@@ -105,6 +105,12 @@ def get_stock_price(stock, date):
     
 def get_data(sym, start_date = None, end_date = None, n = 10):
 
+    # 날짜 파라미터를 전달하지 않은 경우, 시작일과 종료일을 현재일 기준으로 변수 값을 설정한다.
+    if start_date == None or end_date == None:
+        today = datetime.date.today()
+        start_date = today - timedelta(days = 365)
+        end_date = today    
+    
     # 네이버 주가 데이터 제공 URL
     url = f"https://fchart.stock.naver.com/siseJson.nhn?symbol={sym}&requestType=1&startTime={start_date}&endTime={end_date}&timeframe=day"
 
