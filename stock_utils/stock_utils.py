@@ -1,4 +1,4 @@
-from td.client import TDClient
+# from td.client import TDClient
 import requests, time, re, os
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -23,8 +23,8 @@ date - 1/8/2022
 stock utils for preparing training data.
 """
 
-#TD API - 
-TD_API = 'XXXXX' ### your TD ameritrade api key
+# TD API - 
+# TD_API = 'XXXXX' ### your TD ameritrade api key
 
 
 
@@ -84,7 +84,7 @@ def get_stock_price(stock, date):
     start_date = date - timedelta(days = 10)
     end_date = date
     
-    #enter url of database
+    # enter url of database
     url = f'https://api.tdameritrade.com/v1/marketdata/{stock}/pricehistory'
 
     query = {'apikey': str(TD_API), 'startDate': timestamp(start_date), \
