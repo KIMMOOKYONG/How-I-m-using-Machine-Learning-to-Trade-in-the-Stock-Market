@@ -142,16 +142,16 @@ class LR_training:
         pickle.dump(self.scaler, open(scaler_dir, 'wb'))
 
         print(f'Saved the model and scaler in {saved_models_dir}')
-        cm_path = os.path.join(os.getcwd(), 'results\Confusion Matrices')
+        cm_path = os.path.join(os.getcwd(), 'results/Confusion Matrices')
         
         #save cms
         plt.figure()
         self.cmd.plot()
-        plt.savefig(f'{cm_path}\\cm_{self.model_version}.jpg')
+        plt.savefig(f'{cm_path}/cm_{self.model_version}.jpg')
 
         plt.figure()
         self.cmd_thresholded.plot()
-        plt.savefig(f'{cm_path}\\cm_thresholded_{self.model_version}.jpg')
+        plt.savefig(f'{cm_path}/cm_thresholded_{self.model_version}.jpg')
         print(f'Figures saved in {cm_path}')
 
 import argparse
