@@ -9,6 +9,14 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import MinMaxScaler
 from datetime import datetime
 
+# 김무경 추가 코드
+import requests
+import json
+import time
+from datetime import datetime
+import datetime as dt
+import math
+
 """
 author - Kaneel Senevirathne
 date - 1/8/2022
@@ -97,25 +105,24 @@ def get_stock_price(stock, date):
     
 def get_data(sym, start_date = None, end_date = None, n = 10):
 
-    #enter url
-    url = f'https://api.tdameritrade.com/v1/marketdata/{sym}/pricehistory'
-    
-    if start_date:
-        payload = {'apikey': str(TD_API), 'startDate': timestamp(start_date), \
-            'endDate': timestamp(end_date), 'periodType': 'year', 'frequencyType': \
-            'daily', 'frequency': '1', 'needExtendedHoursData': 'False'}
-    else:
-        payload = {'apikey': str(TD_API), 'startDate': timestamp(datetime(2007, 1, 1)), \
-            'endDate': timestamp(datetime(2020, 12, 31)), 'periodType': 'year', 'frequencyType': \
-            'daily', 'frequency': '1', 'needExtendedHoursData': 'False'}
-            
-    #request
-    results = requests.get(url, params = payload)
-    data = results.json()
-    
-    #change the data from ms to datetime format
-    data = pd.DataFrame(data['candles'])
-    data['date'] = pd.to_datetime(data['datetime'], unit = 'ms')
+    # 네이버 주가 데이터 제공 URL
+    url = f"https://fchart.stock.naver.com/siseJson.nhn?symbol={ticker}&requestType=1&startTime={start_date}&endTime={end_date}&timeframe=day"
+
+    # request
+    results = requests.post(url)
+    data = results.text.replace("'",  '"').strip()
+    data = json.loads(data)
+
+    # change the data from ms to datetime format
+    data = pd.DataFrame(data[1:], columns=data[0])
+    data = data.reset_index()
+    data["날짜"] = pd.to_datetime(data["날짜"])
+
+    data = data[["날짜","시가", "고가", "저가", "종가", "거래량"]]
+    data.columns = ["date", "open", "high", "low", "close", "volume"]
+    data = data.dropna()
+    data.loc[:,["date", "open", "high", "low", "close", "volume"]] = data.loc[:,["date", "open", "high", "low", "close", "volume"]].astype(int)
+    data = data.loc[:,["date", "open", "high", "low", "close", "volume"]]
 
     #add the noramlzied value function and create a new column
     data['normalized_value'] = data.apply(lambda x: normalized_values(x.high, x.low, x.close), axis = 1)
@@ -129,7 +136,7 @@ def get_data(sym, start_date = None, end_date = None, n = 10):
     idx_with_maxs = np.where(data['loc_max'] > 0)[0]
     
     return data, idx_with_mins, idx_with_maxs
-
+    
 def create_train_data(stock, start_date = None, end_date = None, n = 10):
 
     #get data to a dataframe
