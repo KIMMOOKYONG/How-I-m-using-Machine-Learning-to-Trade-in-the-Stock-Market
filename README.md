@@ -1,6 +1,8 @@
 # Trading-strategy-
 Here I test a simple ML trading strategy
 
+국내 환경에 받도록 일부 소스코드를 변경할 예정이다.
+
 ## Please note
 - I have commented out the paths in the code. If you use code you'd have to correct them accordingly. 
 - You will need to create a TDA developer account (https://developer.tdameritrade.com/apis) and get the API key in order to download the data. I have left this blank in the code where I used to download data. 
