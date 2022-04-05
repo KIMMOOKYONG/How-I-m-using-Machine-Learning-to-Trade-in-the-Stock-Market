@@ -107,9 +107,9 @@ def get_data(sym, start_date = None, end_date = None, n = 10):
 
     # 날짜 파라미터를 전달하지 않은 경우, 시작일과 종료일을 현재일 기준으로 변수 값을 설정한다.
     if start_date == None or end_date == None:
-        today = datetime.date.today()
+        today = dt.date.today()
         start_date = today - timedelta(days = 365)
-        start_date = star_date.strftime('%Y%m%d')
+        start_date = start_date.strftime('%Y%m%d')
         end_date = today.strftime('%Y%m%d') 
     
     # 네이버 주가 데이터 제공 URL
@@ -217,5 +217,3 @@ def predict_trend(stock, _model_, start_date = None, end_date = None, n = 10):
             data['pred'][i] = np.nan
 
     return data
-
-
