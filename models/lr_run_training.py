@@ -77,11 +77,11 @@ class LR_training:
         get train and test data
         """ 
         for stock in self.stocks:
-            try: 
-                df = stock_utils.create_train_data(stock, n = 10)
-                self.main_df = self.main_df.append(df)
-            except:
-                pass
+            #try: 
+            df = stock_utils.create_train_data(stock, n = 10)
+            self.main_df = self.main_df.append(df)
+            #except:
+            #pass
         print(f'{len(self.main_df)} samples were fetched from the database..')
 
     def create_train_test(self):
@@ -157,4 +157,4 @@ class LR_training:
 import argparse
 
 if __name__ == "__main__":
-    run_lr = LR_training('v2')
+    run_lr = LR_training('v3')
