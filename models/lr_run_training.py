@@ -4,7 +4,7 @@ author - Kaneel Senevirathne
 date - 1/13/2022
 """
 
-from td.client import TDClient
+# from td.client import TDClient
 import requests, time, re, os
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -159,4 +159,3 @@ import argparse
 
 if __name__ == "__main__":
     run_lr = LR_training('v2')
-
