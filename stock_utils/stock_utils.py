@@ -80,25 +80,34 @@ def normalized_values(high, low, close):
 def get_stock_price(stock, date):
     """
     returns the stock price given a date
+    파라미터로 전달한 날짜의 종가 정보를 반환하는 함수
     """
     start_date = date - timedelta(days = 10)
     end_date = date
-    
-    # enter url of database
-    url = f'https://api.tdameritrade.com/v1/marketdata/{stock}/pricehistory'
 
-    query = {'apikey': str(TD_API), 'startDate': timestamp(start_date), \
-            'endDate': timestamp(end_date), 'periodType': 'year', 'frequencyType': \
-            'daily', 'frequency': '1', 'needExtendedHoursData': 'False'}
+    start_date = start_date.strftime('%Y%m%d')
+    end_date = date.strftime('%Y%m%d')
 
-    #request
-    results = requests.get(url, params = query)
-    data = results.json()
-    
+
+    # 네이버 주가 데이터 제공 URL
+    url = f"https://fchart.stock.naver.com/siseJson.nhn?symbol={sym}&requestType=1&startTime={start_date}&endTime={end_date}&timeframe=day"
+
+    # request
+    results = requests.post(url)
+    data = results.text.replace("'",  '"').strip()
+    data = json.loads(data)
+
     try:
-        #change the data from ms to datetime format
-        data = pd.DataFrame(data['candles'])
-        data['date'] = pd.to_datetime(data['datetime'], unit = 'ms')
+        # change the data from ms to datetime format
+        data = pd.DataFrame(data[1:], columns=data[0])
+        data = data.reset_index()
+        data["날짜"] = pd.to_datetime(data["날짜"])
+
+        data = data[["날짜","시가", "고가", "저가", "종가", "거래량"]]
+        data.columns = ["date", "open", "high", "low", "close", "volume"]
+        data = data.dropna()
+        data.loc[:,["date", "open", "high", "low", "close", "volume"]] = data.loc[:,["date", "open", "high", "low", "close", "volume"]].astype(int)
+        data = data.loc[:,["date", "open", "high", "low", "close", "volume"]]
         return data['close'].values[-1]
     except:
         pass
