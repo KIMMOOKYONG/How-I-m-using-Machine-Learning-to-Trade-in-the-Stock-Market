@@ -10,7 +10,7 @@ from stock_utils.stock_utils import get_stock_price
 from models import lr_inference
 from datetime import datetime
 from datetime import timedelta
-from td.client import TDClient
+# from td.client import TDClient
 import pandas as pd
 from models.lr_inference import LR_v1_predict, LR_v1_sell
 import warnings
@@ -146,11 +146,8 @@ class backtester(simulator):
 
 if __name__ == "__main__":
     #stocks list
-    dow = ['AXP', 'AMGN', 'AAPL', 'BA', 'CAT', 'CSCO', 'CVX', 'GS', 'HD', 'HON', 'IBM', 'INTC',\
-        'JNJ', 'KO', 'JPM', 'MCD', 'MMM', 'MRK', 'MSFT', 'NKE', 'PG', 'TRV', 'UNH',\
-        'CRM', 'VZ', 'V', 'WBA', 'WMT', 'DIS']
-    other = ['AMD', 'MU', 'ABT', 'AAL', 'UAL', 'DAL', 'ANTM', 'ATVI', 'BAC', 'PNC', 'C', 'EBAY', 'AMZN', 'GOOG', 'FB', 'SNAP', 'TWTR'\
-        'FDX', 'MCD', 'PEP', ]
+    dow = ['001440']
+    other = []
 
     stocks = list(np.unique(dow + other))
     back = backtester(dow, LR_v1_predict, 3000, datetime(2021, 1, 1), datetime(2021, 12, 31), threshold = 0.9, sell_perc = 0.03, hold_till = 10,\
