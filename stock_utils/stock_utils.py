@@ -109,7 +109,8 @@ def get_data(sym, start_date = None, end_date = None, n = 10):
     if start_date == None or end_date == None:
         today = datetime.date.today()
         start_date = today - timedelta(days = 365)
-        end_date = today    
+        start_date = star_date.strftime('%Y%m%d')
+        end_date = today.strftime('%Y%m%d') 
     
     # 네이버 주가 데이터 제공 URL
     url = f"https://fchart.stock.naver.com/siseJson.nhn?symbol={sym}&requestType=1&startTime={start_date}&endTime={end_date}&timeframe=day"
