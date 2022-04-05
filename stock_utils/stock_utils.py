@@ -106,7 +106,7 @@ def get_stock_price(stock, date):
 def get_data(sym, start_date = None, end_date = None, n = 10):
 
     # 네이버 주가 데이터 제공 URL
-    url = f"https://fchart.stock.naver.com/siseJson.nhn?symbol={ticker}&requestType=1&startTime={start_date}&endTime={end_date}&timeframe=day"
+    url = f"https://fchart.stock.naver.com/siseJson.nhn?symbol={sym}&requestType=1&startTime={start_date}&endTime={end_date}&timeframe=day"
 
     # request
     results = requests.post(url)
