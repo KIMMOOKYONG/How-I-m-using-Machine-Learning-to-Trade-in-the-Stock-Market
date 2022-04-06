@@ -176,15 +176,18 @@ def create_train_data(stock, start_date = None, end_date = None, n = 10):
     
     return _data_.dropna(axis = 0)
 
+"""
+로지스틱회귀 테스트 데이터 생성
+"""
 def create_test_data_lr(stock, start_date = None, end_date = None, n = 10):
     """
     this function create test data sample for logistic regression model
     """
-    #get data to a dataframe
+    # get data to a dataframe
     data, _, _ = get_data(stock, start_date, end_date, n)
     idxs = np.arange(0, len(data))
     
-    #create regressions for 3, 5 and 10 days
+    # create regressions for 3, 5 and 10 days
     data = n_day_regression(3, data, idxs)
     data = n_day_regression(5, data, idxs)
     data = n_day_regression(10, data, idxs)
