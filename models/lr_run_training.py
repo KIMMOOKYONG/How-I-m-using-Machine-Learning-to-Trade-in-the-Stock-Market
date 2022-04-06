@@ -166,7 +166,7 @@ class LR_training:
         cm_thresholded = confusion_matrix(self.test_y, self.predictions_proba_thresholded)
         self.cmd_thresholded = ConfusionMatrixDisplay(cm_thresholded)
 
-        
+    # 분류 결과에 대한 가중치 조정        
     def _threshold(self, predictions, threshold):
 
         prob_thresholded = [0 if x > threshold else 1 for x in predictions[:, 0]]
