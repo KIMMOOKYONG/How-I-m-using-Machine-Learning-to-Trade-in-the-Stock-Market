@@ -78,7 +78,7 @@ class LR_training:
         self.fetch_data()
         self.create_train_test()
         self.fit_model()
-#         self.confusion_matrix()
+        self.confusion_matrix()
 #         self.save_model()
 
     """
@@ -157,14 +157,18 @@ class LR_training:
         # category 0, 1의 분류에 대한 각 분류에 속할 확률값
         self.predictions_proba = self.lr._predict_proba_lr(self.test_x)
         # 아래 코드는 뭐지 ???
+        # 가중치 조정을 통한 분류 결과 조정??
         self.predictions_proba_thresholded = self._threshold(self.predictions_proba, self.threshold) # 0.98
-      
+    
+    # 학습 결과 cm으로 시각화 데이터 생성
     def confusion_matrix(self):
         cm = confusion_matrix(self.test_y, self.predictions)
         self.cmd = ConfusionMatrixDisplay(cm)
+        # self.cmd.plot()
         
         cm_thresholded = confusion_matrix(self.test_y, self.predictions_proba_thresholded)
         self.cmd_thresholded = ConfusionMatrixDisplay(cm_thresholded)
+        # self.cmd_thresholded.plot()
 
     # 분류 결과에 대한 가중치 조정        
     def _threshold(self, predictions, threshold):
@@ -172,14 +176,17 @@ class LR_training:
         prob_thresholded = [0 if x > threshold else 1 for x in predictions[:, 0]]
         return np.array(prob_thresholded)
 
+    # 모델 저장
     def save_model(self):
 
         # save models
+        # 모델 객체를 pickled binary file 형태로 저장한다.
         saved_models_dir = os.path.join(os.getcwd(), 'saved_models')
         model_file = f'lr_{self.model_version}.sav'
         model_dir = os.path.join(saved_models_dir, model_file)
         pickle.dump(self.lr, open(model_dir, 'wb'))
 
+        # Scaler객체 pickled binary file 형태로 저장한다.
         scaler_file = f'scaler_{self.model_version}.sav'
         scaler_dir = os.path.join(saved_models_dir, scaler_file)
         pickle.dump(self.scaler, open(scaler_dir, 'wb'))
@@ -187,7 +194,8 @@ class LR_training:
         print(f'Saved the model and scaler in {saved_models_dir}')
         cm_path = os.path.join(os.getcwd(), 'results/Confusion Matrices')
         
-        #save cms
+        # save cms
+        # confusion matricx 저장
         plt.figure()
         self.cmd.plot()
         plt.savefig(f'{cm_path}/cm_{self.model_version}.jpg')
@@ -201,3 +209,4 @@ import argparse
 
 if __name__ == "__main__":
     run_lr = LR_training('v3')
+    
