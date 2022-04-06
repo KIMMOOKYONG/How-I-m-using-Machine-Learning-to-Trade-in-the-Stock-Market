@@ -79,7 +79,7 @@ class LR_training:
         self.create_train_test()
         self.fit_model()
         self.confusion_matrix()
-#         self.save_model()
+        self.save_model()
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
