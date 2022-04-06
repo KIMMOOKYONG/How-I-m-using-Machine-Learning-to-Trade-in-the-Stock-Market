@@ -93,6 +93,9 @@ class LR_training:
                 print('fetch_data(self) 함수 오류 발생')
                 pass
         print(f'{len(self.main_df)} samples were fetched from the database..')
+        
+        # 디버깅을 위해서 데이터를 덤프함.
+        self.main_df.to_csv('main_df.csv')
 
     def create_train_test(self):
         """
