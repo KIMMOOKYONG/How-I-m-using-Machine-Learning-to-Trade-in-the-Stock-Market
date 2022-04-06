@@ -57,6 +57,8 @@ class LR_training:
 
         # get stock ticker symbols
         # 학습을 진행할 종목코드를 tickers.csv파일에서 불러온다.
+        # 여러개 종목코드를 파라미터로 전달할 경우, 개별 종목에 대한 훈련이 아니고, 여러 종목의 데이터를 가져와서
+        # 하나의 학습 데이터를 생성하는 구조인것으로 보인다.
         dow = ['001440']
         tickers = pd.read_csv('tickers.csv', dtype=str)
         tickers = list(tickers['ticker'])
