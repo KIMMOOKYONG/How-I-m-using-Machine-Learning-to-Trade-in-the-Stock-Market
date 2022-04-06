@@ -110,6 +110,7 @@ def get_stock_price(stock, date):
         data = data.loc[:,["date", "open", "high", "low", "close", "volume"]]
         return data['close'].values[-1]
     except:
+        print('get_stock_price(stock, date) 함수 오류 발생')
         pass
     
 def get_data(sym, start_date = None, end_date = None, n = 10):
