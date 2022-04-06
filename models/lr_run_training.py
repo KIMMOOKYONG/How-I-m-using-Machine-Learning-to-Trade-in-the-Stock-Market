@@ -76,11 +76,16 @@ class LR_training:
         # run logistic regresion
         # 학습 진행 순서 정의
         self.fetch_data()
-#         self.create_train_test()
-#         self.fit_model()
+        self.create_train_test()
+        self.fit_model()
 #         self.confusion_matrix()
 #         self.save_model()
 
+    """
+    주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
+    OLHC 가격 정규화 및 라벨링 작업 수행
+    라베링 작업은 green dot (category 0) or a red dot (category 1)인지 여부를 target 칼럼에 라벨링
+    """
     def fetch_data(self):
         """
         get train and test data
@@ -94,21 +99,43 @@ class LR_training:
                 pass
         print(f'{len(self.main_df)} samples were fetched from the database..')
         
-        # 디버깅을 위해서 데이터를 덤프함.
-        self.main_df.to_csv('main_df.csv')
+        # 디버깅을 위해서 생성 데이터 덤프함.
+        # self.main_df.to_csv('main_df.csv')
 
+    """
+    학습 데이터를 훈련용 데이터와 테스트 데이터로 분활
+    """
     def create_train_test(self):
+        
         """
         create train and test data
-        """
+        학습 데이터에서 무작위 샘플링을 통해서 데이터 추출
+        """        
         self.main_df = self.main_df.sample(frac = 1, random_state = 3). reset_index(drop = True)
-        self.main_df['target'] = self.main_df['target'].astype('category')
+        """
+        데이터프레임으로 부터 무작위(확률, 임의) 표본 추출하는 방법
+        특정 개수의 표본 무작위 추출(number)
+        특정 비율의 표본 무작위로 추출(fraction)
+        복원 무작위 표본 추출(random sampling with replacement)
+        가중치를 부여하여 표본 추출(weights)
+        칼럼에 대해 무작위 표본 추출(axis=1, axis='column')
+        특정 칼럼에 대해 무작위 표본 추출한 결과를 numpy array로 할당
+        """        
         
+        self.main_df['target'] = self.main_df['target'].astype('category')        
+        """
+        카테고리형(Categorical) 데이터는 데이터프레임의 칼럼에서 특정한 형태의 데이터가 반복되는 경우 사용
+        예를 들어 성별(남성, 여성), 나이(10대, 20대, ...)와 같이 특정 구간의 데이터가 반복되는 경우
+        카테고리형 데이터를 이용하면 반복된 데이터를 코드화하여 데이터의 사이즈를 줄여서 메모리 사용량이 줄어 들고 데이터 처리 속도가 빨라집니다.        
+        """        
+        # pop 메서드를 사용하면 해당 칼럼 데이터를 추출하고, 소스 데이터프레임에서 해당 칼럼 삭제
+        # x, y 2차원 데이터로 변환
         y = self.main_df.pop('target').to_numpy()
         y = y.reshape(y.shape[0], 1)
+        # 스케일링 적용
         x = self.scaler.fit_transform(self.main_df)
 
-        #test train split
+        # test train split
         self.train_x, self.test_x, self.train_y, self.test_y = train_test_split(x, y, \
             test_size = 0.05, random_state = 50, shuffle = True)
 
@@ -117,16 +144,20 @@ class LR_training:
     def fit_model(self):
 
         print('Training model...')
-        self.lr.fit(self.train_x, self.train_y)
+        # self.lr.fit(self.train_x, self.train_y)
+        # ravel() 함수는 다차원 1배열을 1차원 배열로 변환해주는 함수.
+        self.lr.fit(self.train_x, self.train_y.ravel())
         
-        #predict the test data
+        # predict the test data
         self.predictions = self.lr.predict(self.test_x)
         self.score = self.lr.score(self.test_x, self.test_y)
         print(f'Logistic regression model score: {self.score}')
 
-        #preds with threshold
+        # preds with threshold
+        # category 0, 1의 분류에 대한 각 분류에 속할 확률값
         self.predictions_proba = self.lr._predict_proba_lr(self.test_x)
-        self.predictions_proba_thresholded = self._threshold(self.predictions_proba, self.threshold)
+        # 아래 코드는 뭐지 ???
+        self.predictions_proba_thresholded = self._threshold(self.predictions_proba, self.threshold) # 0.98
       
     def confusion_matrix(self):
         cm = confusion_matrix(self.test_y, self.predictions)
@@ -139,12 +170,11 @@ class LR_training:
     def _threshold(self, predictions, threshold):
 
         prob_thresholded = [0 if x > threshold else 1 for x in predictions[:, 0]]
-
         return np.array(prob_thresholded)
 
     def save_model(self):
 
-        #save models
+        # save models
         saved_models_dir = os.path.join(os.getcwd(), 'saved_models')
         model_file = f'lr_{self.model_version}.sav'
         model_dir = os.path.join(saved_models_dir, model_file)
