@@ -13,6 +13,7 @@ import numpy as np
 import datetime
 plt.style.use('grayscale')
 
+# Linear algebra functions(선형대수함수)
 from scipy import linalg
 import math
 from datetime import datetime
@@ -25,7 +26,10 @@ import os
 import sys
 import pickle
 
-#append path
+# append path
+# import 문을 통해 다른 파이썬 파일을 불러올 때, 
+# 파이썬은 내부적으로 파일을 찾기 위해 sys.path와 PYTHONPATH에 있는 경로를 탐색합니다.
+# 현재 경로를 sys.path에 추가한다.
 current_dir = os.getcwd()
 sys.path.append(current_dir)
 
@@ -45,43 +49,46 @@ class LR_training:
         self.model_version = model_version
         self.threshold = threshold
         
+        # 훈련에 사용할 데이터의 기간을 설정한다.
         if start_date:
             self.start_date = start_date
         if end_date:
             self.end_date = end_date
 
-        #get stock ticker symbols
+        # get stock ticker symbols
+        # 학습을 진행할 종목코드를 tickers.csv파일에서 불러온다.
         dow = ['001440']
-        # sp500 = #use pandas to open the companies csv
-        # sp = list(sp500['Ticker'])
-        # stocks = dow + sp[:20]
-        stocks = dow
+        tickers = pd.read_csv('tickers.csv')
+        tickers = list(tickers['ticker'])
+        stocks = dow + tickers[:20]
         self.stocks = list(np.unique(stocks))
+        print(f'학습할 종목코드: {self.stocks}')
 
-        #main dataframe
+        # main dataframe
         self.main_df = pd.DataFrame(columns = ['volume', 'normalized_value', '3_reg', '5_reg', '10_reg', '20_reg', 'target'])
 
-        #init models
+        # init models
         self.scaler = MinMaxScaler()
         self.lr = LogisticRegression()
 
-        #run logistic regresion
+        # run logistic regresion
+        # 학습 진행 순서 정의
         self.fetch_data()
-        self.create_train_test()
-        self.fit_model()
-        self.confusion_matrix()
-        self.save_model()
+#         self.create_train_test()
+#         self.fit_model()
+#         self.confusion_matrix()
+#         self.save_model()
 
     def fetch_data(self):
         """
         get train and test data
         """ 
         for stock in self.stocks:
-            #try: 
-            df = stock_utils.create_train_data(stock, n = 10)
-            self.main_df = self.main_df.append(df)
-            #except:
-            #pass
+            try: 
+                df = stock_utils.create_train_data(stock, n = 10)
+                self.main_df = self.main_df.append(df)
+            except:
+                pass
         print(f'{len(self.main_df)} samples were fetched from the database..')
 
     def create_train_test(self):
