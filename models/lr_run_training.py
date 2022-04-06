@@ -58,7 +58,7 @@ class LR_training:
         # get stock ticker symbols
         # 학습을 진행할 종목코드를 tickers.csv파일에서 불러온다.
         dow = ['001440']
-        tickers = pd.read_csv('tickers.csv')
+        tickers = pd.read_csv('tickers.csv', dtype=str)
         tickers = list(tickers['ticker'])
         stocks = dow + tickers[:20]
         self.stocks = list(np.unique(stocks))
