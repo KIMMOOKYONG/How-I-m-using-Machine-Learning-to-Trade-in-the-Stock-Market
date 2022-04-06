@@ -39,9 +39,9 @@ def LR_v1_predict(stock, start_date, end_date, threshold = 0.98):
     """
     this function predict given the data
     """
-    #create model and scaler instances
-    scaler = load_scaler('v2')
-    lr = load_LR('v2')
+    # create model and scaler instances 
+    scaler = load_scaler('v3')
+    lr = load_LR('v3')
     #create input
     data = create_test_data_lr(stock, start_date, end_date)
     #get close price of final date
