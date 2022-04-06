@@ -88,6 +88,7 @@ class LR_training:
                 df = stock_utils.create_train_data(stock, n = 10)
                 self.main_df = self.main_df.append(df)
             except:
+                print('fetch_data(self) 함수 오류 발생')
                 pass
         print(f'{len(self.main_df)} samples were fetched from the database..')
 
