@@ -27,24 +27,24 @@ class backtester(simulator):
         
         super().__init__(capital) #initialize simulator
 
-        self.stocks = stocks_list
-        self.model = model
-        self.start_date = start_date
-        self.day = start_date
-        self.end_date = end_date  
+        self.stocks = stocks_list # 종목 목록
+        self.model = model # 모델명
+        self.start_date = start_date # 시작일
+        self.day = start_date # 시작일
+        self.end_date = end_date # 종료일
         self.status = 'buy' #the status says if the backtester is in buy mode or sell mode
         self.threshold = threshold
-        self.sell_perc = sell_perc
-        self.hold_till = hold_till
-        self.stop_perc = stop_perc
+        self.sell_perc = sell_perc # 상승 비율
+        self.hold_till = hold_till # 보유 기간
+        self.stop_perc = stop_perc # 손절 비율
 
-        #current directory
+        # current directory
         current_dir = os.getcwd()
         results_dir = os.path.join(current_dir, 'results')
         folder_name = f'{str(self.model.__name__)}_{self.threshold}_{self.hold_till}'
         self.folder_dir = os.path.join(results_dir, folder_name)
         if not os.path.exists(self.folder_dir):
-            #create a new folder
+            # create a new folder
             os.makedirs(self.folder_dir)
       
     def backtest(self):
@@ -53,17 +53,17 @@ class backtester(simulator):
         """
         delta = timedelta(days = 1)
         
-        #progress bar to track progress
+        # progress bar to track progress
         total_days = (self.end_date - self.start_date).days
         d = 0
         pbar = tqdm(desc = 'Progress', total = total_days)
 
         while self.day <= self.end_date:
             
-            #daily scanner dict
+            # daily scanner dict
             self.daily_scanner = {}  
             if self.status == 'buy':
-                #scan stocks for the day
+                # scan stocks for the day
                 self.scanner()
                 if list(self.daily_scanner.keys()) != []:
                     recommended_stock = list(self.daily_scanner.keys())[0]
@@ -112,12 +112,13 @@ class backtester(simulator):
         scan the stocks to find good stocks
         """
         for stock in self.stocks:
-            try:#to ignore the stock if no data is available. #for staturdays or sundays etc
+            try:# to ignore the stock if no data is available. #for staturdays or sundays etc
                 prediction, prediction_thresholded, close_price = self.get_stock_data(stock)
                 #if prediction greater than
                 if prediction_thresholded < 1: #if prediction is zero
                     self.daily_scanner[stock] = (prediction, prediction_thresholded, close_price)
             except:
+                print('scanner() 함수 오류 발생')
                 pass
 
         def take_first(elem):
