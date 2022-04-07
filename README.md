@@ -50,6 +50,21 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 
 ![](https://miro.medium.com/max/700/1*fqafvwhvO_7owgIiU-GQtw.png)
 
+- Volume, normalized value, 3_reg, 5_reg, 10_reg, 20_reg are the input parameters and the target is the output. If target is 0, the row represents data from a buying point (local minimum) and if the row represents a 1 it is a selling point (local maximum).
+- split the data into train & validation sets
+- train the LR model
+- The LR model used the input parameters and predicted the target value.
+- 
+
+# Validation results and analysis
+- 모델 성능 검증을 위해서 하나의 종목을 선택한다.(Gs, 골드만삭스)
+- 학습된 LR model을 통해서 주가의 방향성을 예측
+- Testing results for stock ticker GS. Green dots represent buying points and red points represent selling points predicted by our model.
+
+![](https://miro.medium.com/max/700/1*Enhp6QJ6nVm5XQjcuL7tSQ.png)
+
+- 지역 고가, 저가 데이터를 가지고 모델을 학습시켰기 때문에 일반 가격에 대한 방향성 예측에는 약점이 있다.
+- 
 
 ## Please note
 - I have commented out the paths in the code. If you use code you'd have to correct them accordingly. 
