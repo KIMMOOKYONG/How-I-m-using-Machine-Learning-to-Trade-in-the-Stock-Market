@@ -21,7 +21,8 @@ import pickle
 from tqdm import tqdm
 
 class backtester(simulator):
-
+    # model: 학습 모델을 실행할 함수명을 파라미터로 전달
+    # lr_inference 파일에 저장된 함수를 호출
     def __init__(self, stocks_list, model, capital, start_date, end_date, threshold = 0.99, sell_perc = 0.04, hold_till = 5,\
          stop_perc = 0.005):
         
@@ -38,6 +39,7 @@ class backtester(simulator):
         self.hold_till = hold_till # 보유 기간
         self.stop_perc = stop_perc # 손절 비율
 
+        # 백테스팅 결과 저장 폴더 설정 및 폴더 생성
         # current directory
         current_dir = os.getcwd()
         results_dir = os.path.join(current_dir, 'results')
@@ -51,13 +53,17 @@ class backtester(simulator):
         """
         start backtesting
         """
+        # 1일 날짜값
         delta = timedelta(days = 1)
         
         # progress bar to track progress
+        # 시작일과 종료일의 기간 일수
         total_days = (self.end_date - self.start_date).days
         d = 0
+        # 진행바 생성
         pbar = tqdm(desc = 'Progress', total = total_days)
 
+        # 시작일에서 종료일까지 루프 실행
         while self.day <= self.end_date:
             
             # daily scanner dict
@@ -100,10 +106,12 @@ class backtester(simulator):
         this function queries to td database and get data of a particular stock on a given day back to certain amount of days
         (default is 30). 
         """
-        #get start and end dates
-        end = self.day
-        start = self.day - timedelta(days = back_to)        
-        # prediction, prediction_thresholded, close_price = LR_v1_predict(stock, start, end, threshold = 0.5)
+        # get start and end dates
+        # (datetime.datetime(2020, 11, 22, 0, 0), datetime.datetime(2021, 1, 1, 0, 0))
+        end = self.day # 시작일
+        start = self.day - timedelta(days = back_to) # 과거 40일전 날짜 추출
+        
+        # prediction, prediction_thresholded, close_price = LR_v1_predict(stock, start, end, threshold = 0.5)        
         prediction, prediction_thresholded, close_price = self.model(stock, start, end, self.threshold)
         return prediction[0], prediction_thresholded, close_price
 
