@@ -64,6 +64,12 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 ![](https://miro.medium.com/max/700/1*Enhp6QJ6nVm5XQjcuL7tSQ.png)
 
 - 지역 고가, 저가 데이터를 가지고 모델을 학습시켰기 때문에 일반 가격에 대한 방향성 예측에는 약점이 있다.
+- 2021년 테스트 데이터를 입력하고 LR 모델을 통해서 매수 포인트를 대다수 정확하게 예측은 하지만 일부 데이터는 잘못 예측하고 있다.
+- Confusion matrix of results from the validation dataset
+
+![](https://miro.medium.com/max/416/1*SPRHtOiSwfOZgyvKsAmk6Q.jpeg)
+
+- Confusion matrix를 활용해서 모델을 보정
 - 
 
 ## Please note
