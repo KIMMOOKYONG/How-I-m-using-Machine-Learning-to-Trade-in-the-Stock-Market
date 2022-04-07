@@ -78,19 +78,19 @@ class backtester(simulator):
                     # print(f'Bought {recommended_stock} for {recommended_price} on the {self.day}')
                     self.status = 'sell' #change the status to sell
                 else:
-                    # print('No recommendations')
+                    print('No recommendations')
                     pass
-            else: #if the status is sell
-                #get stock price on the day
+            else: # if the status is sell
+                # get stock price on the day
                 stocks = [key for key in self.buy_orders.keys()]
                 for s in stocks:
                     recommended_action, current_price = LR_v1_sell(s, self.buy_orders[s][3], self.buy_orders[s][0], self.day, \
                         self.sell_perc, self.hold_till, self.stop_perc)
                     if recommended_action == "SELL":
-                        # print(f'Sold {s} for {current_price} on {self.day}')
+                        print(f'Sold {s} for {current_price} on {self.day}')
                         self.sell(s, current_price, self.buy_orders[s][1], self.day)
                         self.status = 'buy'              
-            #go to next day
+            # go to next day
             self.day += delta
             d += 1
             pbar.update(1)
