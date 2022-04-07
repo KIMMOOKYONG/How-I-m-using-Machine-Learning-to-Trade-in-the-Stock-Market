@@ -117,6 +117,12 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 - 의료 민영화, 원격의료장비, 보험(한화, 삼성)
 - 
 
+## Total value of investment during year 2021. The starting balance for each investor type was 3000 USD.
+
+![](https://miro.medium.com/max/700/1*NolLe5zVigJTGSKcy1E5Xg.png)
+
+
+
 ## Please note
 - I have commented out the paths in the code. If you use code you'd have to correct them accordingly. 
 - You will need to create a TDA developer account (https://developer.tdameritrade.com/apis) and get the API key in order to download the data. I have left this blank in the code where I used to download data. 
