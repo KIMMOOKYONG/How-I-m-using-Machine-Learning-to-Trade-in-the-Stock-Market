@@ -75,7 +75,7 @@ class backtester(simulator):
                     recommended_stock = list(self.daily_scanner.keys())[0]
                     recommended_price = list(self.daily_scanner.values())[0][2]
                     self.buy(recommended_stock, recommended_price, self.day) #buy stock
-                    # print(f'Bought {recommended_stock} for {recommended_price} on the {self.day}')
+                    print(f'Bought {recommended_stock} for {recommended_price} on the {self.day}')
                     self.status = 'sell' #change the status to sell
                 else:
                     print('No recommendations')
