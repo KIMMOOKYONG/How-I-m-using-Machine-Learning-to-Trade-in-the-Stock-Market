@@ -69,7 +69,13 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 
 ![](https://miro.medium.com/max/416/1*SPRHtOiSwfOZgyvKsAmk6Q.jpeg)
 
-- Confusion matrix를 활용해서 모델을 보정
+- Confusion matrix를 활용해서 모델을 보정(29 instances 잘못 예측)
+- LR model 임계값 조정을 통해서 모델의 성능 개선
+- Logistic Regression binary classification, the default threshold is 0.5.
+- 모델의 예측 확률값이 0.5 보다 크면, category 1
+- 모델의 예측 확률값이 0.5 보다 작으면, category 0
+- 임계값을 0.1으로 변경하면, 예측 확률값이 0.1 보다 작으면 buying points (category 0)
+- 확률값이 0 근처에 있는 값만 매수 포인트가 된다.
 - 
 
 ## Please note
