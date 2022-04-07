@@ -43,6 +43,7 @@ def LR_v1_predict(stock, start_date, end_date, threshold = 0.98):
     """
     this function predict given the data
     주가 데이터를 기반으로 고가, 저가 예측
+    시작일과 종료일 기간에 해당하는 학습용 데이터를 생성
     """
     # create model and scaler instances 
     # 모델, 스케일러 로딩
