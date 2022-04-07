@@ -121,6 +121,9 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 
 ![](https://miro.medium.com/max/700/1*NolLe5zVigJTGSKcy1E5Xg.png)
 
+![](https://miro.medium.com/max/700/1*TGaUtjcuchrxFUCKRpFS_A.png)
+
+
 
 
 ## Please note
