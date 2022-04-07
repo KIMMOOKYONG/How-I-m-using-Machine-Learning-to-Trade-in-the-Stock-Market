@@ -45,7 +45,7 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 - 주가 데이터 수집은 네이버 이용
 - 학습 및 검증 데이터는 다우 30 종목 + S&P 500 종목 주가 데이터 사용(2007 ~ 2020)
 - 테스트 데이터는 2021년 데이터 사용
-- 알고리즘을 통해서 local mins and max points 찾아서 데이터 라벨링
+- 알고리즘을 통해서 local mins(0) and max(1) points 찾아서 데이터 라벨링
 - 다음은 입력 데이터 예시
 
 ![](https://miro.medium.com/max/700/1*fqafvwhvO_7owgIiU-GQtw.png)
