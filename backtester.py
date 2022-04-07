@@ -105,6 +105,8 @@ class backtester(simulator):
         """
         this function queries to td database and get data of a particular stock on a given day back to certain amount of days
         (default is 30). 
+        back_to에 40일 설정하는 이유는 regression 연산을 위해서 과거 데이터 필요
+        regression 기간을 변경하면 back_to의 값을 재조정해야한다.
         """
         # get start and end dates        
         # (datetime.datetime(2020, 11, 22, 0, 0), datetime.datetime(2021, 1, 1, 0, 0))
@@ -114,6 +116,8 @@ class backtester(simulator):
         # prediction, prediction_thresholded, close_price = LR_v1_predict(stock, start, end, threshold = 0.5)        
         # prediction, prediction_thresholded, close_price = LR_v1_predict(stock, '2020-11-22', '2021-01-01', threshold = 0.5)        
         prediction, prediction_thresholded, close_price = self.model(stock, start, end, self.threshold)
+        
+        # 예측값, 가중치 적용 예측값, 종가
         return prediction[0], prediction_thresholded, close_price
 
     def scanner(self):
@@ -123,8 +127,10 @@ class backtester(simulator):
         for stock in self.stocks:
             try:# to ignore the stock if no data is available. #for staturdays or sundays etc
                 prediction, prediction_thresholded, close_price = self.get_stock_data(stock)
-                #if prediction greater than
-                if prediction_thresholded < 1: #if prediction is zero
+                # if prediction greater than
+                # 매수 여부를 결정한다.
+                if prediction_thresholded < 1: # if prediction is zero
+                    # 일별 종목별 예측값, 가중치 적용 예측값, 종가 정보를 저장한다.
                     self.daily_scanner[stock] = (prediction, prediction_thresholded, close_price)
             except:
                 print('scanner() 함수 오류 발생')
@@ -133,6 +139,7 @@ class backtester(simulator):
         def take_first(elem):
             return elem[1]
 
+        # OrderedDict 순서를 보장하는 딕셔너리
         self.daily_scanner = OrderedDict(sorted(self.daily_scanner.items(), key = take_first, reverse = True))
 
     def save_results(self):
