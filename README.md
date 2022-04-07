@@ -89,6 +89,19 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 
 ![](https://miro.medium.com/max/700/1*2rdETRDZHCg4NqnIaXDWDA.png)
 
+# Back-testing & results
+- DOW 30 데이터 학습한 LR 모델과 임계값 조정을 통해서 매수 포인트를 찾는 시뮬레이터 와 백테스팅 스크립트 생성
+- threshold(t)
+- 매도 조건: gain(g) + loss(l) + days(d)
+- 백테스팅 스크립트 파라미터: threshold(t) + gain(g) + loss(l) + days(d)
+
+- 파라미터 조정을 통해서 4개의 투자자 타입 생성
+- Impatient Trader
+- Moderate Holder
+- Patient Swing Trader
+- The APE
+
+### The Impatient Trader 
 
 
 ## Please note
