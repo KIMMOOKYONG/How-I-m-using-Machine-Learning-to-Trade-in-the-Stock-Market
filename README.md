@@ -29,9 +29,17 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 - 입력 값으로 주가와 거래량 사용(주가의 방향성 예측하기에는 너무 작은 정보)
 - 4개의 추가 입력 파라미터 생성
 - 입력01: normalized stock price(OHLC를 단일 변수로 변환, 0 ~ 1)
+- 입력01이 1에 가까우면 고가 가깝다.(0에 가까우면 저가)
+- 입력01 하나의 변수에 단일 가격의 변동 정보를 모두 담을 수 있다.
+- 입력02: 거래량
+- 입력03: 03 day regression coefficient(과거 3일간의 종가 데이터를 가지고 선형회귀를 통해서 계산, 3일간의 주가 방향을 나타냄)
+- 입력04: 05 day regression coefficient
+- 입력05: 10 day regression coefficient
+- 입력06: 20 day regression coefficient
 
 ![normalized value calculation](https://miro.medium.com/max/356/1*EeIdzaCOAYph6d1QA4orkQ.png)
 
+![](https://miro.medium.com/max/350/1*OMsY8j4udl-g7r1YpjwYcw.png)
 
 ## Please note
 - I have commented out the paths in the code. If you use code you'd have to correct them accordingly. 
