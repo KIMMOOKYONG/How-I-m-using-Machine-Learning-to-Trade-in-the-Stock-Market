@@ -102,7 +102,20 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 - The APE
 
 ### The Impatient Trader 
+- 잛은 기간 동안 매수 후 보유
+- 작은 수익 목표
+- 작은 손실
+- 파라미터: t = 0.3, g = 0.005, l = 0.001 and d = 3
 
+## The Moderate Holder
+- 파라미터: t = 0.1, g = 0.03, l = 0.03 and d = 10.
+
+## The Patient Swing Trader
+- 파라미터: t = 0.05, g = 0.04, l = 0.003 and d = 21
+
+## The APE
+- 의료 민영화, 원격의료장비, 보험(한화, 삼성)
+- 
 
 ## Please note
 - I have commented out the paths in the code. If you use code you'd have to correct them accordingly. 
