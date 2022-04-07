@@ -76,7 +76,20 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 - 모델의 예측 확률값이 0.5 보다 작으면, category 0
 - 임계값을 0.1으로 변경하면, 예측 확률값이 0.1 보다 작으면 buying points (category 0)
 - 확률값이 0 근처에 있는 값만 매수 포인트가 된다.
-- 
+
+- Confusion matrix after threshold was changed to 0.01.
+- FP값이 0건으로 변화됨.
+
+![](https://miro.medium.com/max/416/1*JWfGpkEqSmFWXpo-IQHYMg.jpeg)
+
+- 게임주, 식품주, 시멘트
+- 리츠, 부동산 경매
+- 물류 대란(상하이)
+- GS stock buying opportunities after using a threshold of 0.03
+
+![](https://miro.medium.com/max/700/1*2rdETRDZHCg4NqnIaXDWDA.png)
+
+
 
 ## Please note
 - I have commented out the paths in the code. If you use code you'd have to correct them accordingly. 
