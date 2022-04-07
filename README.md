@@ -15,7 +15,7 @@ cd ..
 rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market  
 
 
-# 매매전략
+# The ML model
 - ML모델 활용 매수 관점인지 예측
 - 단기 저점이면 매수
 - 일정 비율 상승하면 매도
@@ -40,6 +40,16 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 ![normalized value calculation](https://miro.medium.com/max/356/1*EeIdzaCOAYph6d1QA4orkQ.png)
 
 ![](https://miro.medium.com/max/350/1*OMsY8j4udl-g7r1YpjwYcw.png)
+
+# Training and validating the model
+- 주가 데이터 수집은 네이버 이용
+- 학습 및 검증 데이터는 다우 30 종목 + S&P 500 종목 주가 데이터 사용(2007 ~ 2020)
+- 테스트 데이터는 2021년 데이터 사용
+- 알고리즘을 통해서 local mins and max points 찾아서 데이터 라벨링
+- 다음은 입력 데이터 예시
+
+![](https://miro.medium.com/max/700/1*fqafvwhvO_7owgIiU-GQtw.png)
+
 
 ## Please note
 - I have commented out the paths in the code. If you use code you'd have to correct them accordingly. 
