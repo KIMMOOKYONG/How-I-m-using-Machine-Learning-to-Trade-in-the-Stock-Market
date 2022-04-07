@@ -106,12 +106,13 @@ class backtester(simulator):
         this function queries to td database and get data of a particular stock on a given day back to certain amount of days
         (default is 30). 
         """
-        # get start and end dates
+        # get start and end dates        
         # (datetime.datetime(2020, 11, 22, 0, 0), datetime.datetime(2021, 1, 1, 0, 0))
         end = self.day # 시작일
         start = self.day - timedelta(days = back_to) # 과거 40일전 날짜 추출
         
         # prediction, prediction_thresholded, close_price = LR_v1_predict(stock, start, end, threshold = 0.5)        
+        # prediction, prediction_thresholded, close_price = LR_v1_predict(stock, '2020-11-22', '2021-01-01', threshold = 0.5)        
         prediction, prediction_thresholded, close_price = self.model(stock, start, end, self.threshold)
         return prediction[0], prediction_thresholded, close_price
 
