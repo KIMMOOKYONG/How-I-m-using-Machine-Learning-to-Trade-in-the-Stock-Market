@@ -1,3 +1,7 @@
+# TO DO
+- 로깅 파일로 보관하는 기능
+- 주가 데이터를 DB 또는 파일에서 가져오는 구조로 변경
+
 # Trading-strategy-
 Here I test a simple ML trading strategy
 
