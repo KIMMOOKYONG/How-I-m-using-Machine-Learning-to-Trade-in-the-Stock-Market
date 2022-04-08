@@ -47,8 +47,8 @@ def LR_v1_predict(stock, start_date, end_date, threshold = 0.98):
     """
     # create model and scaler instances 
     # 모델, 스케일러 로딩
-    scaler = load_scaler('v3')
-    lr = load_LR('v3')
+    scaler = load_scaler('v2')
+    lr = load_LR('v2')
     
     # create input
     # 로지스틱 회귀 테스트 데이터 생성
