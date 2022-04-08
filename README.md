@@ -103,6 +103,8 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 - 
 ### 파라미터 설정 고려사항
 - 백테스팅 파리미터는 백테스팅할 종목의 성격을 감안해서 설정해야함.
+- 모델을 적용할때 상승 국면인 경우에 적용하고, 하락 국면인 경우 적용하면 손실이 증가한다.
+- 따라서 파라미터 설정할때 고려해야하는 요소이다.
 - 
 ### The Impatient Trader 
 - 잛은 기간 동안 매수 후 보유
