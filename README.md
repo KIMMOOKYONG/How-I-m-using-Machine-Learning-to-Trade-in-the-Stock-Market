@@ -100,7 +100,10 @@ rm -rf ./How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market
 - Moderate Holder
 - Patient Swing Trader
 - The APE
-
+- 
+### 파라미터 설정 고려사항
+- 백테스팅 파리미터는 백테스팅할 종목의 성격을 감안해서 설정해야함.
+- 
 ### The Impatient Trader 
 - 잛은 기간 동안 매수 후 보유
 - 작은 수익 목표
