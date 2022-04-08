@@ -16,9 +16,10 @@ handlers:
   file:
     class: logging.FileHandler
     level: WARNING
-    filename: 'ieddit.log'
+    filename: 'ieddit.log' # 프로젝트 시작시 수정필요
     formatter: simple
   queue_listener:
+    # 프로젝트 시작시 수정필요
     class: log_utils.logger_util.QueueListenerHandler
     handlers:
       - cfg://handlers.console
