@@ -23,7 +23,8 @@ with open(path, 'r') as stream:
 logging.config.dictConfig(logging_config)
 
 # Initialize Log Levels
-log_level = logging.WARNING
+# 로깅 레벨 초기값 설정
+# log_level = logging.WARNING
 
 # Check For Debug Flag
 # if config.DEBUG:
@@ -33,6 +34,9 @@ log_level = logging.WARNING
 # This level can be overwritten by the following in a file
 #   logger = logging.getlogger(__name__)
 #   logger.setLevel(logging.INFO)
-loggers = [logging.getLogger(name) for name in logging.root.manager.loggerDict]
-for log in loggers:
-  log.setLevel(log_level)
+
+# 전체 로그 레벨을 단일 값으로 설정하고자 하는 경우 아래 코드를 적용한다.
+# log_level = logging.WARNING
+# loggers = [logging.getLogger(name) for name in logging.root.manager.loggerDict]
+# for log in loggers:
+#   log.setLevel(log_level)
