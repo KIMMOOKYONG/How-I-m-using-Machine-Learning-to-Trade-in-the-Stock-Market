@@ -2,6 +2,10 @@ import numpy as np
 import math
 import pandas as pd
 
+import logging
+import log_utils.logger_init
+logger = logging.getLogger("__simulator__")
+
 """
 stock simulator to trade in real time. 
 author - Kaneel Senevirathne
@@ -64,17 +68,17 @@ class simulator:
         """
         print current stocks holding
         """
-        print ("{:<10} {:<10} {:<10} {:<10}".format('STOCK', 'BUY PRICE', 'SHARES', 'TOTAL VALUE'))
+        logger.info("{:<10} {:<10} {:<10} {:<10}".format('STOCK', 'BUY PRICE', 'SHARES', 'TOTAL VALUE'))
         for key, value in self.buy_orders.items():
-            print("{:<10} {:<10} {:<10} {:<10}".format(key, value[0], value[1], value[2]))
-        print('\n')  
+            logger.info("{:<10} {:<10} {:<10} {:<10}".format(key, value[0], value[1], value[2]))
+        # print('\n')
 
     def create_summary(self, print_results = False):
         """
         create summary
         """
         if print_results:
-            print ("{:<10} {:<10} {:<10} {:<10} {:<10}".format('STOCK', 'BUY PRICE', 'SHARES', 'SELL PRICE', 'NET GAIN'))    
+            logger.info("{:<10} {:<10} {:<10} {:<10} {:<10}".format('STOCK', 'BUY PRICE', 'SHARES', 'SELL PRICE', 'NET GAIN'))    
         
         for values in self.history:
             net_gain = (values[3] - values[1]) * values[2]
@@ -83,16 +87,16 @@ class simulator:
                  ,'net_gain': net_gain, 'buy_date': values[4], 'sell_date': values[5]}, ignore_index = True)
                     
             if print_results:
-                print("{:<10} {:<10} {:<10} {:<10} {:<10}".format(values[0], values[1], values[2], values[3], np.round(net_gain, 2)))
+                logger.info("{:<10} {:<10} {:<10} {:<10} {:<10}".format(values[0], values[1], values[2], values[3], np.round(net_gain, 2)))
             
     def print_summary(self):
         """
         prints the summary of results
         """
         self.create_summary(print_results = True)
-        print('\n')
-        print(f'Initial Balance: {self.initial_capital:.2f}')
-        print(f'Final Balance: {(self.initial_capital + self.total_gain):.2f}')
-        print(f'Total gain: {self.total_gain:.2f}')
-        print(f'P/L : {(self.total_gain/self.initial_capital)*100:.2f} %')
-        print('\n')
+        # print('\n')
+        logger.info(f'Initial Balance: {self.initial_capital:.2f}')
+        logger.info(f'Final Balance: {(self.initial_capital + self.total_gain):.2f}')
+        logger.info(f'Total gain: {self.total_gain:.2f}')
+        logger.info(f'P/L : {(self.total_gain/self.initial_capital)*100:.2f} %')
+        # print('\n')
