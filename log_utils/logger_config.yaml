@@ -31,6 +31,16 @@ loggers:
     handlers:
       - queue_listener
     propagate: false
+  __utils__:
+    level: DEBUG
+    handlers:
+      - queue_listener
+    propagate: false            
+  __simulator__:
+    level: DEBUG
+    handlers:
+      - queue_listener
+    propagate: false        
 root:
   level: WARNING
   handlers:
