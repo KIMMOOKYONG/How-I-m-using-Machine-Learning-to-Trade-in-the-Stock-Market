@@ -26,7 +26,9 @@ stock utils for preparing training data.
 # TD API - 
 # TD_API = 'XXXXX' ### your TD ameritrade api key
 
-
+import logging
+from log_utils import logger_init
+logger = logging.getLogger("__utils__")
 
 def timestamp(dt):
     epoch = datetime.utcfromtimestamp(0)
