@@ -20,6 +20,10 @@ import os
 import pickle
 from tqdm import tqdm
 
+import logging
+import log_utils.logger_init
+logger = logging.getLogger("__bt_logger__")
+
 class backtester(simulator):
     # model: 학습 모델을 실행할 함수명을 파라미터로 전달
     # lr_inference 파일에 저장된 함수를 호출
@@ -39,16 +43,30 @@ class backtester(simulator):
         self.hold_till = hold_till # 보유 기간
         self.stop_perc = stop_perc # 손절 비율
 
+        logger.debug(f"금번 실행 파라미터:")
+        logger.debug(f"종목목록:{self.stocks}")
+        logger.debug(f"모델명: {self.model}")
+        logger.debug(f"시작일: {self.start_date}")
+        logger.debug(f"종료일: {self.end_date}")
+        logger.debug(f"실행모드: {self.status}")
+        logger.debug(f"임계값: {self.threshold}")
+        logger.debug(f"상승비율: {self.sell_perc}")
+        logger.debug(f"보유기간: {self.hold_till}")
+        logger.debug(f"손절비율: {self.stop_perc}")
+
         # 백테스팅 결과 저장 폴더 설정 및 폴더 생성
         # current directory
         current_dir = os.getcwd()
         results_dir = os.path.join(current_dir, 'results')
         folder_name = f'{str(self.model.__name__)}_{self.threshold}_{self.hold_till}'
+
+        logger.debug(f"백테스팅 모델 경로: {folder_name}")
+
         self.folder_dir = os.path.join(results_dir, folder_name)
         if not os.path.exists(self.folder_dir):
             # create a new folder
             os.makedirs(self.folder_dir)
-      
+
     def backtest(self):
         """
         start backtesting
@@ -75,10 +93,10 @@ class backtester(simulator):
                     recommended_stock = list(self.daily_scanner.keys())[0]
                     recommended_price = list(self.daily_scanner.values())[0][2]
                     self.buy(recommended_stock, recommended_price, self.day) #buy stock
-                    print(f'Bought {recommended_stock} for {recommended_price} on the {self.day}')
+                    logger.info(f'Bought {recommended_stock} for {recommended_price} on the {self.day}')
                     self.status = 'sell' #change the status to sell
                 else:
-                    print('No recommendations')
+                    logger.debug('No recommendations')
                     pass
             else: # if the status is sell
                 # get stock price on the day
@@ -87,7 +105,7 @@ class backtester(simulator):
                     recommended_action, current_price = LR_v1_sell(s, self.buy_orders[s][3], self.buy_orders[s][0], self.day, \
                         self.sell_perc, self.hold_till, self.stop_perc)
                     if recommended_action == "SELL":
-                        print(f'Sold {s} for {current_price} on {self.day}')
+                        logger.info(f'Sold {s} for {current_price} on {self.day}')
                         self.sell(s, current_price, self.buy_orders[s][1], self.day)
                         self.status = 'buy'              
             # go to next day
@@ -170,8 +188,3 @@ if __name__ == "__main__":
     back = backtester(dow, LR_v1_predict, 3000, datetime(2021, 1, 1), datetime(2021, 12, 31), threshold = 0.9, sell_perc = 0.03, hold_till = 10,\
         stop_perc = 0.03)
     back.backtest()
-
-    
-
-
-    
