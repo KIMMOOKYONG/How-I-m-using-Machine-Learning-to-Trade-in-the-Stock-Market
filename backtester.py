@@ -59,10 +59,9 @@ class backtester(simulator):
         current_dir = os.getcwd()
         results_dir = os.path.join(current_dir, 'results')
         folder_name = f'{str(self.model.__name__)}_{self.threshold}_{self.hold_till}'
-
-        logger.debug(f"백테스팅 모델 경로: {folder_name}")
-
+        
         self.folder_dir = os.path.join(results_dir, folder_name)
+        logger.debug(f"백테스팅 모델 경로: {self.folder_dir}")        
         if not os.path.exists(self.folder_dir):
             # create a new folder
             os.makedirs(self.folder_dir)
