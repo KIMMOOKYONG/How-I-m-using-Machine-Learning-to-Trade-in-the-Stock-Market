@@ -33,7 +33,7 @@ loggers:
       - file
     propagate: false        
 root:
-  level: WARNING
+  level: INFO
   handlers:
     - console
 
