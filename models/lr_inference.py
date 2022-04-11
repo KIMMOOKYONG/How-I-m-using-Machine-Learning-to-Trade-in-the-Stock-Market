@@ -51,7 +51,7 @@ def _threshold(probs, threshold):
 """
 
 """
-def LR_v1_predict(stock, start_date, end_date, threshold = 0.98):
+def LR_v1_predict(stock, start_date, end_date, model = 'v2', threshold = 0.98):
     """
     this function predict given the data
     주가 데이터를 기반으로 고가, 저가 예측
@@ -59,17 +59,19 @@ def LR_v1_predict(stock, start_date, end_date, threshold = 0.98):
     """
     # create model and scaler instances 
     # 모델, 스케일러 로딩
-    scaler = load_scaler('v2')
-    lr = load_LR('v2')
+    # @model: 모델 버전
+    scaler = load_scaler(model)
+    lr = load_LR(model)
     
     # create input
-    # 로지스틱 회귀 테스트 데이터 생성
-    # 라벨이 붙어있지 않는 데이터
+    # 백테스팅 데이터 생성
+    # 라벨링 없음    
     data = create_test_data_lr(stock, start_date, end_date)
     
     # get close price of final date
     # 테스트 데이터의 마지막 날 종가
     close_price = data['close'].values[-1]
+    logger.debug(f"close_price: {close_price}")
     
     # get input data to model
     # 모델에 입력할 데이터, 종가 칼럼을 제거
