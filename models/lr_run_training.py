@@ -104,7 +104,6 @@ class LR_training:
 #         self.save_model()
 
         current_dir = os.getcwd()
-        sys.path.append(current_dir)
         logger.info(f"current_dir: {current_dir}")
 
     """
