@@ -103,9 +103,8 @@ class LR_training:
 #         self.fit_model()
 #         self.confusion_matrix()
 #         self.save_model()
-
-        current_dir = __name__
-        logger.info(f"current_dir: {current_dir}")
+        
+        logger.info(f"current execute dir: {os.path.dirname(os.path.realpath(__file__))}")
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
