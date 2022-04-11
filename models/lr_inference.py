@@ -19,7 +19,7 @@ logger = logging.getLogger("__LR_training__")
 
 def load_LR(model_version):
 
-    file =  f"./saved_models//lr_{model_version}.sav"
+    file =  f"./saved_models/lr_{model_version}.sav"
     logger.debug(f"로딩 모델 경로: {file}")
     
     loaded_model = pickle.load(open(file, 'rb'))
@@ -28,7 +28,7 @@ def load_LR(model_version):
 
 def load_scaler(model_version):
 
-    file = f"./saved_models//scaler_{model_version}.sav"
+    file = f"./saved_models/scaler_{model_version}.sav"
     logger.debug(f"로딩 스케일러 경로: {file}")
     
     loaded_model = pickle.load(open(file, 'rb'))
@@ -41,6 +41,10 @@ def _threshold(probs, threshold):
     """
     prob_thresholded = [0 if x > threshold else 1 for x in probs[:, 0]]
 
+    logger.debug("_threshold() 호출")
+    logger.debug(f"파라미터: probs({probs}, threshold({threshold}))")
+    logger.debug(f"prob_thresholded 값: {prob_thresholded}")
+    
     return np.array(prob_thresholded)
 
 
