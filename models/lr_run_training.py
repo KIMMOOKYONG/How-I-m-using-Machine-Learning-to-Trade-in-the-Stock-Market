@@ -82,8 +82,8 @@ class LR_training:
         # dow: 학습 할 임의 종목을 설정한다.
         # tickers: 학습에 사용할 종목 정보를 저장한 파일
         dow = []
-        tickers = pd.read_csv('tickers.csv', dtype=str)
-        tickers = list(tickers['ticker'])
+        tickers = pd.read_csv(f"{self.curr_dir}/tickers.csv", dtype=str)
+        tickers = list(tickers["ticker"])
         stocks = dow + tickers[:20] # 상위 20개 종목
         self.stocks = list(np.unique(stocks))
         logger.info(f"학습할 종목코드: {self.stocks}")
@@ -99,10 +99,10 @@ class LR_training:
         # run logistic regresion
         # 학습 진행 순서 정의
         self.fetch_data()
-        self.create_train_test()
-        self.fit_model()
-        self.confusion_matrix()
-        self.save_model()
+#         self.create_train_test()
+#         self.fit_model()
+#         self.confusion_matrix()
+#         self.save_model()
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
