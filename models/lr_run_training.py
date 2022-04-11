@@ -105,6 +105,7 @@ class LR_training:
 
         current_dir = os.getcwd()
         logger.info(f"current_dir: {current_dir}")
+        print("aaaa")
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
