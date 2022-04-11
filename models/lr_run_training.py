@@ -3,15 +3,13 @@ LR training
 author - Kaneel Senevirathne
 date - 1/13/2022
 """
-
-# from td.client import TDClient
 import requests, time, re, os
 import matplotlib.pyplot as plt
 import pandas as pd
 import pickle as pkl
 import numpy as np
 import datetime
-plt.style.use('grayscale')
+plt.style.use("grayscale")
 
 # Linear algebra functions(선형대수함수)
 from scipy import linalg
@@ -101,10 +99,10 @@ class LR_training:
         # run logistic regresion
         # 학습 진행 순서 정의
         self.fetch_data()
-#         self.create_train_test()
-#         self.fit_model()
-#         self.confusion_matrix()
-#         self.save_model()
+        self.create_train_test()
+        self.fit_model()
+        self.confusion_matrix()
+        self.save_model()
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
