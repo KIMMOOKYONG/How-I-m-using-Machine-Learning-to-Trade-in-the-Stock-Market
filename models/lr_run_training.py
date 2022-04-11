@@ -97,11 +97,15 @@ class LR_training:
 
         # run logistic regresion
         # 학습 진행 순서 정의
-        self.fetch_data()
-        self.create_train_test()
-        self.fit_model()
-        self.confusion_matrix()
-        self.save_model()
+#         self.fetch_data()
+#         self.create_train_test()
+#         self.fit_model()
+#         self.confusion_matrix()
+#         self.save_model()
+
+        current_dir = os.getcwd()
+        sys.path.append(current_dir)
+        logger.info(f"current_dir: {current_dir}")
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
