@@ -39,6 +39,8 @@ def _threshold(probs, threshold):
     """
     Inputs the probability and returns 1 or 0 based on the threshold
     """
+    # probs[:, 0]: 분류가 0일 확률 값
+    # 0일 확률값이 threshold 값 보다 크면, 0(매수), 아니면 1(매도)
     prob_thresholded = [0 if x > threshold else 1 for x in probs[:, 0]]
 
     logger.debug("_threshold() 호출")
@@ -49,7 +51,8 @@ def _threshold(probs, threshold):
 
 
 """
-
+매수, 매도를 예측하고자는 날짜(종료일)를 기준으로 과거 데이터(-40일, 시작일) 파라미터로 전달하면
+기준 날짜의 매수, 매도를 예측하는 함수이다.
 """
 def LR_v1_predict(stock, start_date, end_date, model = 'v2', threshold = 0.98):
     """
@@ -74,10 +77,10 @@ def LR_v1_predict(stock, start_date, end_date, model = 'v2', threshold = 0.98):
     logger.debug(f"close_price: {close_price}")
     
     # get input data to model
-    # 모델에 입력할 데이터, 종가 칼럼을 제거
+    # 모델에 입력할 데이터 생성
     input_data = data[['volume', 'normalized_value', '3_reg', '5_reg', '10_reg', '20_reg']]
-    # 1D 데이터를 2D 데이터로 변환
-    # 마지막 날 데이터
+    # 1D 데이터를 2D 데이터로 변환(모델 입력값이 2차원이므로)
+    # 마지막 데이터 추출 및 1D를 2D로 변환
     input_data = input_data.to_numpy()[-1].reshape(1, -1)
     
     # scale input data
