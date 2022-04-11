@@ -13,9 +13,15 @@ from stock_utils.stock_utils import timestamp, create_train_data, get_data, crea
 from datetime import timedelta
 import time
 
+import logging
+import log_utils.logger_init
+logger = logging.getLogger("__LR_training__")
+
 def load_LR(model_version):
 
-    file =  f'./saved_models//lr_{model_version}.sav'
+    file =  f"./saved_models//lr_{model_version}.sav"
+    logger.debug(f"로딩 모델명: {file}")
+    
     loaded_model = pickle.load(open(file, 'rb'))
 
     return loaded_model
