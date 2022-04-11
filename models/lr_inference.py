@@ -20,7 +20,7 @@ logger = logging.getLogger("__LR_training__")
 def load_LR(model_version):
 
     file =  f"./saved_models//lr_{model_version}.sav"
-    logger.debug(f"로딩 모델명: {file}")
+    logger.debug(f"로딩 모델 경로: {file}")
     
     loaded_model = pickle.load(open(file, 'rb'))
 
@@ -28,7 +28,9 @@ def load_LR(model_version):
 
 def load_scaler(model_version):
 
-    file = f'./saved_models//scaler_{model_version}.sav'
+    file = f"./saved_models//scaler_{model_version}.sav"
+    logger.debug(f"로딩 스케일러 경로: {file}")
+    
     loaded_model = pickle.load(open(file, 'rb'))
 
     return loaded_model
