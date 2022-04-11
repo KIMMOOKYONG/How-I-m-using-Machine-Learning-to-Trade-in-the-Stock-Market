@@ -99,10 +99,10 @@ class LR_training:
         # run logistic regresion
         # 학습 진행 순서 정의
         self.fetch_data()
-#         self.create_train_test()
-#         self.fit_model()
-#         self.confusion_matrix()
-#         self.save_model()
+        self.create_train_test()
+        self.fit_model()
+        self.confusion_matrix()
+        self.save_model()
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
@@ -149,7 +149,7 @@ class LR_training:
         특정 칼럼에 대해 무작위 표본 추출한 결과를 numpy array로 할당
         """        
         
-        self.main_df['target'] = self.main_df['target'].astype('category')        
+        self.main_df["target"] = self.main_df["target"].astype("category")        
         """
         카테고리형(Categorical) 데이터는 데이터프레임의 칼럼에서 특정한 형태의 데이터가 반복되는 경우 사용
         예를 들어 성별(남성, 여성), 나이(10대, 20대, ...)와 같이 특정 구간의 데이터가 반복되는 경우
@@ -157,7 +157,7 @@ class LR_training:
         """        
         # pop 메서드를 사용하면 해당 칼럼 데이터를 추출하고, 소스 데이터프레임에서 해당 칼럼 삭제
         # x, y 2차원 데이터로 변환
-        y = self.main_df.pop('target').to_numpy()
+        y = self.main_df.pop("target").to_numpy()
         y = y.reshape(y.shape[0], 1)
         # 스케일링 적용
         x = self.scaler.fit_transform(self.main_df)
@@ -166,11 +166,11 @@ class LR_training:
         self.train_x, self.test_x, self.train_y, self.test_y = train_test_split(x, y, \
             test_size = 0.05, random_state = 50, shuffle = True)
 
-        print('Created test and train data...')
+        print("Created test and train data...")
 
     def fit_model(self):
 
-        print('Training model...')
+        print("Training model...")
         # self.lr.fit(self.train_x, self.train_y)
         # ravel() 함수는 다차원 1배열을 1차원 배열로 변환해주는 함수.
         self.lr.fit(self.train_x, self.train_y.ravel())
@@ -208,29 +208,31 @@ class LR_training:
 
         # save models
         # 모델 객체를 pickled binary file 형태로 저장한다.
-        saved_models_dir = os.path.join(os.getcwd(), 'saved_models')
-        model_file = f'lr_{self.model_version}.sav'
+        saved_models_dir = os.path.join(os.getcwd(), "saved_models")
+        model_file = f"lr_{self.model_version}.sav"
         model_dir = os.path.join(saved_models_dir, model_file)
-        pickle.dump(self.lr, open(model_dir, 'wb'))
+        pickle.dump(self.lr, open(model_dir, "wb"))
 
         # Scaler객체 pickled binary file 형태로 저장한다.
-        scaler_file = f'scaler_{self.model_version}.sav'
+        scaler_file = f"scaler_{self.model_version}.sav"
         scaler_dir = os.path.join(saved_models_dir, scaler_file)
-        pickle.dump(self.scaler, open(scaler_dir, 'wb'))
+        pickle.dump(self.scaler, open(scaler_dir, "wb"))
 
-        print(f'Saved the model and scaler in {saved_models_dir}')
-        cm_path = os.path.join(os.getcwd(), 'results/Confusion Matrices')
+        print(f"Saved the model and scaler in {saved_models_dir}")
+        cm_path = os.path.join(os.getcwd(), "results/Confusion Matrices")
         
         # save cms
         # confusion matricx 저장
         plt.figure()
         self.cmd.plot()
-        plt.savefig(f'{cm_path}/cm_{self.model_version}.jpg')
+        plt.savefig(f"{cm_path}/cm_{self.model_version}.jpg")
+        plt.savefig(f"{self.curr_dir}/dumpdata/cm_{self.model_version}.jpg")
 
         plt.figure()
         self.cmd_thresholded.plot()
-        plt.savefig(f'{cm_path}/cm_thresholded_{self.model_version}.jpg')
-        print(f'Figures saved in {cm_path}')
+        plt.savefig(f"{cm_path}/cm_thresholded_{self.model_version}.jpg")
+        plt.savefig(f"{self.curr_dir}/dumpdata/cm_thresholded_{self.model_version}.jpg")        
+        print(f"Figures saved in {cm_path}")
 
 import argparse
 
