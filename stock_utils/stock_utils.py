@@ -1,4 +1,3 @@
-# from td.client import TDClient
 import requests, time, re, os
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -22,10 +21,6 @@ author - Kaneel Senevirathne
 date - 1/8/2022
 stock utils for preparing training data.
 """
-
-# TD API - 
-# TD_API = 'XXXXX' ### your TD ameritrade api key
-
 import logging
 from log_utils import logger_init
 logger = logging.getLogger("__utils__")
@@ -146,6 +141,10 @@ def get_data(sym, start_date = None, end_date = None, n = 10):
     data.loc[:,["date", "open", "high", "low", "close", "volume"]] = data.loc[:,["date", "open", "high", "low", "close", "volume"]].astype(int)
     data = data.loc[:,["date", "open", "high", "low", "close", "volume"]]
 
+    # 수집 데이터 저장
+    # 종목코드.csv
+    data.to_csv(f"{os.path.join(os.getcwd(), "models/datasets")}/{sym}.csv")
+    
     #add the noramlzied value function and create a new column
     data['normalized_value'] = data.apply(lambda x: normalized_values(x.high, x.low, x.close), axis = 1)
     
