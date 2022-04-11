@@ -64,6 +64,8 @@ class LR_training:
         tickers
         종목코드들
         """
+        
+        self.curr_dir = os.path.dirname(os.path.realpath(__file__)) # 현재 실행경로        
         self.model_version = model_version
         self.threshold = threshold
         
@@ -98,13 +100,11 @@ class LR_training:
 
         # run logistic regresion
         # 학습 진행 순서 정의
-#         self.fetch_data()
+        self.fetch_data()
 #         self.create_train_test()
 #         self.fit_model()
 #         self.confusion_matrix()
 #         self.save_model()
-        
-        logger.info(f"current execute dir: {os.path.dirname(os.path.realpath(__file__))}")
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
@@ -128,8 +128,8 @@ class LR_training:
             
         logger.info(f"{len(self.main_df)} samples were fetched from the database..")
         
-        # 디버깅을 위해서 생성 데이터 덤프함.
-        self.main_df.to_csv("dump_main_df.csv")
+        # 디버깅을 위해서 생성 데이터 덤프함.        
+        self.main_df.to_csv(self.curr_dir + "/dumpdata/dump_main_df.csv")
 
     """
     학습 데이터를 훈련용 데이터와 테스트 데이터로 분활
