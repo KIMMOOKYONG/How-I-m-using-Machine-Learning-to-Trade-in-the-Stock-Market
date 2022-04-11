@@ -157,6 +157,11 @@ def get_data(sym, start_date = None, end_date = None, n = 10):
     idx_with_mins = np.where(data['loc_min'] > 0)[0]
     idx_with_maxs = np.where(data['loc_max'] > 0)[0]
     
+    # 전처리 데이터 저장
+    ds_path = os.path.join(os.getcwd(), "models/datasets") # 데이터셋 저장 경로
+    np.save(f"{ds_path}/{sym}_idx_with_mins.npy", idx_with_mins)
+    np.save(f"{ds_path}/{sym}_idx_with_maxs.npy", idx_with_maxs)
+    
     return data, idx_with_mins, idx_with_maxs
     
 def create_train_data(stock, start_date = None, end_date = None, n = 10):
@@ -182,7 +187,10 @@ def create_train_data(stock, start_date = None, end_date = None, n = 10):
     return _data_.dropna(axis = 0)
 
 """
-로지스틱회귀 테스트 데이터 생성
+백테스팅 할 종목의 데이터 다운로드 및 입력 데이터 전처리
+데이터 다운로드
+주가(OHLC) 데이터 정규화
+로걸 최소, 최대 값 
 """
 def create_test_data_lr(stock, start_date = None, end_date = None, n = 10):
     """
