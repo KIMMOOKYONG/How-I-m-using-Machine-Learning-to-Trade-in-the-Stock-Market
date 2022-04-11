@@ -142,8 +142,9 @@ def get_data(sym, start_date = None, end_date = None, n = 10):
     data = data.loc[:,["date", "open", "high", "low", "close", "volume"]]
 
     # 수집 데이터 저장
-    # 종목코드.csv
-    data.to_csv(f"{os.path.join(os.getcwd(), "models/datasets")}/{sym}.csv")
+    # 종목코드.csv    
+    ds_path = os.path.join(os.getcwd(), "models/datasets") # 데이터셋 저장 경로
+    data.to_csv(f"{ds_path}/{sym}.csv")
     
     #add the noramlzied value function and create a new column
     data['normalized_value'] = data.apply(lambda x: normalized_values(x.high, x.low, x.close), axis = 1)
