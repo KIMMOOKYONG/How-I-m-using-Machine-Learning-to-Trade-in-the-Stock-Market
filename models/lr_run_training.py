@@ -30,6 +30,7 @@ import pickle
 # import 문을 통해 다른 파이썬 파일을 불러올 때, 
 # 파이썬은 내부적으로 파일을 찾기 위해 sys.path와 PYTHONPATH에 있는 경로를 탐색합니다.
 # 현재 경로를 sys.path에 추가한다.
+# 현재 경로(current_dir)란 사용자가 프로그램을 실행하는 폴더의 절대경로 정보
 current_dir = os.getcwd()
 sys.path.append(current_dir)
 
@@ -103,9 +104,8 @@ class LR_training:
 #         self.confusion_matrix()
 #         self.save_model()
 
-        current_dir = os.getcwd()
+        current_dir = __name__
         logger.info(f"current_dir: {current_dir}")
-        print("aaaa")
 
     """
     주가정보를 수집해서, 모델 학습용 데이터를 생성하는 함수.
