@@ -2,6 +2,16 @@
 - 로깅 파일로 보관하는 기능
 - 주가 데이터를 DB 또는 파일에서 가져오는 구조로 변경
 
+# colab에서 git 사용하는 방법
+## 최초 레파지토리 복제하기
+!git clone https://github.com/KIMMOOKYONG/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market.git  
+
+## 레파지토리 변경 정보 가져오기
+cd How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market  
+!git pull https://github.com/KIMMOOKYONG/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market.git main  
+
+
+
 # Trading-strategy-
 Here I test a simple ML trading strategy
 
