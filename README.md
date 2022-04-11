@@ -10,7 +10,15 @@
 cd How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market  
 !git pull https://github.com/KIMMOOKYONG/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market.git main  
 
-
+# 주가 방향성 예측(매수, 매도)
+```python
+from models.lr_inference import *
+from datetime import datetime, timedelta
+end_date = datetime(2022,4,6)
+start_date = end_date - timedelta(days=40)
+start_date, end_date
+LR_v1_predict('009150', start_date, end_date, threshold=0.98)
+```
 
 # Trading-strategy-
 Here I test a simple ML trading strategy
