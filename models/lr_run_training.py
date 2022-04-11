@@ -42,10 +42,27 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import seaborn as sns
 
+import logging
+import log_utils.logger_init
+logger = logging.getLogger("__LR_training__")
+
 class LR_training:
 
-    def __init__(self, model_version, threshold = 0.98, start_date = None, end_date = None):
+    def __init__(self, model_version, tickers = "tickers.csv", threshold = 0.98, start_date = None, end_date = None):
 
+        """
+        @model_version: 버전
+        @tickers: 학습 데이터 종목 코드 파일
+        @threshold: 임계값
+        @start_date: 시작일
+        @end_date: 종료일
+        
+        # ------------------------------------        
+        tickers.csv 파일 구조
+        # ------------------------------------
+        tickers
+        종목코드들
+        """
         self.model_version = model_version
         self.threshold = threshold
         
@@ -59,19 +76,24 @@ class LR_training:
         # 학습을 진행할 종목코드를 tickers.csv파일에서 불러온다.
         # 여러개 종목코드를 파라미터로 전달할 경우, 개별 종목에 대한 훈련이 아니고, 여러 종목의 데이터를 가져와서
         # 하나의 학습 데이터를 생성하는 구조인것으로 보인다.
-        dow = ['001440']
+        
+        # stocks 변수에 학습에 사용할 종목 코드 목록을 저장한다.
+        # dow: 학습 할 임의 종목을 설정한다.
+        # tickers: 학습에 사용할 종목 정보를 저장한 파일
+        dow = []
         tickers = pd.read_csv('tickers.csv', dtype=str)
         tickers = list(tickers['ticker'])
-        stocks = dow + tickers[:20]
+        stocks = dow + tickers[:20] # 상위 20개 종목
         self.stocks = list(np.unique(stocks))
-        print(f'학습할 종목코드: {self.stocks}')
+        logger.info(f"학습할 종목코드: {self.stocks}")
 
         # main dataframe
-        self.main_df = pd.DataFrame(columns = ['volume', 'normalized_value', '3_reg', '5_reg', '10_reg', '20_reg', 'target'])
+        # 학습 데이터 저장 데이터프레임
+        self.main_df = pd.DataFrame(columns = ["volume", "normalized_value", "3_reg", "5_reg", "10_reg", "20_reg", "target"])
 
         # init models
-        self.scaler = MinMaxScaler()
-        self.lr = LogisticRegression()
+        self.scaler = MinMaxScaler() # 정규화
+        self.lr = LogisticRegression() # 로지스틱 회귀 모델
 
         # run logistic regresion
         # 학습 진행 순서 정의
@@ -92,15 +114,19 @@ class LR_training:
         """ 
         for stock in self.stocks:
             try: 
+                # 함수호출경로: create_train_data() - > get_data() - > normalized_values()                
+                # 종목별 특성 정보를 제거하고 학습용 데이터만 생성한다.
+                # 종목의 갯수는 의미가 없다.
                 df = stock_utils.create_train_data(stock, n = 10)
                 self.main_df = self.main_df.append(df)
             except:
-                print('fetch_data(self) 함수 오류 발생')
+                logger.warning("fetch_data(self) 함수 오류 발생")
                 pass
-        print(f'{len(self.main_df)} samples were fetched from the database..')
+            
+        logger.info(f"{len(self.main_df)} samples were fetched from the database..")
         
         # 디버깅을 위해서 생성 데이터 덤프함.
-        # self.main_df.to_csv('main_df.csv')
+        self.main_df.to_csv("dump_main_df.csv")
 
     """
     학습 데이터를 훈련용 데이터와 테스트 데이터로 분활
