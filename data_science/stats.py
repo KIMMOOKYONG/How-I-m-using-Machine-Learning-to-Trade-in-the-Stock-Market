@@ -6,6 +6,7 @@ import os
 from datetime import timedelta
 import seaborn as sns
 
+# 매매 현황 정보를 전송한다.
 class create_stats:
 
     def __init__(self, model_name, threshold, hold_till):
