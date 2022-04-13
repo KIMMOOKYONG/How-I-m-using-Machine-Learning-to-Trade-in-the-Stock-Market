@@ -78,4 +78,7 @@ class create_stats:
         df.to_csv(results_dir + "/model_result_summary.csv")        
 
 if __name__ == "__main__":
+    # 모델명: LR_v1_predict
+    # 임계값: 1
+    # 보유일수: 1
     cs = create_stats('LR_v1_predict', 1, 1)
