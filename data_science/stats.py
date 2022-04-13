@@ -6,7 +6,7 @@ import os
 from datetime import timedelta
 import seaborn as sns
 
-# 매매 현황 정보를 전송한다.
+#모델 백테스트 결과를 저장한다.
 class create_stats:
 
     def __init__(self, model_name, threshold, hold_till):
@@ -19,7 +19,10 @@ class create_stats:
         self.threshold = threshold
         self.hold_till = hold_till
         
-        results_dir = #add results directory
+        #분석결과 저장 폴더 설정
+        results_dir = os.getcwd()
+        results_dir = os.path.join(results_dir, 'results')
+        #results_dir = #add results directory
         self.folder_name = f'{str(self.model)}_{self.threshold}_{self.hold_till}'
         self.folder_dir = os.path.join(results_dir, self.folder_name)
 
@@ -58,7 +61,11 @@ class create_stats:
     
     def save_stats(self):
 
-        df = pd.read_csv(## add results/model_result_summary.csv path)
+        #분석결과 저장 폴더 설정
+        results_dir = os.getcwd()
+        results_dir = os.path.join(results_dir, 'results')
+
+        df = pd.read_csv(results_dir + "/model_result_summary.csv")
 
         results_dict = {'Model': f'{self.model}_{self.threshold}_{self.hold_till}',\
             'Gains': self.total_gains,
@@ -68,7 +75,7 @@ class create_stats:
             'Maximum Gain': self.maximum_gain,
             'Maximum Loss': self.maximum_loss}
         df = df.append(results_dict, ignore_index = True)
-        df.to_csv(## add path results/model_result_summary.csv')        
+        df.to_csv(results_dir + "/model_result_summary.csv")        
 
 if __name__ == "__main__":
     cs = create_stats('LR_v1_predict', 1, 1)
