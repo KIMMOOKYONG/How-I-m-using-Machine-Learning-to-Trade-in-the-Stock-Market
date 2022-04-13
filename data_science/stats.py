@@ -10,7 +10,11 @@ import seaborn as sns
 class create_stats:
 
     def __init__(self, model_name, threshold, hold_till):
-        
+        """
+        @model_name: 모델명
+        @threshold: 임계치
+        @hold_till: 보유 일수
+        """        
         self.model = model_name
         self.threshold = threshold
         self.hold_till = hold_till
