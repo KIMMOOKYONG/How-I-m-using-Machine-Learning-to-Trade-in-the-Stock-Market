@@ -151,4 +151,15 @@ class create_figures:
         plt.savefig(fig_path)
 
 if __name__ == '__main__':
-    create_figures('LR_v1_predict', 1, 1)
+    create_figures('LR_v1_predict', 0.98, 10)
+
+    """
+    특성값 생성하기를 실행하면
+    results/LR_v1_predict_임계값_보유기간 형식의 폴더가 생성되고
+    폴더 내부에 아래의 파일이 생성된다.
+    gain_loss.jpg
+    held_time_histogram.jpg
+    running_gains_df.csv
+    total_balance_history.jpg
+    """
+    
