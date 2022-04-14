@@ -81,4 +81,10 @@ if __name__ == "__main__":
     # 모델명: LR_v1_predict
     # 임계값: 1
     # 보유일수: 1
-    cs = create_stats('LR_v1_predict', 1, 1)
+    cs = create_stats('LR_v1_predict', 0.98, 10)
+
+    """
+    특성값 생성하기를 실행하면
+    results 폴더 내부에 아래의 파일의 모델 성능 결과가 저장된다.
+    model_result_summary.csv
+    """
