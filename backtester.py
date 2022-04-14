@@ -204,3 +204,12 @@ if __name__ == "__main__":
     back = backtester(dow, LR_v1_predict, model_version, 3000, datetime(2021, 12, 1), datetime(2022, 4, 14), threshold = 0.98, sell_perc = 0.03, hold_till = 10,\
         stop_perc = 0.03)
     back.backtest()
+
+    """
+    백테스팅을 실행하면
+    results/LR_v1_predict_임계값_보유기간 형식의 폴더가 생성되고
+    폴더 내부에 아래의 파일이 생성된다.
+    history_df.csv(stock,buy_price,n_shares,sell_price,net_gain,buy_date,sell_date)
+    params
+    results_summary
+    """    
