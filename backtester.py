@@ -201,6 +201,6 @@ if __name__ == "__main__":
     #모델버전
     model_version = "v2"
     stocks = list(np.unique(dow + other))
-    back = backtester(dow, LR_v1_predict, model_version, 3000, datetime(2021, 12, 1), datetime(2022, 4, 14), threshold = 0.9, sell_perc = 0.03, hold_till = 10,\
+    back = backtester(dow, LR_v1_predict, model_version, 3000, datetime(2021, 12, 1), datetime(2022, 4, 14), threshold = 0.98, sell_perc = 0.03, hold_till = 10,\
         stop_perc = 0.03)
     back.backtest()
