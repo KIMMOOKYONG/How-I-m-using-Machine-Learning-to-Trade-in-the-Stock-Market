@@ -243,3 +243,19 @@ def predict_trend(stock, _model_, start_date = None, end_date = None, n = 10):
             data['pred'][i] = np.nan
 
     return data
+
+
+def csv_to_dict(filename):
+    """
+    두개의 필드로 구성된 csv 파일을 읽어서
+    딕셔너리 형식으로 반환하는 함수
+    @filename: 파일명
+    """
+
+    data = pd.read_csv(filename, dtype=str).values
+    data = dict(data)    
+
+    return data
+   
+
+
