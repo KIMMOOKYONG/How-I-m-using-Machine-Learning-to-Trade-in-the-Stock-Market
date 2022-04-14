@@ -31,6 +31,25 @@ if __name__ == "__main__":
     """
 ```
 
+## 특성값 생성 하기
+```shell
+!python ./data_science/create_figures.py
+```
+
+```python
+if __name__ == '__main__':
+    create_figures('LR_v1_predict', 0.98, 10)
+
+    """
+    특성값 생성하기를 실행하면
+    results/LR_v1_predict_임계값_보유기간 형식의 폴더가 생성되고
+    폴더 내부에 아래의 파일이 생성된다.
+    gain_loss.jpg
+    held_time_histogram.jpg
+    running_gains_df.csv
+    total_balance_history.jpg
+    """
+```
 
 
 # colab에서 git 사용하는 방법
