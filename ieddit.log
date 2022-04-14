@@ -3058,3 +3058,643 @@
 2022-04-14 06:18:21,653 - INFO - __simulator__ - Final Balance: 3971.00
 2022-04-14 06:18:21,653 - INFO - __simulator__ - Total gain: 971.00
 2022-04-14 06:18:21,653 - INFO - __simulator__ - P/L : 32.37 %
+2022-04-14 06:28:37,726 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:28:37,746 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:28:38,855 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:28:38,861 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:28:38,866 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254962 0.99745038]], threshold(0.98))
+2022-04-14 06:28:38,871 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:31:40,497 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:31:40,504 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:31:41,698 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:31:41,705 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:31:41,710 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254962 0.99745038]], threshold(0.98))
+2022-04-14 06:31:41,714 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:31:41,717 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:31:41,721 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:31:42,448 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:31:42,453 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:31:42,457 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254962 0.99745038]], threshold(0.98))
+2022-04-14 06:31:42,460 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:32:55,964 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:32:55,973 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:32:56,957 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:32:56,963 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:32:56,965 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:32:56,972 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:33:06,933 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:33:06,939 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:33:07,684 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:33:07,688 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:33:07,692 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:33:07,698 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:33:07,700 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:33:07,711 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:33:08,418 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:33:08,422 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:33:08,426 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:33:08,429 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:33:20,394 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:33:20,400 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:33:21,131 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:33:21,135 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:33:21,138 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:33:21,141 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:33:21,143 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:33:21,151 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:33:21,877 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:33:21,881 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:33:21,885 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:33:21,887 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:34:37,134 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:34:37,138 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:34:38,040 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:34:38,046 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:34:38,051 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:34:38,056 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:34:38,060 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:34:38,065 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:34:38,751 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:34:38,759 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:34:38,764 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:34:38,768 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:34:38,773 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:34:38,784 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:34:39,503 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:34:39,511 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:34:39,515 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:34:39,520 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:34:39,524 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:34:39,530 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:34:40,230 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:34:40,237 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:34:40,243 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:34:40,249 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:34:40,254 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:34:40,260 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:34:40,986 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:34:40,991 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:34:40,995 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:34:40,998 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:34:41,001 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:34:41,006 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:34:41,708 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:34:41,713 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:34:41,717 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:34:41,719 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:35:44,626 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:35:44,632 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:35:45,579 - DEBUG - __LR_training__ - close_price: 2590
+2022-04-14 06:35:45,583 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:35:45,586 - DEBUG - __LR_training__ - 파라미터: probs([[0.02840041 0.97159959]], threshold(0.98))
+2022-04-14 06:35:45,589 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:35:45,592 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:35:45,597 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:35:46,327 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:35:46,332 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:35:46,335 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:35:46,338 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:35:46,341 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:35:46,345 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:35:47,070 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:35:47,075 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:35:47,079 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928236e-46]], threshold(0.98))
+2022-04-14 06:35:47,082 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:35:47,084 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:35:47,090 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:35:47,788 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:35:47,792 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:35:47,794 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52972968e-25]], threshold(0.98))
+2022-04-14 06:35:47,802 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:35:47,804 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:35:47,812 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:35:48,526 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:35:48,535 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:35:48,540 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396674e-12]], threshold(0.98))
+2022-04-14 06:35:48,542 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:35:48,544 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:35:48,551 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:35:49,268 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:35:49,275 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:35:49,281 - DEBUG - __LR_training__ - 파라미터: probs([[0.40993306 0.59006694]], threshold(0.98))
+2022-04-14 06:35:49,286 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:38:53,775 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:38:53,783 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:38:54,717 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:38:54,724 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:38:54,729 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:38:54,733 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:38:54,737 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:38:54,741 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:38:55,423 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:38:55,430 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:38:55,435 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:38:55,439 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:38:55,441 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:38:55,445 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:38:56,163 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:38:56,167 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:38:56,170 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:38:56,173 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:38:56,175 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:38:56,183 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:38:56,868 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:38:56,874 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:38:56,880 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:38:56,885 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:38:56,889 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:38:56,895 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:38:57,605 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:38:57,610 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:38:57,615 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:38:57,621 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:38:57,624 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:38:57,631 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:38:58,380 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:38:58,387 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:38:58,391 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:38:58,394 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:40:20,335 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:40:20,342 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:40:21,237 - DEBUG - __LR_training__ - close_price: 2590
+2022-04-14 06:40:21,244 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:40:21,249 - DEBUG - __LR_training__ - 파라미터: probs([[0.02840041 0.97159959]], threshold(0.98))
+2022-04-14 06:40:21,253 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:40:21,258 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:40:21,262 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:40:21,991 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:40:21,997 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:40:22,002 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254984 0.99745016]], threshold(0.98))
+2022-04-14 06:40:22,006 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:40:22,010 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:40:22,016 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:40:22,709 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:40:22,719 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:40:22,728 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928236e-46]], threshold(0.98))
+2022-04-14 06:40:22,732 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:40:22,733 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:40:22,737 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:40:23,406 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:40:23,411 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:40:23,414 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52972968e-25]], threshold(0.98))
+2022-04-14 06:40:23,417 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:40:23,419 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:40:23,424 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:40:24,173 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:40:24,180 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:40:24,184 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396674e-12]], threshold(0.98))
+2022-04-14 06:40:24,186 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:40:24,190 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:40:24,193 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:40:24,904 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:40:24,910 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:40:24,914 - DEBUG - __LR_training__ - 파라미터: probs([[0.40993306 0.59006694]], threshold(0.98))
+2022-04-14 06:40:24,916 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:54:21,110 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:54:21,117 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:54:30,193 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:54:30,199 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:00,723 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:00,730 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:01,658 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:55:01,662 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:01,665 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971613e-25]], threshold(0.98))
+2022-04-14 06:55:01,668 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:55:12,833 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:12,837 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:13,547 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:55:13,557 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:13,564 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971613e-25]], threshold(0.98))
+2022-04-14 06:55:13,568 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:55:13,573 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:13,579 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:14,309 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:55:14,314 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:14,318 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396672e-12]], threshold(0.98))
+2022-04-14 06:55:14,321 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:55:14,325 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:14,332 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:15,014 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:55:15,021 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:15,026 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 06:55:15,029 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:55:15,032 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:15,038 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:15,775 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 06:55:15,781 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:15,787 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265777 0.94734223]], threshold(0.98))
+2022-04-14 06:55:15,791 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:55:15,796 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:15,809 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:16,532 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 06:55:16,539 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:16,543 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 06:55:16,549 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:55:16,556 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:16,562 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:17,250 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:55:17,258 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:17,263 - DEBUG - __LR_training__ - 파라미터: probs([[0.40993307 0.59006693]], threshold(0.98))
+2022-04-14 06:55:17,268 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:55:17,275 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:17,283 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:18,023 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:55:18,029 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:18,034 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928116e-46]], threshold(0.98))
+2022-04-14 06:55:18,039 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:55:18,042 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:55:18,048 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:55:18,756 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 06:55:18,760 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:55:18,763 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 06:55:18,766 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:09,000 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:09,004 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:09,913 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:56:09,919 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:09,924 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971608e-25]], threshold(0.98))
+2022-04-14 06:56:09,927 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:09,931 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:09,936 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:10,647 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:56:10,653 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:10,656 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396672e-12]], threshold(0.98))
+2022-04-14 06:56:10,659 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:10,662 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:10,668 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:11,399 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:56:11,403 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:11,407 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 06:56:11,410 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:11,414 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:11,420 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:12,103 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 06:56:12,108 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:12,111 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265777 0.94734223]], threshold(0.98))
+2022-04-14 06:56:12,114 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:12,119 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:12,123 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:12,839 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 06:56:12,845 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:12,847 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 06:56:12,850 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:12,855 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:12,862 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:13,540 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:56:13,547 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:13,549 - DEBUG - __LR_training__ - 파라미터: probs([[0.40993307 0.59006693]], threshold(0.98))
+2022-04-14 06:56:13,551 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:13,552 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:13,557 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:14,275 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:56:14,278 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:14,283 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928116e-46]], threshold(0.98))
+2022-04-14 06:56:14,286 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:14,289 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:14,295 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:15,019 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 06:56:15,026 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:15,028 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 06:56:15,031 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:24,740 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:24,744 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:25,423 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:56:25,430 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:25,434 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971608e-25]], threshold(0.98))
+2022-04-14 06:56:25,438 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:25,443 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:25,451 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:26,153 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:56:26,158 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:26,161 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396672e-12]], threshold(0.98))
+2022-04-14 06:56:26,164 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:26,167 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:26,172 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:26,861 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:56:26,866 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:26,869 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 06:56:26,871 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:26,874 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:26,879 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:27,624 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 06:56:27,627 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:27,631 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265777 0.94734223]], threshold(0.98))
+2022-04-14 06:56:27,634 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:27,638 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:27,647 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:28,352 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 06:56:28,359 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:28,364 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 06:56:28,368 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:28,373 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:28,380 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:29,097 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:56:29,103 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:29,107 - DEBUG - __LR_training__ - 파라미터: probs([[0.40993307 0.59006693]], threshold(0.98))
+2022-04-14 06:56:29,111 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:29,114 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:29,117 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:29,806 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:56:29,812 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:29,816 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928112e-46]], threshold(0.98))
+2022-04-14 06:56:29,818 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:29,821 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:29,830 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:30,521 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 06:56:30,530 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:30,535 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 06:56:30,539 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:32,093 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:32,097 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:32,803 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:56:32,809 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:32,811 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971608e-25]], threshold(0.98))
+2022-04-14 06:56:32,813 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:41,804 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:41,808 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:42,745 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:56:42,751 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:42,754 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971601e-25]], threshold(0.98))
+2022-04-14 06:56:42,756 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:42,761 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:42,765 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:43,469 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:56:43,474 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:43,477 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396672e-12]], threshold(0.98))
+2022-04-14 06:56:43,479 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:43,489 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:43,495 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:44,203 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:56:44,210 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:44,213 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 06:56:44,215 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:44,223 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:44,230 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:44,949 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 06:56:44,956 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:44,961 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265778 0.94734222]], threshold(0.98))
+2022-04-14 06:56:44,966 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:44,975 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:44,982 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:45,693 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 06:56:45,700 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:45,704 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 06:56:45,708 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:45,712 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:45,718 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:46,432 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:56:46,439 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:46,444 - DEBUG - __LR_training__ - 파라미터: probs([[0.40993307 0.59006693]], threshold(0.98))
+2022-04-14 06:56:46,448 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:46,452 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:46,458 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:47,171 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:56:47,176 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:47,179 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928112e-46]], threshold(0.98))
+2022-04-14 06:56:47,184 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:47,186 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:47,192 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:47,884 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 06:56:47,890 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:47,892 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 06:56:47,899 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:53,971 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:53,989 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:54,702 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:56:54,710 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:54,715 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971601e-25]], threshold(0.98))
+2022-04-14 06:56:54,721 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:54,725 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:54,734 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:55,448 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:56:55,454 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:55,456 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396672e-12]], threshold(0.98))
+2022-04-14 06:56:55,459 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:55,461 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:55,467 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:56,167 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:56:56,172 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:56,175 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 06:56:56,177 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:56,180 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:56,189 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:56,922 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 06:56:56,928 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:56,934 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265778 0.94734222]], threshold(0.98))
+2022-04-14 06:56:56,939 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:56,943 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:56,950 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:57,694 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 06:56:57,705 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:57,709 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 06:56:57,713 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:57,716 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:57,724 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:58,440 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:56:58,447 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:58,451 - DEBUG - __LR_training__ - 파라미터: probs([[0.40993307 0.59006693]], threshold(0.98))
+2022-04-14 06:56:58,456 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:56:58,464 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:58,470 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:59,174 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:56:59,181 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:59,184 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928112e-46]], threshold(0.98))
+2022-04-14 06:56:59,187 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:56:59,192 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:56:59,201 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:56:59,890 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 06:56:59,897 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:56:59,902 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 06:56:59,906 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:57:21,467 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:57:21,475 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:57:22,176 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:57:22,182 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:57:22,184 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971601e-25]], threshold(0.98))
+2022-04-14 06:57:22,190 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:57:22,194 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:57:22,202 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:57:22,931 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:57:22,938 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:57:22,942 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396672e-12]], threshold(0.98))
+2022-04-14 06:57:22,946 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:57:22,949 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:57:22,957 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:57:23,671 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:57:23,678 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:57:23,680 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 06:57:23,684 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:57:23,688 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:57:23,694 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:57:24,403 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 06:57:24,410 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:57:24,412 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265778 0.94734222]], threshold(0.98))
+2022-04-14 06:57:24,416 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:57:24,420 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:57:24,426 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:57:25,110 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 06:57:25,119 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:57:25,124 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 06:57:25,129 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:57:25,134 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:57:25,139 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:57:25,858 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:57:25,864 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:57:25,869 - DEBUG - __LR_training__ - 파라미터: probs([[0.40993307 0.59006693]], threshold(0.98))
+2022-04-14 06:57:25,874 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:57:25,878 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:57:25,884 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:57:26,620 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:57:26,626 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:57:26,629 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928112e-46]], threshold(0.98))
+2022-04-14 06:57:26,631 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:57:26,635 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:57:26,640 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:57:27,346 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 06:57:27,354 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:57:27,360 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 06:57:27,365 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:58:11,139 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:58:11,148 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:58:12,234 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:58:12,240 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:58:12,245 - DEBUG - __LR_training__ - 파라미터: probs([[1.000000e+00 5.529716e-25]], threshold(0.98))
+2022-04-14 06:58:12,249 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:58:12,253 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:58:12,260 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:58:12,950 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:58:12,954 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:58:12,957 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396672e-12]], threshold(0.98))
+2022-04-14 06:58:12,959 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:58:12,961 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:58:12,977 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:58:13,683 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:58:13,690 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:58:13,692 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 06:58:13,696 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:58:13,699 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:58:13,704 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:58:14,416 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 06:58:14,421 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:58:14,425 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265778 0.94734222]], threshold(0.98))
+2022-04-14 06:58:14,427 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:58:14,430 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:58:14,436 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:58:15,143 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 06:58:15,150 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:58:15,155 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 06:58:15,157 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:58:15,159 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:58:15,167 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:58:15,859 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:58:15,863 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:58:15,865 - DEBUG - __LR_training__ - 파라미터: probs([[0.4099331 0.5900669]], threshold(0.98))
+2022-04-14 06:58:15,868 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:58:15,870 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:58:15,875 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:58:16,615 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:58:16,620 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:58:16,627 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928112e-46]], threshold(0.98))
+2022-04-14 06:58:16,632 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:58:16,637 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:58:16,645 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:58:17,375 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 06:58:17,381 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:58:17,386 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 06:58:17,388 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:59:33,559 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:59:33,563 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:59:34,766 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 06:59:34,773 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:59:34,778 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971596e-25]], threshold(0.98))
+2022-04-14 06:59:34,779 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:59:34,786 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:59:34,794 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:59:35,520 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 06:59:35,527 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:59:35,534 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396671e-12]], threshold(0.98))
+2022-04-14 06:59:35,540 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:59:35,547 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:59:35,554 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:59:36,268 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 06:59:36,275 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:59:36,280 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 06:59:36,285 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:59:36,289 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:59:36,296 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:59:37,000 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 06:59:37,007 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:59:37,012 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265778 0.94734222]], threshold(0.98))
+2022-04-14 06:59:37,017 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:59:37,023 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:59:37,033 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:59:37,732 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 06:59:37,736 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:59:37,742 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 06:59:37,744 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:59:37,748 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:59:37,757 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:59:38,463 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 06:59:38,470 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:59:38,475 - DEBUG - __LR_training__ - 파라미터: probs([[0.4099331 0.5900669]], threshold(0.98))
+2022-04-14 06:59:38,479 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 06:59:38,481 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:59:38,484 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:59:39,203 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 06:59:39,210 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:59:39,213 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928112e-46]], threshold(0.98))
+2022-04-14 06:59:39,215 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 06:59:39,217 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 06:59:39,221 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 06:59:39,936 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 06:59:39,943 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 06:59:39,949 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 06:59:39,953 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 07:00:20,507 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 07:00:20,516 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 07:00:21,521 - DEBUG - __LR_training__ - close_price: 67500
+2022-04-14 07:00:21,528 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 07:00:21,530 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.52971596e-25]], threshold(0.98))
+2022-04-14 07:00:21,536 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 07:00:21,540 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 07:00:21,549 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 07:00:22,283 - DEBUG - __LR_training__ - close_price: 159000
+2022-04-14 07:00:22,290 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 07:00:22,295 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 1.01396671e-12]], threshold(0.98))
+2022-04-14 07:00:22,299 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 07:00:22,304 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 07:00:22,307 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 07:00:23,021 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-14 07:00:23,029 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 07:00:23,035 - DEBUG - __LR_training__ - 파라미터: probs([[0.00254985 0.99745015]], threshold(0.98))
+2022-04-14 07:00:23,041 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 07:00:23,047 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 07:00:23,056 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 07:00:23,775 - DEBUG - __LR_training__ - close_price: 8160
+2022-04-14 07:00:23,784 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 07:00:23,790 - DEBUG - __LR_training__ - 파라미터: probs([[0.05265778 0.94734222]], threshold(0.98))
+2022-04-14 07:00:23,794 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 07:00:23,799 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 07:00:23,802 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 07:00:24,565 - DEBUG - __LR_training__ - close_price: 39850
+2022-04-14 07:00:24,576 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 07:00:24,581 - DEBUG - __LR_training__ - 파라미터: probs([[0.03288803 0.96711197]], threshold(0.98))
+2022-04-14 07:00:24,583 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 07:00:24,587 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 07:00:24,593 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 07:00:25,299 - DEBUG - __LR_training__ - close_price: 4310
+2022-04-14 07:00:25,305 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 07:00:25,308 - DEBUG - __LR_training__ - 파라미터: probs([[0.4099331 0.5900669]], threshold(0.98))
+2022-04-14 07:00:25,311 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-14 07:00:25,313 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 07:00:25,319 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 07:00:26,018 - DEBUG - __LR_training__ - close_price: 12800
+2022-04-14 07:00:26,026 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 07:00:26,032 - DEBUG - __LR_training__ - 파라미터: probs([[1.00000000e+00 5.46928112e-46]], threshold(0.98))
+2022-04-14 07:00:26,034 - DEBUG - __LR_training__ - prob_thresholded 값: [0]
+2022-04-14 07:00:26,036 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v2.sav
+2022-04-14 07:00:26,045 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v2.sav
+2022-04-14 07:00:26,747 - DEBUG - __LR_training__ - close_price: 131000
+2022-04-14 07:00:26,753 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-14 07:00:26,755 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
+2022-04-14 07:00:26,758 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
