@@ -10,23 +10,33 @@ class create_figures:
 
     def __init__(self, model_name, threshold, hold_till):
         
+        """
+        @model_name: 모델명
+        @threshold: 임계치
+        @hold_till: 보유기간
+        """
         self.model = model_name
         self.threshold = threshold
         self.hold_till = hold_till
         
-        results_dir = ## '\\results' folder directory
+        #모델 결과 폴더 설정
+        results_dir = os.getcwd()
+        results_dir = os.path.join(results_dir, "results")
         self.folder_name = f'{str(self.model)}_{self.threshold}_{self.hold_till}'
         self.folder_dir = os.path.join(results_dir, self.folder_name)
 
+        #매수, 매도 내역
         history_df_path = os.path.join(self.folder_dir, 'history_df.csv')
         self.history_df = pd.read_csv(history_df_path)
         self.history_df['buy_date'] = pd.to_datetime(self.history_df['buy_date'])
         self.history_df['sell_date'] = pd.to_datetime(self.history_df['sell_date'])
         
+        #파라미터
         params_path = os.path.join(self.folder_dir, 'params')
         with open(params_path, 'rb') as fp:
             self.params = pickle.load(fp)
         
+        #요약
         results_summary_path = os.path.join(self.folder_dir, 'results_summary')
         with open(results_summary_path, 'rb') as fp:
             self.results_summary = pickle.load(fp)
@@ -42,6 +52,9 @@ class create_figures:
         self.gain_loss_plot()
         self.hold_hist()
 
+    """
+    일자별 매매 잔고
+    """
     def create_history_df(self):
         """
         this function creates a dataframe from start date to end date
@@ -80,6 +93,9 @@ class create_figures:
         #save the running gains df
         self.running_gains_df.to_csv(f'{self.folder_dir}/running_gains_df.csv', index = False)
 
+    """
+    일자별 잔고 현황 시각화
+    """
     def create_history_figure(self):
         """
         plot the running gains
@@ -93,6 +109,9 @@ class create_figures:
         fig_path = os.path.join(self.folder_dir, 'total_balance_history.jpg')
         plt.savefig(fig_path)
 
+    """
+    일자별 손익 현황 시각화
+    """ 
     def gain_loss_plot(self):
         """
         a bar plot with gains and losses on the day
@@ -111,6 +130,9 @@ class create_figures:
         fig_path = os.path.join(self.folder_dir, 'gain_loss.jpg')
         plt.savefig(fig_path)
 
+    """
+    보유 기간 시각화
+    """
     def hold_hist(self):
         """
         This function creates a histogram with buy times and color code it with winner or loser
