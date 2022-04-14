@@ -10,12 +10,12 @@ formatters:
 handlers:
   console:
     class: logging.StreamHandler
-    level: WARNING
+    level: DEBUG
     formatter: simple
     stream: ext://sys.stdout
   file:
     class: logging.FileHandler
-    level: INFO
+    level: DEBUG
     filename: 'ieddit.log' # 프로젝트 시작시 수정필요
     formatter: simple
   queue_listener:
@@ -33,7 +33,8 @@ loggers:
       - file
     propagate: false        
 root:
-  level: INFO
+  level: DEBUG
   handlers:
     - console
+    - file
 
