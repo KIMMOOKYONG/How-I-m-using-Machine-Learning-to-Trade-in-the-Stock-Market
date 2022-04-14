@@ -4,7 +4,9 @@
 
 # 사용법
 ## 백테스팅 하기
+```shell
 !python backtester.py
+```
 
 ```python
 if __name__ == "__main__":
@@ -28,6 +30,7 @@ if __name__ == "__main__":
     results_summary
     """
 ```
+
 
 
 # colab에서 git 사용하는 방법
