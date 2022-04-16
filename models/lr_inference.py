@@ -54,7 +54,7 @@ def _threshold(probs, threshold):
 매수, 매도를 예측하고자는 날짜(종료일)를 기준으로 과거 데이터(-40일, 시작일) 파라미터로 전달하면
 기준 날짜의 매수, 매도를 예측하는 함수이다.
 """
-def LR_v1_predict(stock, start_date, end_date, model = 'v4', threshold = 0.98):
+def LR_v1_predict(stock, start_date, end_date, model = 'v2', threshold = 0.98):
     """
     this function predict given the data
     주가 데이터를 기반으로 고가, 저가 예측
