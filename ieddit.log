@@ -3698,3 +3698,1401 @@
 2022-04-14 07:00:26,753 - DEBUG - __LR_training__ - _threshold() 호출
 2022-04-14 07:00:26,755 - DEBUG - __LR_training__ - 파라미터: probs([[0. 1.]], threshold(0.98))
 2022-04-14 07:00:26,758 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 02:52:17,781 - WARNING - __LR_offline_training__ - fetch_data(self) 함수 오류 발생
+2022-04-16 02:53:06,205 - WARNING - __LR_offline_training__ - fetch_data(self) 함수 오류 발생
+2022-04-16 02:56:53,128 - WARNING - __LR_offline_training__ - fetch_data(self) 함수 오류 발생
+2022-04-16 02:56:53,129 - ERROR - __LR_offline_training__ - Wrong number of items passed 6, placement implies 1
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'normalized_value'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3751, in _set_item_mgr
+    loc = self._info_axis.get_loc(key)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'normalized_value'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./models/lr_run_offline_training.py", line 126, in fetch_data
+    df = stock_utils.create_train_data(stock, n = 10)
+  File "/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/stock_utils/stock_utils.py", line 174, in create_train_data
+    data, idxs_with_mins, idxs_with_maxs = get_offline_data(stock, start_date, end_date, n)
+  File "/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/stock_utils/stock_utils.py", line 274, in get_offline_data
+    data["normalized_value"] = data.apply(lambda x: normalized_values(x.high, x.low, x.close), axis = 1)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3602, in __setitem__
+    self._set_item_frame_value(key, value)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3742, in _set_item_frame_value
+    self._set_item_mgr(key, arraylike)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3754, in _set_item_mgr
+    self._mgr.insert(len(self._info_axis), key, value)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/managers.py", line 1162, in insert
+    block = new_block(values=value, ndim=self.ndim, placement=slice(loc, loc + 1))
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/blocks.py", line 1937, in new_block
+    check_ndim(values, placement, ndim)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/blocks.py", line 1980, in check_ndim
+    f"Wrong number of items passed {len(values)}, "
+ValueError: Wrong number of items passed 6, placement implies 1
+2022-04-16 03:06:27,510 - WARNING - __LR_offline_training__ - fetch_data(self) 함수 오류 발생
+2022-04-16 03:06:27,510 - ERROR - __LR_offline_training__ - Wrong number of items passed 6, placement implies 1
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'normalized_value'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3751, in _set_item_mgr
+    loc = self._info_axis.get_loc(key)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'normalized_value'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./models/lr_run_offline_training.py", line 126, in fetch_data
+    df = stock_utils.create_train_data(stock, n = 10)
+  File "/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/stock_utils/stock_utils.py", line 174, in create_train_data
+    data, idxs_with_mins, idxs_with_maxs = get_offline_data(stock, start_date, end_date, n)
+  File "/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/stock_utils/stock_utils.py", line 274, in get_offline_data
+    data["normalized_value"] = data.apply(lambda x: normalized_values(x.high, x.low, x.close), axis = 1)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3602, in __setitem__
+    self._set_item_frame_value(key, value)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3742, in _set_item_frame_value
+    self._set_item_mgr(key, arraylike)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3754, in _set_item_mgr
+    self._mgr.insert(len(self._info_axis), key, value)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/managers.py", line 1162, in insert
+    block = new_block(values=value, ndim=self.ndim, placement=slice(loc, loc + 1))
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/blocks.py", line 1937, in new_block
+    check_ndim(values, placement, ndim)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/blocks.py", line 1980, in check_ndim
+    f"Wrong number of items passed {len(values)}, "
+ValueError: Wrong number of items passed 6, placement implies 1
+2022-04-16 03:09:06,983 - WARNING - __LR_offline_training__ - fetch_data(self) 함수 오류 발생
+2022-04-16 03:09:06,984 - ERROR - __LR_offline_training__ - Wrong number of items passed 6, placement implies 1
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'normalized_value'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3751, in _set_item_mgr
+    loc = self._info_axis.get_loc(key)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'normalized_value'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./models/lr_run_offline_training.py", line 126, in fetch_data
+    df = stock_utils.create_train_data(stock, n = 10)
+  File "/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/stock_utils/stock_utils.py", line 174, in create_train_data
+    data, idxs_with_mins, idxs_with_maxs = get_offline_data(stock, start_date, end_date, n)
+  File "/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/stock_utils/stock_utils.py", line 275, in get_offline_data
+    data["normalized_value"] = data.apply(lambda x: normalized_values(x.high, x.low, x.close), axis = 1)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3602, in __setitem__
+    self._set_item_frame_value(key, value)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3742, in _set_item_frame_value
+    self._set_item_mgr(key, arraylike)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py", line 3754, in _set_item_mgr
+    self._mgr.insert(len(self._info_axis), key, value)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/managers.py", line 1162, in insert
+    block = new_block(values=value, ndim=self.ndim, placement=slice(loc, loc + 1))
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/blocks.py", line 1937, in new_block
+    check_ndim(values, placement, ndim)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/core/internals/blocks.py", line 1980, in check_ndim
+    f"Wrong number of items passed {len(values)}, "
+ValueError: Wrong number of items passed 6, placement implies 1
+2022-04-16 03:10:42,195 - WARNING - __LR_offline_training__ - fetch_data(self) 함수 오류 발생
+2022-04-16 03:10:42,196 - ERROR - __LR_offline_training__ - [Errno 2] No such file or directory: '/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/datasets/373220'
+Traceback (most recent call last):
+  File "./models/lr_run_offline_training.py", line 126, in fetch_data
+    df = stock_utils.create_train_data(stock, n = 10)
+  File "/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/stock_utils/stock_utils.py", line 174, in create_train_data
+    data, idxs_with_mins, idxs_with_maxs = get_offline_data(stock, start_date, end_date, n)
+  File "/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/stock_utils/stock_utils.py", line 270, in get_offline_data
+    data = pd.read_csv(load_data_path)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/usr/local/lib/python3.7/dist-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/usr/local/lib/python3.7/dist-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/usr/local/lib/python3.7/dist-packages/pandas/io/common.py", line 707, in get_handle
+    newline="",
+FileNotFoundError: [Errno 2] No such file or directory: '/content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/datasets/373220'
+2022-04-16 03:21:54,912 - DEBUG - matplotlib - CONFIGDIR=/root/.config/matplotlib
+2022-04-16 03:21:54,913 - DEBUG - matplotlib - (private) matplotlib data path: /usr/local/lib/python3.7/dist-packages/matplotlib/mpl-data
+2022-04-16 03:21:54,919 - DEBUG - matplotlib - matplotlib data path: /usr/local/lib/python3.7/dist-packages/matplotlib/mpl-data
+2022-04-16 03:21:54,920 - DEBUG - matplotlib - loaded rc file /usr/local/lib/python3.7/dist-packages/matplotlib/mpl-data/matplotlibrc
+2022-04-16 03:21:54,922 - DEBUG - matplotlib - matplotlib version 3.2.2
+2022-04-16 03:21:54,923 - DEBUG - matplotlib - interactive is False
+2022-04-16 03:21:54,923 - DEBUG - matplotlib - platform is linux
+2022-04-16 03:21:54,923 - DEBUG - matplotlib - loaded modules: ['sys', 'builtins', '_frozen_importlib', '_imp', '_thread', '_warnings', '_weakref', 'zipimport', '_frozen_importlib_external', '_io', 'marshal', 'posix', 'encodings', 'codecs', '_codecs', 'encodings.aliases', 'encodings.utf_8', '_signal', '__main__', 'encodings.latin_1', 'io', 'abc', '_abc', 'warnings', 're', 'enum', 'types', '_collections', 'sre_compile', '_sre', 'sre_parse', 'sre_constants', 'functools', '_functools', 'collections', '_collections_abc', 'operator', '_operator', 'keyword', 'heapq', '_heapq', 'itertools', 'reprlib', '_locale', 'copyreg', 'site', 'os', 'stat', '_stat', 'posixpath', 'genericpath', 'os.path', '_sitebuiltins', '_bootlocale', 'importlib', 'importlib._bootstrap', 'importlib._bootstrap_external', 'importlib.util', 'importlib.abc', 'importlib.machinery', 'contextlib', 'google', 'google.cloud', 'google.logging', 'mpl_toolkits', 'sphinxcontrib', 'sitecustomize', 'numpy', 'numpy._globals', 'numpy.__config__', 'numpy._version', 'json', 'json.decoder', 'json.scanner', '_json', 'json.encoder', 'numpy._distributor_init', 'numpy.core', 'numpy.version', 'numpy.core.multiarray', 'numpy.core.overrides', 'textwrap', 'datetime', 'time', 'math', '_datetime', 'numpy.core._multiarray_umath', 'numpy.compat', 'numpy.compat._inspect', 'numpy.compat.py3k', 'pathlib', 'fnmatch', 'ntpath', 'errno', 'urllib', 'urllib.parse', 'pickle', 'struct', '_struct', '_compat_pickle', '_pickle', 'numpy.core.umath', 'numpy.core.numerictypes', 'numbers', 'numpy.core._string_helpers', 'numpy.core._type_aliases', 'numpy.core._dtype', 'numpy.core.numeric', 'numpy.core.shape_base', 'numpy.core.fromnumeric', 'numpy.core._methods', 'numpy.core._exceptions', 'numpy.core._ufunc_config', 'collections.abc', 'numpy.core.arrayprint', 'numpy.core._asarray', 'numpy.core.defchararray', 'numpy.core.records', 'numpy.core.memmap', 'numpy.core.function_base', 'numpy.core.machar', 'numpy.core.getlimits', 'numpy.core.einsumfunc', 'numpy.core._add_newdocs', 'numpy.core._multiarray_tests', 'numpy.core._add_newdocs_scalars', 'platform', 'subprocess', 'signal', '_posixsubprocess', 'select', 'selectors', 'threading', 'traceback', 'linecache', 'tokenize', 'token', '_weakrefset', 'numpy.core._dtype_ctypes', 'numpy.core._internal', 'ast', '_ast', 'ctypes', '_ctypes', 'ctypes._endian', 'numpy._pytesttester', 'numpy.lib', 'numpy.lib.mixins', 'numpy.lib.scimath', 'numpy.lib.type_check', 'numpy.lib.ufunclike', 'numpy.lib.index_tricks', 'numpy.matrixlib', 'numpy.matrixlib.defmatrix', 'numpy.linalg', 'numpy.linalg.linalg', 'numpy.lib.twodim_base', 'numpy.lib.stride_tricks', 'numpy.linalg.lapack_lite', 'numpy.linalg._umath_linalg', 'numpy.lib.function_base', 'numpy.lib.histograms', 'numpy.lib.nanfunctions', 'numpy.lib.shape_base', 'numpy.lib.polynomial', 'numpy.lib.utils', 'numpy.lib.arraysetops', 'numpy.lib.npyio', 'weakref', 'numpy.lib.format', 'numpy.lib._datasource', 'numpy.lib._iotools', 'numpy.lib.arrayterator', 'numpy.lib.arraypad', 'numpy.lib._version', 'numpy.fft', 'numpy.fft._pocketfft', 'numpy.fft._pocketfft_internal', 'numpy.fft.helper', 'numpy.polynomial', 'numpy.polynomial.polynomial', 'numpy.polynomial.polyutils', 'numpy.polynomial._polybase', 'numpy.polynomial.chebyshev', 'numpy.polynomial.legendre', 'numpy.polynomial.hermite', 'numpy.polynomial.hermite_e', 'numpy.polynomial.laguerre', 'numpy.random', 'numpy.random._pickle', 'numpy.random.mtrand', 'cython_runtime', 'numpy.random.bit_generator', '_cython_0_29_24', 'numpy.random._common', 'secrets', 'base64', 'binascii', 'hmac', '_hashlib', 'hashlib', '_blake2', '_sha3', 'random', 'bisect', '_bisect', '_random', 'numpy.random._bounded_integers', 'numpy.random._mt19937', 'numpy.random._philox', 'numpy.random._pcg64', 'numpy.random._sfc64', 'numpy.random._generator', 'numpy.ctypeslib', 'numpy.ma', 'numpy.ma.core', 'inspect', 'dis', 'opcode', '_opcode', 'numpy.ma.extras', 'stock_utils', 'stock_utils.simulator', 'pandas', 'pytz', 'pytz.exceptions', 'pytz.lazy', 'pytz.tzinfo', 'pytz.tzfile', 'dateutil', 'dateutil._version', 'pandas.compat', 'pandas._typing', 'mmap', 'typing', 'typing.io', 'typing.re', 'pandas.compat.numpy', 'pandas.util', 'pandas.util._decorators', '__future__', 'pandas._libs', 'pandas._libs.interval', 'pandas._libs.hashtable', 'pandas._libs.missing', 'pandas._libs.tslibs', 'pandas._libs.tslibs.dtypes', 'pandas._libs.tslibs.conversion', 'pandas._libs.tslibs.base', 'pandas._libs.tslibs.nattype', 'pandas._libs.tslibs.np_datetime', 'pandas._libs.tslibs.timezones', 'dateutil.tz', 'dateutil.tz.tz', 'six', 'six.moves', 'dateutil.tz._common', 'dateutil.tz._factories', 'pandas._libs.tslibs.tzconversion', 'pandas._libs.tslibs.ccalendar', 'pandas._libs.tslibs.parsing', 'pandas._libs.tslibs.offsets', 'pandas._libs.tslibs.timedeltas', 'pandas._libs.tslibs.fields', 'locale', 'pandas._config', 'pandas._config.config', 'pandas._config.dates', 'pandas._config.display', 'pandas._config.localization', 'pandas._libs.tslibs.strptime', 'calendar', 'pandas._libs.tslibs.timestamps', 'dateutil.easter', 'dateutil.relativedelta', 'dateutil._common', 'pandas._libs.properties', 'dateutil.parser', 'dateutil.parser._parser', 'string', '_string', 'decimal', '_decimal', 'dateutil.parser.isoparser', 'pandas._libs.tslibs.period', 'pandas._libs.tslibs.vectorized', 'pandas._libs.ops_dispatch', 'pandas._libs.algos', 'pandas.core', 'pandas.core.util', 'pandas.core.util.hashing', 'pandas._libs.lib', 'pandas._libs.tslib', 'pandas._libs.hashing', 'pandas.core.dtypes', 'pandas.core.dtypes.common', 'pandas.core.dtypes.base', 'pandas.errors', 'pandas.core.dtypes.generic', 'pandas.core.dtypes.dtypes', 'pandas.core.dtypes.inference', 'pandas.util.version', 'pandas.compat.pyarrow', 'pyarrow', 'gc', 'pyarrow._generated_version', 'pyarrow.lib', 'cloudpickle', 'cloudpickle.cloudpickle', 'logging', 'atexit', 'uuid', 'pyarrow.util', 'socket', '_socket', 'queue', '_queue', 'pyarrow._hdfsio', 'pyarrow.hdfs', 'pyarrow.filesystem', 'pyarrow.ipc', 'pyarrow.serialization', 'pyarrow.types', 'pandas.core.config_init', 'pandas.core.api', 'pandas.core.dtypes.missing', 'pandas.core.algorithms', 'pandas.core.dtypes.cast', 'pandas.util._exceptions', 'pandas.util._validators', 'pandas.core.array_algos', 'pandas.core.array_algos.take', 'pandas.core.construction', 'pandas.core.common', 'pandas.core.indexers', 'pandas.core.arrays', 'pandas.core.arrays.base', 'pandas.compat.numpy.function', 'pandas.core.missing', 'pandas.compat._optional', 'pandas.core.ops', 'pandas.core.roperator', 'pandas.core.ops.array_ops', 'pandas._libs.ops', 'pandas.core.computation', 'pandas.core.computation.expressions', 'pandas.core.computation.check', 'numexpr', 'numexpr.interpreter', 'numexpr.expressions', 'packaging', 'packaging.__about__', 'packaging.version', 'packaging._structures', 'numexpr.necompiler', 'numexpr.utils', 'numexpr.version', 'pandas.core.ops.missing', 'pandas.core.ops.dispatch', 'pandas.core.ops.invalid', 'pandas.core.ops.common', 'pandas.core.ops.docstrings', 'pandas.core.ops.mask_ops', 'pandas.core.ops.methods', 'pandas.core.sorting', 'pandas.core.arrays.boolean', 'pandas.core.arrays.masked', 'pandas.core.nanops', 'bottleneck', 'bottleneck.benchmark', 'bottleneck.benchmark.bench', 'bottleneck.benchmark.autotimeit', 'timeit', 'bottleneck.benchmark.bench_detailed', 'bottleneck.tests', 'bottleneck.tests.util', 'bottleneck.slow', 'bottleneck.slow.reduce', 'bottleneck.slow.nonreduce', 'bottleneck.slow.nonreduce_axis', 'bottleneck.slow.move', 'bottleneck._pytesttester', 'bottleneck.move', 'bottleneck.nonreduce', 'bottleneck.nonreduce_axis', 'bottleneck.reduce', 'bottleneck._version', 'pandas.core.array_algos.masked_reductions', 'pandas.core.arraylike', 'pandas.core.arrays.categorical', 'csv', '_csv', 'shutil', 'zlib', 'bz2', '_compression', '_bz2', 'lzma', '_lzma', 'pwd', 'grp', 'pandas._libs.arrays', 'pandas.core.accessor', 'pandas.core.arrays._mixins', 'pandas.core.array_algos.transforms', 'pandas.core.base', 'pandas.core.strings', 'pandas.core.strings.accessor', 'pandas.core.strings.base', 'pandas.core.strings.object_array', 'unicodedata', 'pandas.io', 'pandas.io.formats', 'pandas.io.formats.console', 'pandas.core.arrays.datetimes', 'pandas.core.arrays.datetimelike', 'pandas.tseries', 'pandas.tseries.frequencies', 'pandas.core.arrays._ranges', 'pandas.core.arrays.integer', 'pandas.core.arrays.numeric', 'pandas.core.tools', 'pandas.core.tools.numeric', 'pandas.tseries.offsets', 'pandas.core.arrays.floating', 'pandas.core.arrays.interval', 'pandas.core.indexes', 'pandas.core.indexes.base', 'pandas._libs.index', 'pandas._libs.join', 'pandas.core.dtypes.concat', 'pandas.core.arrays.sparse', 'pandas.core.arrays.sparse.accessor', 'pandas.core.arrays.sparse.array', 'pandas._libs.sparse', 'pandas.core.arrays.sparse.dtype', 'pandas.io.formats.printing', 'pandas.core.array_algos.putmask', 'pandas.core.indexes.frozen', 'pandas.core.arrays.numpy_', 'pandas.core.arrays.period', 'pandas.core.arrays.string_', 'pandas.core.arrays.string_arrow', 'pyarrow.compute', 'pyarrow._compute', 'pandas.core.arrays.timedeltas', 'pandas.core.flags', 'pandas.core.groupby', 'pandas.core.groupby.generic', 'pandas._libs.reduction', 'pandas.core.aggregation', 'pandas.core.indexes.api', 'pandas.core.indexes.category', 'pandas.core.indexes.extension', 'pandas.core.indexes.datetimes', 'pandas.core.indexes.datetimelike', 'pandas.core.indexes.numeric', 'pandas.core.tools.timedeltas', 'pandas.core.tools.times', 'pandas.core.indexes.interval', 'pandas.core.indexes.multi', 'pandas.core.indexes.timedeltas', 'pandas.core.indexes.period', 'pandas.core.indexes.range', 'pandas.core.apply', 'pandas.core.frame', 'pandas.core.generic', 'pandas.core.indexing', 'pandas._libs.indexing', 'pandas.core.describe', 'pandas.core.reshape', 'pandas.core.reshape.concat', 'pandas.core.internals', 'pandas.core.internals.api', 'pandas._libs.internals', 'pandas.core.internals.blocks', 'pandas._libs.writers', 'pandas.core.array_algos.quantile', 'pandas.core.array_algos.replace', 'pandas.core.internals.array_manager', 'pandas.core.internals.base', 'pandas.core.internals.concat', 'copy', 'pandas.core.internals.managers', 'pandas.core.internals.ops', 'pandas.io.formats.format', 'pandas.io.common', 'dataclasses', 'gzip', 'tempfile', 'zipfile', 'pandas.core.internals.construction', 'pandas.core.shared_docs', 'pandas.core.window', 'pandas.core.window.ewm', 'pandas._libs.window', 'pandas._libs.window.aggregations', 'pandas.core.util.numba_', 'pandas.core.window.common', 'pandas.core.window.doc', 'pandas.core.window.indexers', 'pandas._libs.window.indexers', 'pandas.core.window.numba_', 'pandas.core.window.online', 'pandas.core.window.rolling', 'pandas.core.window.expanding', 'pandas.core.reshape.melt', 'pandas.core.reshape.util', 'pandas.core.series', 'pandas._libs.reshape', 'pandas.core.indexes.accessors', 'pandas.core.tools.datetimes', 'pandas.arrays', 'pandas.plotting', 'pandas.plotting._core', 'pandas.plotting._misc', 'pandas.io.formats.info', 'pandas.core.groupby.base', 'pandas.core.groupby.groupby', 'pandas._libs.groupby', 'pandas.core.groupby.numba_', 'pandas.core.groupby.ops', 'pandas.core.groupby.grouper', 'pandas.core.groupby.categorical', 'pandas.tseries.api', 'pandas.core.computation.api', 'pandas.core.computation.eval', 'pandas.core.computation.engines', 'pandas.core.computation.align', 'pandas.core.computation.common', 'pandas.core.computation.expr', 'pandas.core.computation.ops', 'pandas.core.computation.scope', 'pprint', 'pandas.compat.chainmap', 'pandas.core.computation.parsing', 'pandas.core.reshape.api', 'pandas.core.reshape.merge', 'pandas.core.reshape.pivot', 'pandas.core.reshape.reshape', 'pandas.core.reshape.tile', 'pandas.api', 'pandas.api.extensions', 'pandas.api.indexers', 'pandas.api.types', 'pandas.core.dtypes.api', 'pandas.util._print_versions', 'pandas.io.api', 'pandas.io.clipboards', 'pandas.io.excel', 'pandas.io.excel._base', 'pandas._libs.parsers', 'pandas.io.excel._util', 'pandas.io.parsers', 'pandas.io.parsers.readers', 'pandas.io.parsers.base_parser', 'pandas.io.date_converters', 'pandas.io.parsers.c_parser_wrapper', 'pandas.io.parsers.python_parser', 'pandas.io.excel._odfreader', 'pandas.io.excel._openpyxl', 'pandas.io.excel._pyxlsb', 'pandas.io.excel._xlrd', 'pandas.io.excel._odswriter', 'pandas._libs.json', 'pandas.io.formats.excel', 'pandas.io.formats._color_data', 'pandas.io.formats.css', 'pandas.io.excel._xlsxwriter', 'pandas.io.excel._xlwt', 'pandas.io.feather_format', 'pandas.io.gbq', 'pandas.io.html', 'pandas.io.json', 'pandas.io.json._json', 'pandas.io.json._normalize', 'pandas.io.json._table_schema', 'pandas.io.orc', 'pandas.io.parquet', 'pandas.io.pickle', 'pandas.compat.pickle_compat', 'pandas.io.pytables', 'pandas.core.computation.pytables', 'pandas.io.sas', 'pandas.io.sas.sasreader', 'pandas.io.spss', 'pandas.io.sql', 'pandas.io.stata', 'pandas.io.xml', 'pandas.util._tester', 'pandas.testing', 'pandas._testing', 'pandas._testing._io', 'pandas._testing._random', 'pandas._testing.contexts', 'pandas._testing._warnings', 'pandas._testing.asserters', 'pandas._libs.testing', 'cmath', 'pandas._testing.compat', 'pandas._version', 'log_utils', 'log_utils.logger_init', 'yaml', 'yaml.error', 'yaml.tokens', 'yaml.events', 'yaml.nodes', 'yaml.loader', 'yaml.reader', 'yaml.scanner', 'yaml.parser', 'yaml.composer', 'yaml.constructor', 'yaml.resolver', 'yaml.dumper', 'yaml.emitter', 'yaml.serializer', 'yaml.representer', 'logging.config', 'logging.handlers', 'socketserver', 'log_utils.logger_util', 'stock_utils.stock_utils', 'requests', 'urllib3', 'urllib3.connectionpool', 'urllib3.exceptions', 'urllib3.packages', 'urllib3.packages.ssl_match_hostname', 'ssl', '_ssl', 'urllib3.packages.six', 'urllib3.packages.six.moves', 'http', 'http.client', 'email', 'email.parser', 'email.feedparser', 'email.errors', 'email._policybase', 'email.header', 'email.quoprimime', 'email.base64mime', 'email.charset', 'email.encoders', 'quopri', 'email.utils', 'email._parseaddr', 'email.message', 'uu', 'email._encoded_words', 'email.iterators', 'urllib3.packages.six.moves.http_client', 'urllib3.connection', 'urllib3.util', 'urllib3.util.connection', 'urllib3.util.wait', 'urllib3.contrib', 'urllib3.contrib._appengine_environ', 'urllib3.util.request', 'urllib3.util.response', 'urllib3.util.ssl_', 'urllib3.util.timeout', 'urllib3.util.retry', 'urllib3.util.url', 'urllib3.packages.six.moves.urllib', 'urllib3.packages.six.moves.urllib.parse', 'urllib3._collections', 'urllib3.request', 'urllib3.filepost', 'urllib3.fields', 'mimetypes', 'urllib3.response', 'urllib3.util.queue', 'urllib3.poolmanager', 'chardet', 'chardet.compat', 'chardet.universaldetector', 'chardet.charsetgroupprober', 'chardet.enums', 'chardet.charsetprober', 'chardet.escprober', 'chardet.codingstatemachine', 'chardet.escsm', 'chardet.latin1prober', 'chardet.mbcsgroupprober', 'chardet.utf8prober', 'chardet.mbcssm', 'chardet.sjisprober', 'chardet.mbcharsetprober', 'chardet.chardistribution', 'chardet.euctwfreq', 'chardet.euckrfreq', 'chardet.gb2312freq', 'chardet.big5freq', 'chardet.jisfreq', 'chardet.jpcntx', 'chardet.eucjpprober', 'chardet.gb2312prober', 'chardet.euckrprober', 'chardet.cp949prober', 'chardet.big5prober', 'chardet.euctwprober', 'chardet.sbcsgroupprober', 'chardet.sbcharsetprober', 'chardet.langcyrillicmodel', 'chardet.langgreekmodel', 'chardet.langbulgarianmodel', 'chardet.langthaimodel', 'chardet.langhebrewmodel', 'chardet.hebrewprober', 'chardet.langturkishmodel', 'chardet.version', 'requests.exceptions', 'requests.__version__', 'requests.utils', 'requests.certs', 'certifi', 'certifi.core', 'importlib.resources', 'requests._internal_utils', 'requests.compat', 'urllib.request', 'urllib.error', 'urllib.response', 'http.cookiejar', 'http.cookies', 'requests.cookies', 'requests.structures', 'requests.packages', 'requests.packages.urllib3', 'requests.packages.urllib3.connectionpool', 'requests.packages.urllib3.exceptions', 'requests.packages.urllib3.packages', 'requests.packages.urllib3.packages.ssl_match_hostname', 'requests.packages.urllib3.packages.six', 'requests.packages.urllib3.packages.six.moves', 'requests.packages.urllib3.packages.six.moves.http_client', 'requests.packages.urllib3.connection', 'requests.packages.urllib3.util', 'requests.packages.urllib3.util.connection', 'requests.packages.urllib3.util.wait', 'requests.packages.urllib3.contrib', 'requests.packages.urllib3.contrib._appengine_environ', 'requests.packages.urllib3.util.request', 'requests.packages.urllib3.util.response', 'requests.packages.urllib3.util.ssl_', 'requests.packages.urllib3.util.timeout', 'requests.packages.urllib3.util.retry', 'requests.packages.urllib3.util.url', 'requests.packages.urllib3.packages.six.moves.urllib', 'requests.packages.urllib3.packages.six.moves.urllib.parse', 'requests.packages.urllib3._collections', 'requests.packages.urllib3.request', 'requests.packages.urllib3.filepost', 'requests.packages.urllib3.fields', 'requests.packages.urllib3.response', 'requests.packages.urllib3.util.queue', 'requests.packages.urllib3.poolmanager', 'idna', 'idna.package_data', 'idna.core', 'idna.idnadata', 'idna.intranges', 'requests.packages.idna', 'requests.packages.idna.package_data', 'requests.packages.idna.core', 'requests.packages.idna.idnadata', 'requests.packages.idna.intranges', 'requests.packages.chardet', 'requests.packages.chardet.compat', 'requests.packages.chardet.universaldetector', 'requests.packages.chardet.charsetgroupprober', 'requests.packages.chardet.enums', 'requests.packages.chardet.charsetprober', 'requests.packages.chardet.escprober', 'requests.packages.chardet.codingstatemachine', 'requests.packages.chardet.escsm', 'requests.packages.chardet.latin1prober', 'requests.packages.chardet.mbcsgroupprober', 'requests.packages.chardet.utf8prober', 'requests.packages.chardet.mbcssm', 'requests.packages.chardet.sjisprober', 'requests.packages.chardet.mbcharsetprober', 'requests.packages.chardet.chardistribution', 'requests.packages.chardet.euctwfreq', 'requests.packages.chardet.euckrfreq', 'requests.packages.chardet.gb2312freq', 'requests.packages.chardet.big5freq', 'requests.packages.chardet.jisfreq', 'requests.packages.chardet.jpcntx', 'requests.packages.chardet.eucjpprober', 'requests.packages.chardet.gb2312prober', 'requests.packages.chardet.euckrprober', 'requests.packages.chardet.cp949prober', 'requests.packages.chardet.big5prober', 'requests.packages.chardet.euctwprober', 'requests.packages.chardet.sbcsgroupprober', 'requests.packages.chardet.sbcharsetprober', 'requests.packages.chardet.langcyrillicmodel', 'requests.packages.chardet.langgreekmodel', 'requests.packages.chardet.langbulgarianmodel', 'requests.packages.chardet.langthaimodel', 'requests.packages.chardet.langhebrewmodel', 'requests.packages.chardet.hebrewprober', 'requests.packages.chardet.langturkishmodel', 'requests.packages.chardet.version', 'requests.models', 'encodings.idna', 'stringprep', 'requests.hooks', 'requests.auth', 'requests.status_codes', 'requests.api', 'requests.sessions', 'requests.adapters', 'urllib3.contrib.socks', 'socks', 'matplotlib', 'distutils', 'distutils.version', 'matplotlib.cbook', 'glob', 'shlex', 'matplotlib.cbook.deprecation', 'matplotlib.rcsetup', 'matplotlib.fontconfig_pattern', 'pyparsing', 'pyparsing.util', 'pyparsing.exceptions', 'pyparsing.unicode', 'pyparsing.actions', 'pyparsing.core', 'pyparsing.results', 'pyparsing.helpers', 'html', 'html.entities', 'pyparsing.testing', 'pyparsing.common', 'matplotlib.colors', 'matplotlib.docstring', 'matplotlib._color_data', 'cycler', 'matplotlib._version', 'matplotlib.ft2font', 'kiwisolver', 'kiwisolver._cext']
+2022-04-16 03:21:55,007 - DEBUG - matplotlib - CACHEDIR=/root/.cache/matplotlib
+2022-04-16 03:21:55,009 - DEBUG - matplotlib.font_manager - Using fontManager instance from /root/.cache/matplotlib/fontlist-v310.json
+2022-04-16 03:21:55,569 - DEBUG - matplotlib.pyplot - Loaded backend module://ipykernel.pylab.backend_inline version unknown.
+2022-04-16 03:21:55,997 - DEBUG - __bt_logger__ - 금번 실행 파라미터:
+2022-04-16 03:21:55,997 - DEBUG - __bt_logger__ - 종목목록:['001440']
+2022-04-16 03:21:55,998 - DEBUG - __bt_logger__ - 모델명: <function LR_v1_predict at 0x7fec2f021320>
+2022-04-16 03:21:55,998 - DEBUG - __bt_logger__ - 모델버전: v4
+2022-04-16 03:21:55,998 - DEBUG - __bt_logger__ - 시작일: 2021-12-01 00:00:00
+2022-04-16 03:21:55,998 - DEBUG - __bt_logger__ - 종료일: 2022-04-14 00:00:00
+2022-04-16 03:21:55,998 - DEBUG - __bt_logger__ - 실행모드: buy
+2022-04-16 03:21:55,999 - DEBUG - __bt_logger__ - 임계값: 0.98
+2022-04-16 03:21:55,999 - DEBUG - __bt_logger__ - 상승비율: 0.03
+2022-04-16 03:21:55,999 - DEBUG - __bt_logger__ - 보유기간: 10
+2022-04-16 03:21:55,999 - DEBUG - __bt_logger__ - 손절비율: 0.03
+2022-04-16 03:21:55,999 - DEBUG - __bt_logger__ - 백테스팅 모델 경로: /content/drive/MyDrive/2022-연구노트/How-I-m-using-Machine-Learning-to-Trade-in-the-Stock-Market/results/LR_v1_predict_0.98_10
+2022-04-16 03:21:56,001 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:21:56,003 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:21:56,007 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:21:56,592 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211022&endTime=20211201&timeframe=day HTTP/1.1" 200 1727
+2022-04-16 03:21:56,821 - DEBUG - __LR_training__ - close_price: 1742
+2022-04-16 03:21:56,823 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:21:56,823 - DEBUG - __LR_training__ - 파라미터: probs([[0.49755822 0.50244178]], threshold(0.98))
+2022-04-16 03:21:56,824 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:21:56,824 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:21:56,824 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:21:56,826 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:21:56,830 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:21:57,389 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211023&endTime=20211202&timeframe=day HTTP/1.1" 200 1727
+2022-04-16 03:21:57,494 - DEBUG - __LR_training__ - close_price: 1732
+2022-04-16 03:21:57,496 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:21:57,496 - DEBUG - __LR_training__ - 파라미터: probs([[0.49793278 0.50206722]], threshold(0.98))
+2022-04-16 03:21:57,496 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:21:57,496 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:21:57,497 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:21:57,498 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:21:57,502 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:21:58,056 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211024&endTime=20211203&timeframe=day HTTP/1.1" 200 1783
+2022-04-16 03:21:58,162 - DEBUG - __LR_training__ - close_price: 1775
+2022-04-16 03:21:58,163 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:21:58,164 - DEBUG - __LR_training__ - 파라미터: probs([[0.49395177 0.50604823]], threshold(0.98))
+2022-04-16 03:21:58,164 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:21:58,165 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:21:58,165 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:21:58,167 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:21:58,170 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:21:58,733 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211025&endTime=20211204&timeframe=day HTTP/1.1" 200 1783
+2022-04-16 03:21:58,836 - DEBUG - __LR_training__ - close_price: 1775
+2022-04-16 03:21:58,837 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:21:58,838 - DEBUG - __LR_training__ - 파라미터: probs([[0.49395177 0.50604823]], threshold(0.98))
+2022-04-16 03:21:58,838 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:21:58,839 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:21:58,839 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:21:58,841 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:21:58,844 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:21:59,412 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211026&endTime=20211205&timeframe=day HTTP/1.1" 200 1727
+2022-04-16 03:21:59,510 - DEBUG - __LR_training__ - close_price: 1775
+2022-04-16 03:21:59,511 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:21:59,512 - DEBUG - __LR_training__ - 파라미터: probs([[0.49395177 0.50604823]], threshold(0.98))
+2022-04-16 03:21:59,512 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:21:59,512 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:21:59,513 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:21:59,515 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:21:59,518 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:00,101 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211027&endTime=20211206&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:00,206 - DEBUG - __LR_training__ - close_price: 1775
+2022-04-16 03:22:00,208 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:00,208 - DEBUG - __LR_training__ - 파라미터: probs([[0.49893837 0.50106163]], threshold(0.98))
+2022-04-16 03:22:00,209 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:00,209 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:00,209 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:00,211 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:00,214 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:00,752 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211028&endTime=20211207&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:00,853 - DEBUG - __LR_training__ - close_price: 1789
+2022-04-16 03:22:00,855 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:00,856 - DEBUG - __LR_training__ - 파라미터: probs([[0.49242218 0.50757782]], threshold(0.98))
+2022-04-16 03:22:00,856 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:00,856 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:00,856 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:00,858 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:00,862 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:01,420 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211029&endTime=20211208&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:01,542 - DEBUG - __LR_training__ - close_price: 1837
+2022-04-16 03:22:01,544 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:01,545 - DEBUG - __LR_training__ - 파라미터: probs([[0.47601669 0.52398331]], threshold(0.98))
+2022-04-16 03:22:01,545 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:01,545 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:01,546 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:01,547 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:01,551 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:02,105 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211030&endTime=20211209&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:02,209 - DEBUG - __LR_training__ - close_price: 1827
+2022-04-16 03:22:02,211 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:02,212 - DEBUG - __LR_training__ - 파라미터: probs([[0.48334789 0.51665211]], threshold(0.98))
+2022-04-16 03:22:02,213 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:02,213 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:02,213 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:02,215 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:02,219 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:02,790 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211031&endTime=20211210&timeframe=day HTTP/1.1" 200 1782
+2022-04-16 03:22:02,894 - DEBUG - __LR_training__ - close_price: 1803
+2022-04-16 03:22:02,895 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:02,896 - DEBUG - __LR_training__ - 파라미터: probs([[0.49932727 0.50067273]], threshold(0.98))
+2022-04-16 03:22:02,896 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:02,896 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:02,897 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:02,899 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:02,902 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:03,440 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211101&endTime=20211211&timeframe=day HTTP/1.1" 200 1782
+2022-04-16 03:22:03,544 - DEBUG - __LR_training__ - close_price: 1803
+2022-04-16 03:22:03,546 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:03,546 - DEBUG - __LR_training__ - 파라미터: probs([[0.49932727 0.50067273]], threshold(0.98))
+2022-04-16 03:22:03,547 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:03,547 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:03,547 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:03,549 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:03,552 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:04,093 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211102&endTime=20211212&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:04,192 - DEBUG - __LR_training__ - close_price: 1803
+2022-04-16 03:22:04,193 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:04,194 - DEBUG - __LR_training__ - 파라미터: probs([[0.49932727 0.50067273]], threshold(0.98))
+2022-04-16 03:22:04,194 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:04,194 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:04,195 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:04,196 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:04,200 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:04,768 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211103&endTime=20211213&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:04,868 - DEBUG - __LR_training__ - close_price: 1832
+2022-04-16 03:22:04,870 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:04,871 - DEBUG - __LR_training__ - 파라미터: probs([[0.48912155 0.51087845]], threshold(0.98))
+2022-04-16 03:22:04,871 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:04,872 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:04,872 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:04,874 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:04,877 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:05,444 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211104&endTime=20211214&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:05,559 - DEBUG - __LR_training__ - close_price: 1775
+2022-04-16 03:22:05,560 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:05,561 - DEBUG - __LR_training__ - 파라미터: probs([[0.48757189 0.51242811]], threshold(0.98))
+2022-04-16 03:22:05,561 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:05,562 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:05,562 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:05,565 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:05,568 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:06,142 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211105&endTime=20211215&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:06,246 - DEBUG - __LR_training__ - close_price: 1746
+2022-04-16 03:22:06,247 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:06,248 - DEBUG - __LR_training__ - 파라미터: probs([[0.50141684 0.49858316]], threshold(0.98))
+2022-04-16 03:22:06,248 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:06,248 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:06,249 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:06,250 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:06,254 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:06,824 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211106&endTime=20211216&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:06,921 - DEBUG - __LR_training__ - close_price: 1727
+2022-04-16 03:22:06,922 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:06,923 - DEBUG - __LR_training__ - 파라미터: probs([[0.5018079 0.4981921]], threshold(0.98))
+2022-04-16 03:22:06,923 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:06,924 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:06,924 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:06,926 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:06,929 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:07,480 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211107&endTime=20211217&timeframe=day HTTP/1.1" 200 1781
+2022-04-16 03:22:07,582 - DEBUG - __LR_training__ - close_price: 1727
+2022-04-16 03:22:07,583 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:07,584 - DEBUG - __LR_training__ - 파라미터: probs([[0.50246428 0.49753572]], threshold(0.98))
+2022-04-16 03:22:07,584 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:07,585 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:07,585 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:07,587 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:07,590 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:08,156 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211108&endTime=20211218&timeframe=day HTTP/1.1" 200 1781
+2022-04-16 03:22:08,264 - DEBUG - __LR_training__ - close_price: 1727
+2022-04-16 03:22:08,265 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:08,266 - DEBUG - __LR_training__ - 파라미터: probs([[0.50246428 0.49753572]], threshold(0.98))
+2022-04-16 03:22:08,266 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:08,266 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:08,267 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:08,269 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:08,273 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:08,851 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211109&endTime=20211219&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:08,952 - DEBUG - __LR_training__ - close_price: 1727
+2022-04-16 03:22:08,954 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:08,955 - DEBUG - __LR_training__ - 파라미터: probs([[0.50246428 0.49753572]], threshold(0.98))
+2022-04-16 03:22:08,955 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:08,955 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:08,956 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:08,958 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:08,961 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:09,538 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211110&endTime=20211220&timeframe=day HTTP/1.1" 200 1727
+2022-04-16 03:22:09,668 - DEBUG - __LR_training__ - close_price: 1699
+2022-04-16 03:22:09,670 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:09,670 - DEBUG - __LR_training__ - 파라미터: probs([[0.5015279 0.4984721]], threshold(0.98))
+2022-04-16 03:22:09,671 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:09,671 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:09,671 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:09,673 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:09,676 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:10,206 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211111&endTime=20211221&timeframe=day HTTP/1.1" 200 1727
+2022-04-16 03:22:10,302 - DEBUG - __LR_training__ - close_price: 1670
+2022-04-16 03:22:10,304 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:10,305 - DEBUG - __LR_training__ - 파라미터: probs([[0.49541391 0.50458609]], threshold(0.98))
+2022-04-16 03:22:10,305 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:10,305 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:10,305 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:10,307 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:10,311 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:10,861 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211112&endTime=20211222&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:10,967 - DEBUG - __LR_training__ - close_price: 1689
+2022-04-16 03:22:10,969 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:10,970 - DEBUG - __LR_training__ - 파라미터: probs([[0.48966055 0.51033945]], threshold(0.98))
+2022-04-16 03:22:10,970 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:10,970 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:10,971 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:10,972 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:10,976 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:11,529 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211113&endTime=20211223&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:11,630 - DEBUG - __LR_training__ - close_price: 1604
+2022-04-16 03:22:11,632 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:11,632 - DEBUG - __LR_training__ - 파라미터: probs([[0.46611519 0.53388481]], threshold(0.98))
+2022-04-16 03:22:11,633 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:11,633 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:11,633 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:11,635 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:11,638 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:12,196 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211114&endTime=20211224&timeframe=day HTTP/1.1" 200 1782
+2022-04-16 03:22:12,297 - DEBUG - __LR_training__ - close_price: 1665
+2022-04-16 03:22:12,298 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:12,299 - DEBUG - __LR_training__ - 파라미터: probs([[0.4792117 0.5207883]], threshold(0.98))
+2022-04-16 03:22:12,299 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:12,300 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:12,300 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:12,302 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:12,305 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:12,845 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211115&endTime=20211225&timeframe=day HTTP/1.1" 200 1782
+2022-04-16 03:22:12,955 - DEBUG - __LR_training__ - close_price: 1665
+2022-04-16 03:22:12,957 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:12,957 - DEBUG - __LR_training__ - 파라미터: probs([[0.4792117 0.5207883]], threshold(0.98))
+2022-04-16 03:22:12,957 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:12,957 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:12,958 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:12,959 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:12,962 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:13,531 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211116&endTime=20211226&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:13,666 - DEBUG - __LR_training__ - close_price: 1665
+2022-04-16 03:22:13,668 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:13,668 - DEBUG - __LR_training__ - 파라미터: probs([[0.4792117 0.5207883]], threshold(0.98))
+2022-04-16 03:22:13,669 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:13,669 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:13,669 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:13,671 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:13,674 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:14,220 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211117&endTime=20211227&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:14,315 - DEBUG - __LR_training__ - close_price: 1661
+2022-04-16 03:22:14,317 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:14,317 - DEBUG - __LR_training__ - 파라미터: probs([[0.49701473 0.50298527]], threshold(0.98))
+2022-04-16 03:22:14,318 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:14,318 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:14,319 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:14,320 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:14,324 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:14,895 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211118&endTime=20211228&timeframe=day HTTP/1.1" 200 1724
+2022-04-16 03:22:15,006 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:15,007 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:15,008 - DEBUG - __LR_training__ - 파라미터: probs([[0.49933874 0.50066126]], threshold(0.98))
+2022-04-16 03:22:15,008 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:15,008 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:15,009 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:15,011 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:15,014 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:15,591 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211119&endTime=20211229&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:15,692 - DEBUG - __LR_training__ - close_price: 1751
+2022-04-16 03:22:15,694 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:15,694 - DEBUG - __LR_training__ - 파라미터: probs([[0.46002242 0.53997758]], threshold(0.98))
+2022-04-16 03:22:15,695 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:15,695 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:15,695 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:15,697 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:15,700 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:16,244 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211120&endTime=20211230&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:16,346 - DEBUG - __LR_training__ - close_price: 1694
+2022-04-16 03:22:16,348 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:16,348 - DEBUG - __LR_training__ - 파라미터: probs([[0.49047451 0.50952549]], threshold(0.98))
+2022-04-16 03:22:16,349 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:16,349 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:16,349 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:16,351 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:16,354 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:16,933 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211121&endTime=20211231&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:17,043 - DEBUG - __LR_training__ - close_price: 1694
+2022-04-16 03:22:17,044 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:17,045 - DEBUG - __LR_training__ - 파라미터: probs([[0.49047451 0.50952549]], threshold(0.98))
+2022-04-16 03:22:17,045 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:17,045 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:17,046 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:17,047 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:17,050 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:17,591 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211122&endTime=20220101&timeframe=day HTTP/1.1" 200 1725
+2022-04-16 03:22:17,710 - DEBUG - __LR_training__ - close_price: 1694
+2022-04-16 03:22:17,712 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:17,712 - DEBUG - __LR_training__ - 파라미터: probs([[0.49047451 0.50952549]], threshold(0.98))
+2022-04-16 03:22:17,713 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:17,713 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:17,713 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:17,715 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:17,718 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:18,256 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211123&endTime=20220102&timeframe=day HTTP/1.1" 200 1670
+2022-04-16 03:22:18,349 - DEBUG - __LR_training__ - close_price: 1694
+2022-04-16 03:22:18,350 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:18,351 - DEBUG - __LR_training__ - 파라미터: probs([[0.49047451 0.50952549]], threshold(0.98))
+2022-04-16 03:22:18,351 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:18,351 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:18,352 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:18,353 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:18,357 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:18,930 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211124&endTime=20220103&timeframe=day HTTP/1.1" 200 1670
+2022-04-16 03:22:19,033 - DEBUG - __LR_training__ - close_price: 1713
+2022-04-16 03:22:19,035 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:19,036 - DEBUG - __LR_training__ - 파라미터: probs([[0.49449594 0.50550406]], threshold(0.98))
+2022-04-16 03:22:19,036 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:19,036 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:19,037 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:19,038 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:19,042 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:19,582 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211125&endTime=20220104&timeframe=day HTTP/1.1" 200 1670
+2022-04-16 03:22:19,682 - DEBUG - __LR_training__ - close_price: 1708
+2022-04-16 03:22:19,684 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:19,684 - DEBUG - __LR_training__ - 파라미터: probs([[0.49684374 0.50315626]], threshold(0.98))
+2022-04-16 03:22:19,685 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:19,685 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:19,685 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:19,687 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:19,690 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:20,266 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211126&endTime=20220105&timeframe=day HTTP/1.1" 200 1670
+2022-04-16 03:22:20,364 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:20,365 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:20,366 - DEBUG - __LR_training__ - 파라미터: probs([[0.49859207 0.50140793]], threshold(0.98))
+2022-04-16 03:22:20,366 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:20,366 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:20,366 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:20,368 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:20,371 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:20,939 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211127&endTime=20220106&timeframe=day HTTP/1.1" 200 1670
+2022-04-16 03:22:21,035 - DEBUG - __LR_training__ - close_price: 1656
+2022-04-16 03:22:21,036 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:21,037 - DEBUG - __LR_training__ - 파라미터: probs([[0.4983527 0.5016473]], threshold(0.98))
+2022-04-16 03:22:21,037 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:21,037 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:21,038 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:21,039 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:21,043 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:21,599 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211128&endTime=20220107&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:21,725 - DEBUG - __LR_training__ - close_price: 1665
+2022-04-16 03:22:21,727 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:21,728 - DEBUG - __LR_training__ - 파라미터: probs([[0.50326067 0.49673933]], threshold(0.98))
+2022-04-16 03:22:21,728 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:21,728 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:21,728 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:21,730 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:21,734 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:22,285 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211129&endTime=20220108&timeframe=day HTTP/1.1" 200 1726
+2022-04-16 03:22:22,380 - DEBUG - __LR_training__ - close_price: 1665
+2022-04-16 03:22:22,382 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:22,382 - DEBUG - __LR_training__ - 파라미터: probs([[0.50326067 0.49673933]], threshold(0.98))
+2022-04-16 03:22:22,383 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:22,383 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:22,383 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:22,385 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:22,388 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:22,944 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211130&endTime=20220109&timeframe=day HTTP/1.1" 200 1670
+2022-04-16 03:22:23,037 - DEBUG - __LR_training__ - close_price: 1665
+2022-04-16 03:22:23,039 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:23,039 - DEBUG - __LR_training__ - 파라미터: probs([[0.50326067 0.49673933]], threshold(0.98))
+2022-04-16 03:22:23,039 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:23,040 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:23,040 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:23,041 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:23,045 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:23,618 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211201&endTime=20220110&timeframe=day HTTP/1.1" 200 1670
+2022-04-16 03:22:23,717 - DEBUG - __LR_training__ - close_price: 1627
+2022-04-16 03:22:23,719 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:23,720 - DEBUG - __LR_training__ - 파라미터: probs([[0.501726 0.498274]], threshold(0.98))
+2022-04-16 03:22:23,720 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:23,720 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:23,721 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:23,722 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:23,726 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:24,285 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211202&endTime=20220111&timeframe=day HTTP/1.1" 200 1669
+2022-04-16 03:22:24,378 - DEBUG - __LR_training__ - close_price: 1594
+2022-04-16 03:22:24,380 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:24,380 - DEBUG - __LR_training__ - 파라미터: probs([[0.49651853 0.50348147]], threshold(0.98))
+2022-04-16 03:22:24,381 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:24,381 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:24,381 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:24,383 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:24,386 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:24,966 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211203&endTime=20220112&timeframe=day HTTP/1.1" 200 1670
+2022-04-16 03:22:25,064 - DEBUG - __LR_training__ - close_price: 1775
+2022-04-16 03:22:25,065 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:25,066 - DEBUG - __LR_training__ - 파라미터: probs([[0.2457767 0.7542233]], threshold(0.98))
+2022-04-16 03:22:25,066 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:25,067 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:25,067 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:25,069 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:25,073 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:25,624 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211204&endTime=20220113&timeframe=day HTTP/1.1" 200 1671
+2022-04-16 03:22:25,749 - DEBUG - __LR_training__ - close_price: 1732
+2022-04-16 03:22:25,750 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:25,751 - DEBUG - __LR_training__ - 파라미터: probs([[0.45361907 0.54638093]], threshold(0.98))
+2022-04-16 03:22:25,751 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:25,751 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:25,752 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:25,754 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:25,757 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:26,306 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211205&endTime=20220114&timeframe=day HTTP/1.1" 200 1728
+2022-04-16 03:22:26,404 - DEBUG - __LR_training__ - close_price: 1632
+2022-04-16 03:22:26,406 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:26,407 - DEBUG - __LR_training__ - 파라미터: probs([[0.46356225 0.53643775]], threshold(0.98))
+2022-04-16 03:22:26,407 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:26,408 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:26,408 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:26,413 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:26,417 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:27,187 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211206&endTime=20220115&timeframe=day HTTP/1.1" 200 1728
+2022-04-16 03:22:27,287 - DEBUG - __LR_training__ - close_price: 1632
+2022-04-16 03:22:27,288 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:27,289 - DEBUG - __LR_training__ - 파라미터: probs([[0.46356225 0.53643775]], threshold(0.98))
+2022-04-16 03:22:27,289 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:27,289 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:27,289 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:27,291 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:27,294 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:27,853 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211207&endTime=20220116&timeframe=day HTTP/1.1" 200 1673
+2022-04-16 03:22:27,952 - DEBUG - __LR_training__ - close_price: 1632
+2022-04-16 03:22:27,954 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:27,954 - DEBUG - __LR_training__ - 파라미터: probs([[0.46356225 0.53643775]], threshold(0.98))
+2022-04-16 03:22:27,955 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:27,955 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:27,955 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:27,957 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:27,961 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:28,518 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211208&endTime=20220117&timeframe=day HTTP/1.1" 200 1673
+2022-04-16 03:22:28,611 - DEBUG - __LR_training__ - close_price: 1613
+2022-04-16 03:22:28,613 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:28,613 - DEBUG - __LR_training__ - 파라미터: probs([[0.49129447 0.50870553]], threshold(0.98))
+2022-04-16 03:22:28,613 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:28,614 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:28,614 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:28,616 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:28,620 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:29,175 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211209&endTime=20220118&timeframe=day HTTP/1.1" 200 1673
+2022-04-16 03:22:29,267 - DEBUG - __LR_training__ - close_price: 1589
+2022-04-16 03:22:29,270 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:29,270 - DEBUG - __LR_training__ - 파라미터: probs([[0.49238042 0.50761958]], threshold(0.98))
+2022-04-16 03:22:29,270 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:29,271 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:29,271 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:29,273 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:29,276 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:29,821 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211210&endTime=20220119&timeframe=day HTTP/1.1" 200 1673
+2022-04-16 03:22:29,934 - DEBUG - __LR_training__ - close_price: 1585
+2022-04-16 03:22:29,936 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:29,936 - DEBUG - __LR_training__ - 파라미터: probs([[0.49674539 0.50325461]], threshold(0.98))
+2022-04-16 03:22:29,937 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:29,937 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:29,937 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:29,939 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:29,942 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:30,489 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211211&endTime=20220120&timeframe=day HTTP/1.1" 200 1673
+2022-04-16 03:22:30,583 - DEBUG - __LR_training__ - close_price: 1618
+2022-04-16 03:22:30,585 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:30,585 - DEBUG - __LR_training__ - 파라미터: probs([[0.5003509 0.4996491]], threshold(0.98))
+2022-04-16 03:22:30,586 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:30,586 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:30,586 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:30,588 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:30,591 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:31,143 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211212&endTime=20220121&timeframe=day HTTP/1.1" 200 1730
+2022-04-16 03:22:31,253 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:31,255 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:31,255 - DEBUG - __LR_training__ - 파라미터: probs([[0.46230625 0.53769375]], threshold(0.98))
+2022-04-16 03:22:31,255 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:31,256 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:31,256 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:31,258 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:31,261 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:31,812 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211213&endTime=20220122&timeframe=day HTTP/1.1" 200 1730
+2022-04-16 03:22:31,910 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:31,912 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:31,913 - DEBUG - __LR_training__ - 파라미터: probs([[0.46230625 0.53769375]], threshold(0.98))
+2022-04-16 03:22:31,913 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:31,913 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:31,914 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:31,916 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:31,920 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:32,459 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211214&endTime=20220123&timeframe=day HTTP/1.1" 200 1674
+2022-04-16 03:22:32,555 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:32,557 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:32,557 - DEBUG - __LR_training__ - 파라미터: probs([[0.46230625 0.53769375]], threshold(0.98))
+2022-04-16 03:22:32,557 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:32,558 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:32,558 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:32,559 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:32,563 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:33,124 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211215&endTime=20220124&timeframe=day HTTP/1.1" 200 1659
+2022-04-16 03:22:33,215 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:33,216 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:33,217 - DEBUG - __LR_training__ - 파라미터: probs([[0.51365723 0.48634277]], threshold(0.98))
+2022-04-16 03:22:33,217 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:33,217 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:33,218 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:33,219 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:33,222 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:33,759 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211216&endTime=20220125&timeframe=day HTTP/1.1" 200 1644
+2022-04-16 03:22:33,878 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:33,880 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:33,880 - DEBUG - __LR_training__ - 파라미터: probs([[0.51354781 0.48645219]], threshold(0.98))
+2022-04-16 03:22:33,881 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:33,881 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:33,881 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:33,883 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:33,886 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:34,435 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211217&endTime=20220126&timeframe=day HTTP/1.1" 200 1630
+2022-04-16 03:22:34,550 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:34,552 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:34,552 - DEBUG - __LR_training__ - 파라미터: probs([[0.51474067 0.48525933]], threshold(0.98))
+2022-04-16 03:22:34,552 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:34,553 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:34,553 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:34,554 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:34,558 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:35,128 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211218&endTime=20220127&timeframe=day HTTP/1.1" 200 1615
+2022-04-16 03:22:35,234 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:35,235 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:35,236 - DEBUG - __LR_training__ - 파라미터: probs([[0.51437446 0.48562554]], threshold(0.98))
+2022-04-16 03:22:35,236 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:35,236 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:35,237 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:35,238 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:35,242 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:35,781 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211219&endTime=20220128&timeframe=day HTTP/1.1" 200 1656
+2022-04-16 03:22:35,883 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:35,885 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:35,885 - DEBUG - __LR_training__ - 파라미터: probs([[0.51407021 0.48592979]], threshold(0.98))
+2022-04-16 03:22:35,886 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:35,886 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:35,887 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:35,888 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:35,892 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:36,443 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211220&endTime=20220129&timeframe=day HTTP/1.1" 200 1656
+2022-04-16 03:22:36,547 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:36,549 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:36,550 - DEBUG - __LR_training__ - 파라미터: probs([[0.51407021 0.48592979]], threshold(0.98))
+2022-04-16 03:22:36,550 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:36,550 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:36,551 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:36,552 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:36,556 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:37,098 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211221&endTime=20220130&timeframe=day HTTP/1.1" 200 1600
+2022-04-16 03:22:37,203 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:37,204 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:37,205 - DEBUG - __LR_training__ - 파라미터: probs([[0.51407021 0.48592979]], threshold(0.98))
+2022-04-16 03:22:37,205 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:37,205 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:37,205 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:37,207 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:37,211 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:37,777 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211222&endTime=20220131&timeframe=day HTTP/1.1" 200 1544
+2022-04-16 03:22:37,894 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:37,895 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:37,896 - DEBUG - __LR_training__ - 파라미터: probs([[0.51407021 0.48592979]], threshold(0.98))
+2022-04-16 03:22:37,896 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:37,897 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:37,897 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:37,899 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:37,903 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:38,478 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211223&endTime=20220201&timeframe=day HTTP/1.1" 200 1489
+2022-04-16 03:22:38,566 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:38,567 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:38,568 - DEBUG - __LR_training__ - 파라미터: probs([[0.51407021 0.48592979]], threshold(0.98))
+2022-04-16 03:22:38,568 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:38,568 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:38,569 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:38,570 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:38,573 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:39,146 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211224&endTime=20220202&timeframe=day HTTP/1.1" 200 1432
+2022-04-16 03:22:39,229 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:39,230 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:39,231 - DEBUG - __LR_training__ - 파라미터: probs([[0.51407021 0.48592979]], threshold(0.98))
+2022-04-16 03:22:39,231 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:39,231 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:39,232 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:39,233 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:39,236 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:39,781 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211225&endTime=20220203&timeframe=day HTTP/1.1" 200 1416
+2022-04-16 03:22:39,867 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:39,869 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:39,869 - DEBUG - __LR_training__ - 파라미터: probs([[0.51389898 0.48610102]], threshold(0.98))
+2022-04-16 03:22:39,870 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:39,870 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:39,870 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:39,872 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:39,875 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:40,421 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211226&endTime=20220204&timeframe=day HTTP/1.1" 200 1457
+2022-04-16 03:22:40,516 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:40,518 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:40,518 - DEBUG - __LR_training__ - 파라미터: probs([[0.51389907 0.48610093]], threshold(0.98))
+2022-04-16 03:22:40,519 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:40,519 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:40,519 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:40,521 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:40,525 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:41,060 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211227&endTime=20220205&timeframe=day HTTP/1.1" 200 1457
+2022-04-16 03:22:41,151 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:41,152 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:41,153 - DEBUG - __LR_training__ - 파라미터: probs([[0.51389907 0.48610093]], threshold(0.98))
+2022-04-16 03:22:41,153 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:41,153 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:41,154 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:41,155 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:41,159 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:41,709 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211228&endTime=20220206&timeframe=day HTTP/1.1" 200 1401
+2022-04-16 03:22:41,822 - DEBUG - __LR_training__ - close_price: 1675
+2022-04-16 03:22:41,823 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:41,824 - DEBUG - __LR_training__ - 파라미터: probs([[0.51389907 0.48610093]], threshold(0.98))
+2022-04-16 03:22:41,824 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:41,824 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:41,825 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:41,827 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:41,830 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:42,389 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211229&endTime=20220207&timeframe=day HTTP/1.1" 200 1402
+2022-04-16 03:22:42,478 - DEBUG - __LR_training__ - close_price: 1560
+2022-04-16 03:22:42,480 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:42,480 - DEBUG - __LR_training__ - 파라미터: probs([[0.46464441 0.53535559]], threshold(0.98))
+2022-04-16 03:22:42,480 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:42,481 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:42,481 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:42,483 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:42,486 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:43,035 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211230&endTime=20220208&timeframe=day HTTP/1.1" 200 1401
+2022-04-16 03:22:43,120 - DEBUG - __LR_training__ - close_price: 1565
+2022-04-16 03:22:43,121 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:43,122 - DEBUG - __LR_training__ - 파라미터: probs([[0.48076458 0.51923542]], threshold(0.98))
+2022-04-16 03:22:43,122 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:43,122 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:43,123 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:43,124 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:43,127 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:43,671 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20211231&endTime=20220209&timeframe=day HTTP/1.1" 200 1400
+2022-04-16 03:22:43,748 - DEBUG - __LR_training__ - close_price: 1570
+2022-04-16 03:22:43,750 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:43,751 - DEBUG - __LR_training__ - 파라미터: probs([[0.50533861 0.49466139]], threshold(0.98))
+2022-04-16 03:22:43,751 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:43,751 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:43,752 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:43,753 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:43,756 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:44,321 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220101&endTime=20220210&timeframe=day HTTP/1.1" 200 1456
+2022-04-16 03:22:44,408 - DEBUG - __LR_training__ - close_price: 1515
+2022-04-16 03:22:44,410 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:44,413 - DEBUG - __LR_training__ - 파라미터: probs([[0.4960998 0.5039002]], threshold(0.98))
+2022-04-16 03:22:44,413 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:44,413 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:44,414 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:44,416 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:44,419 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:44,976 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220102&endTime=20220211&timeframe=day HTTP/1.1" 200 1512
+2022-04-16 03:22:45,066 - DEBUG - __LR_training__ - close_price: 1435
+2022-04-16 03:22:45,068 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:45,068 - DEBUG - __LR_training__ - 파라미터: probs([[0.49358888 0.50641112]], threshold(0.98))
+2022-04-16 03:22:45,069 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:45,069 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:45,069 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:45,071 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:45,074 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:45,625 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220103&endTime=20220212&timeframe=day HTTP/1.1" 200 1512
+2022-04-16 03:22:45,735 - DEBUG - __LR_training__ - close_price: 1435
+2022-04-16 03:22:45,736 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:45,737 - DEBUG - __LR_training__ - 파라미터: probs([[0.49358888 0.50641112]], threshold(0.98))
+2022-04-16 03:22:45,737 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:45,738 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:45,738 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:45,740 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:45,744 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:46,285 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220104&endTime=20220213&timeframe=day HTTP/1.1" 200 1456
+2022-04-16 03:22:46,377 - DEBUG - __LR_training__ - close_price: 1435
+2022-04-16 03:22:46,378 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:46,379 - DEBUG - __LR_training__ - 파라미터: probs([[0.49358888 0.50641112]], threshold(0.98))
+2022-04-16 03:22:46,379 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:46,380 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:46,380 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:46,382 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:46,385 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:46,948 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220105&endTime=20220214&timeframe=day HTTP/1.1" 200 1456
+2022-04-16 03:22:47,036 - DEBUG - __LR_training__ - close_price: 1380
+2022-04-16 03:22:47,037 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:47,038 - DEBUG - __LR_training__ - 파라미터: probs([[0.49449857 0.50550143]], threshold(0.98))
+2022-04-16 03:22:47,038 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:47,038 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:47,039 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:47,040 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:47,044 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:47,617 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220106&endTime=20220215&timeframe=day HTTP/1.1" 200 1456
+2022-04-16 03:22:47,706 - DEBUG - __LR_training__ - close_price: 1395
+2022-04-16 03:22:47,707 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:47,708 - DEBUG - __LR_training__ - 파라미터: probs([[0.49462736 0.50537264]], threshold(0.98))
+2022-04-16 03:22:47,708 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:47,709 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:47,709 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:47,710 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:47,713 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:48,240 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220107&endTime=20220216&timeframe=day HTTP/1.1" 200 1456
+2022-04-16 03:22:48,334 - DEBUG - __LR_training__ - close_price: 1435
+2022-04-16 03:22:48,335 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:48,336 - DEBUG - __LR_training__ - 파라미터: probs([[0.50683189 0.49316811]], threshold(0.98))
+2022-04-16 03:22:48,336 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:48,336 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:48,337 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:48,338 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:48,342 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:48,893 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220108&endTime=20220217&timeframe=day HTTP/1.1" 200 1457
+2022-04-16 03:22:48,976 - DEBUG - __LR_training__ - close_price: 1520
+2022-04-16 03:22:48,978 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:48,979 - DEBUG - __LR_training__ - 파라미터: probs([[0.34491729 0.65508271]], threshold(0.98))
+2022-04-16 03:22:48,979 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:48,979 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:48,980 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:48,981 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:48,984 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:49,539 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220109&endTime=20220218&timeframe=day HTTP/1.1" 200 1514
+2022-04-16 03:22:49,638 - DEBUG - __LR_training__ - close_price: 1485
+2022-04-16 03:22:49,639 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:49,640 - DEBUG - __LR_training__ - 파라미터: probs([[0.46829908 0.53170092]], threshold(0.98))
+2022-04-16 03:22:49,640 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:49,641 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:49,641 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:49,643 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:49,646 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:50,193 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220110&endTime=20220219&timeframe=day HTTP/1.1" 200 1514
+2022-04-16 03:22:50,288 - DEBUG - __LR_training__ - close_price: 1485
+2022-04-16 03:22:50,290 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:50,290 - DEBUG - __LR_training__ - 파라미터: probs([[0.46829908 0.53170092]], threshold(0.98))
+2022-04-16 03:22:50,290 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:50,291 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:50,291 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:50,293 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:50,297 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:50,860 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220111&endTime=20220220&timeframe=day HTTP/1.1" 200 1458
+2022-04-16 03:22:50,946 - DEBUG - __LR_training__ - close_price: 1485
+2022-04-16 03:22:50,948 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:50,948 - DEBUG - __LR_training__ - 파라미터: probs([[0.46829908 0.53170092]], threshold(0.98))
+2022-04-16 03:22:50,949 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:50,949 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:50,949 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:50,951 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:50,954 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:51,504 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220112&endTime=20220221&timeframe=day HTTP/1.1" 200 1459
+2022-04-16 03:22:51,600 - DEBUG - __LR_training__ - close_price: 1460
+2022-04-16 03:22:51,602 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:51,602 - DEBUG - __LR_training__ - 파라미터: probs([[0.48984036 0.51015964]], threshold(0.98))
+2022-04-16 03:22:51,603 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:51,603 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:51,603 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:51,605 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:51,608 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:52,178 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220113&endTime=20220222&timeframe=day HTTP/1.1" 200 1457
+2022-04-16 03:22:52,265 - DEBUG - __LR_training__ - close_price: 1435
+2022-04-16 03:22:52,267 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:52,267 - DEBUG - __LR_training__ - 파라미터: probs([[0.49626888 0.50373112]], threshold(0.98))
+2022-04-16 03:22:52,267 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:52,268 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:52,268 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:52,269 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:52,272 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:52,825 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220114&endTime=20220223&timeframe=day HTTP/1.1" 200 1455
+2022-04-16 03:22:52,913 - DEBUG - __LR_training__ - close_price: 1475
+2022-04-16 03:22:52,915 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:52,915 - DEBUG - __LR_training__ - 파라미터: probs([[0.48005654 0.51994346]], threshold(0.98))
+2022-04-16 03:22:52,916 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:52,916 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:52,916 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:52,918 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:52,921 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:53,491 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220115&endTime=20220224&timeframe=day HTTP/1.1" 200 1454
+2022-04-16 03:22:53,586 - DEBUG - __LR_training__ - close_price: 1430
+2022-04-16 03:22:53,588 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:53,588 - DEBUG - __LR_training__ - 파라미터: probs([[0.49365293 0.50634707]], threshold(0.98))
+2022-04-16 03:22:53,588 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:53,589 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:53,589 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:53,591 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:53,594 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:54,147 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220116&endTime=20220225&timeframe=day HTTP/1.1" 200 1510
+2022-04-16 03:22:54,264 - DEBUG - __LR_training__ - close_price: 1495
+2022-04-16 03:22:54,266 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:54,267 - DEBUG - __LR_training__ - 파라미터: probs([[0.48290691 0.51709309]], threshold(0.98))
+2022-04-16 03:22:54,267 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:54,267 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:54,268 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:54,269 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:54,273 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:54,828 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220117&endTime=20220226&timeframe=day HTTP/1.1" 200 1510
+2022-04-16 03:22:54,930 - DEBUG - __LR_training__ - close_price: 1495
+2022-04-16 03:22:54,932 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:54,933 - DEBUG - __LR_training__ - 파라미터: probs([[0.48290691 0.51709309]], threshold(0.98))
+2022-04-16 03:22:54,933 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:54,934 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:54,934 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:54,939 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:54,943 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:55,524 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220118&endTime=20220227&timeframe=day HTTP/1.1" 200 1454
+2022-04-16 03:22:55,625 - DEBUG - __LR_training__ - close_price: 1495
+2022-04-16 03:22:55,627 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:55,628 - DEBUG - __LR_training__ - 파라미터: probs([[0.48290691 0.51709309]], threshold(0.98))
+2022-04-16 03:22:55,629 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:55,629 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:55,629 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:55,631 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:55,635 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:56,181 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220119&endTime=20220228&timeframe=day HTTP/1.1" 200 1455
+2022-04-16 03:22:56,273 - DEBUG - __LR_training__ - close_price: 1600
+2022-04-16 03:22:56,275 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:56,275 - DEBUG - __LR_training__ - 파라미터: probs([[0.40898306 0.59101694]], threshold(0.98))
+2022-04-16 03:22:56,276 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:56,276 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:56,276 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:56,278 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:56,282 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:57,012 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220120&endTime=20220301&timeframe=day HTTP/1.1" 200 1399
+2022-04-16 03:22:57,100 - DEBUG - __LR_training__ - close_price: 1600
+2022-04-16 03:22:57,102 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:57,102 - DEBUG - __LR_training__ - 파라미터: probs([[0.40898306 0.59101694]], threshold(0.98))
+2022-04-16 03:22:57,103 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:57,103 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:57,104 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:57,105 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:57,109 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:57,664 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220121&endTime=20220302&timeframe=day HTTP/1.1" 200 1399
+2022-04-16 03:22:57,746 - DEBUG - __LR_training__ - close_price: 1580
+2022-04-16 03:22:57,748 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:57,748 - DEBUG - __LR_training__ - 파라미터: probs([[0.48040965 0.51959035]], threshold(0.98))
+2022-04-16 03:22:57,748 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:57,749 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:57,749 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:57,751 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:57,754 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:58,329 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220122&endTime=20220303&timeframe=day HTTP/1.1" 200 1399
+2022-04-16 03:22:58,439 - DEBUG - __LR_training__ - close_price: 1575
+2022-04-16 03:22:58,440 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:58,441 - DEBUG - __LR_training__ - 파라미터: probs([[0.45730041 0.54269959]], threshold(0.98))
+2022-04-16 03:22:58,441 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:58,441 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:58,442 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:58,443 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:58,446 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:58,997 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220123&endTime=20220304&timeframe=day HTTP/1.1" 200 1456
+2022-04-16 03:22:59,084 - DEBUG - __LR_training__ - close_price: 1460
+2022-04-16 03:22:59,085 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:59,086 - DEBUG - __LR_training__ - 파라미터: probs([[0.40753146 0.59246854]], threshold(0.98))
+2022-04-16 03:22:59,086 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:59,086 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:59,087 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:59,088 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:59,092 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:22:59,654 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220124&endTime=20220305&timeframe=day HTTP/1.1" 200 1456
+2022-04-16 03:22:59,747 - DEBUG - __LR_training__ - close_price: 1460
+2022-04-16 03:22:59,749 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:22:59,749 - DEBUG - __LR_training__ - 파라미터: probs([[0.40753146 0.59246854]], threshold(0.98))
+2022-04-16 03:22:59,750 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:22:59,750 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:22:59,750 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:22:59,752 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:22:59,755 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:00,299 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220125&endTime=20220306&timeframe=day HTTP/1.1" 200 1415
+2022-04-16 03:23:00,385 - DEBUG - __LR_training__ - close_price: 1460
+2022-04-16 03:23:00,387 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:00,387 - DEBUG - __LR_training__ - 파라미터: probs([[0.40753146 0.59246854]], threshold(0.98))
+2022-04-16 03:23:00,388 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:00,388 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:00,388 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:00,390 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:00,393 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:00,942 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220126&endTime=20220307&timeframe=day HTTP/1.1" 200 1430
+2022-04-16 03:23:01,024 - DEBUG - __LR_training__ - close_price: 1415
+2022-04-16 03:23:01,025 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:01,026 - DEBUG - __LR_training__ - 파라미터: probs([[0.48042878 0.51957122]], threshold(0.98))
+2022-04-16 03:23:01,026 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:01,026 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:01,027 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:01,028 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:01,032 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:01,597 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220127&endTime=20220308&timeframe=day HTTP/1.1" 200 1445
+2022-04-16 03:23:01,677 - DEBUG - __LR_training__ - close_price: 1395
+2022-04-16 03:23:01,679 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:01,680 - DEBUG - __LR_training__ - 파라미터: probs([[0.48350147 0.51649853]], threshold(0.98))
+2022-04-16 03:23:01,680 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:01,680 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:01,681 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:01,682 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:01,686 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:02,257 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220128&endTime=20220309&timeframe=day HTTP/1.1" 200 1404
+2022-04-16 03:23:02,356 - DEBUG - __LR_training__ - close_price: 1395
+2022-04-16 03:23:02,358 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:02,358 - DEBUG - __LR_training__ - 파라미터: probs([[0.48350147 0.51649853]], threshold(0.98))
+2022-04-16 03:23:02,359 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:02,359 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:02,359 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:02,361 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:02,364 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:02,914 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220129&endTime=20220310&timeframe=day HTTP/1.1" 200 1419
+2022-04-16 03:23:02,993 - DEBUG - __LR_training__ - close_price: 1405
+2022-04-16 03:23:02,995 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:02,995 - DEBUG - __LR_training__ - 파라미터: probs([[0.4907657 0.5092343]], threshold(0.98))
+2022-04-16 03:23:02,996 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:02,996 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:02,996 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:02,998 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:03,001 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:03,554 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220130&endTime=20220311&timeframe=day HTTP/1.1" 200 1475
+2022-04-16 03:23:03,643 - DEBUG - __LR_training__ - close_price: 1415
+2022-04-16 03:23:03,644 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:03,645 - DEBUG - __LR_training__ - 파라미터: probs([[0.48842356 0.51157644]], threshold(0.98))
+2022-04-16 03:23:03,645 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:03,645 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:03,646 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:03,647 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:03,650 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:04,207 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220131&endTime=20220312&timeframe=day HTTP/1.1" 200 1475
+2022-04-16 03:23:04,292 - DEBUG - __LR_training__ - close_price: 1415
+2022-04-16 03:23:04,294 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:04,294 - DEBUG - __LR_training__ - 파라미터: probs([[0.48842356 0.51157644]], threshold(0.98))
+2022-04-16 03:23:04,294 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:04,295 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:04,295 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:04,297 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:04,301 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:04,850 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220201&endTime=20220313&timeframe=day HTTP/1.1" 200 1475
+2022-04-16 03:23:04,939 - DEBUG - __LR_training__ - close_price: 1415
+2022-04-16 03:23:04,940 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:04,941 - DEBUG - __LR_training__ - 파라미터: probs([[0.48842356 0.51157644]], threshold(0.98))
+2022-04-16 03:23:04,941 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:04,941 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:04,942 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:04,943 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:04,947 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:05,522 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220202&endTime=20220314&timeframe=day HTTP/1.1" 200 1531
+2022-04-16 03:23:05,616 - DEBUG - __LR_training__ - close_price: 1405
+2022-04-16 03:23:05,617 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:05,618 - DEBUG - __LR_training__ - 파라미터: probs([[0.49724335 0.50275665]], threshold(0.98))
+2022-04-16 03:23:05,618 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:05,618 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:05,619 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:05,621 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:05,624 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:06,165 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220203&endTime=20220315&timeframe=day HTTP/1.1" 200 1587
+2022-04-16 03:23:06,270 - DEBUG - __LR_training__ - close_price: 1395
+2022-04-16 03:23:06,271 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:06,272 - DEBUG - __LR_training__ - 파라미터: probs([[0.49664873 0.50335127]], threshold(0.98))
+2022-04-16 03:23:06,272 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:06,272 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:06,273 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:06,274 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:06,278 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:06,839 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220204&endTime=20220316&timeframe=day HTTP/1.1" 200 1601
+2022-04-16 03:23:06,930 - DEBUG - __LR_training__ - close_price: 1425
+2022-04-16 03:23:06,932 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:06,932 - DEBUG - __LR_training__ - 파라미터: probs([[0.49574301 0.50425699]], threshold(0.98))
+2022-04-16 03:23:06,932 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:06,933 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:06,933 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:06,935 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:06,938 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:07,498 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220205&endTime=20220317&timeframe=day HTTP/1.1" 200 1617
+2022-04-16 03:23:07,591 - DEBUG - __LR_training__ - close_price: 1465
+2022-04-16 03:23:07,592 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:07,593 - DEBUG - __LR_training__ - 파라미터: probs([[0.45728624 0.54271376]], threshold(0.98))
+2022-04-16 03:23:07,593 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:07,593 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:07,594 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:07,596 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:07,600 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:08,154 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220206&endTime=20220318&timeframe=day HTTP/1.1" 200 1673
+2022-04-16 03:23:08,256 - DEBUG - __LR_training__ - close_price: 1450
+2022-04-16 03:23:08,258 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:08,261 - DEBUG - __LR_training__ - 파라미터: probs([[0.48892048 0.51107952]], threshold(0.98))
+2022-04-16 03:23:08,268 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:08,268 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:08,269 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:08,271 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:08,274 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:08,817 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220207&endTime=20220319&timeframe=day HTTP/1.1" 200 1673
+2022-04-16 03:23:08,922 - DEBUG - __LR_training__ - close_price: 1450
+2022-04-16 03:23:08,924 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:08,924 - DEBUG - __LR_training__ - 파라미터: probs([[0.48892048 0.51107952]], threshold(0.98))
+2022-04-16 03:23:08,925 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:08,925 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:08,925 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:08,927 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:08,930 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:09,496 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220208&endTime=20220320&timeframe=day HTTP/1.1" 200 1616
+2022-04-16 03:23:09,586 - DEBUG - __LR_training__ - close_price: 1450
+2022-04-16 03:23:09,588 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:09,588 - DEBUG - __LR_training__ - 파라미터: probs([[0.48892048 0.51107952]], threshold(0.98))
+2022-04-16 03:23:09,589 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:09,589 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:09,589 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:09,591 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:09,594 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:10,170 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220209&endTime=20220321&timeframe=day HTTP/1.1" 200 1617
+2022-04-16 03:23:10,283 - DEBUG - __LR_training__ - close_price: 1480
+2022-04-16 03:23:10,284 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:10,285 - DEBUG - __LR_training__ - 파라미터: probs([[0.47249783 0.52750217]], threshold(0.98))
+2022-04-16 03:23:10,285 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:10,285 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:10,286 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:10,287 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:10,291 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:10,861 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220210&endTime=20220322&timeframe=day HTTP/1.1" 200 1618
+2022-04-16 03:23:10,959 - DEBUG - __LR_training__ - close_price: 1470
+2022-04-16 03:23:10,961 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:10,961 - DEBUG - __LR_training__ - 파라미터: probs([[0.49543815 0.50456185]], threshold(0.98))
+2022-04-16 03:23:10,962 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:10,962 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:10,962 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:10,964 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:10,967 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:11,523 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220211&endTime=20220323&timeframe=day HTTP/1.1" 200 1618
+2022-04-16 03:23:11,616 - DEBUG - __LR_training__ - close_price: 1505
+2022-04-16 03:23:11,618 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:11,618 - DEBUG - __LR_training__ - 파라미터: probs([[0.45652227 0.54347773]], threshold(0.98))
+2022-04-16 03:23:11,619 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:11,619 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:11,619 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:11,621 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:11,624 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:12,188 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220212&endTime=20220324&timeframe=day HTTP/1.1" 200 1618
+2022-04-16 03:23:12,275 - DEBUG - __LR_training__ - close_price: 1500
+2022-04-16 03:23:12,277 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:12,277 - DEBUG - __LR_training__ - 파라미터: probs([[0.48987315 0.51012685]], threshold(0.98))
+2022-04-16 03:23:12,278 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:12,278 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:12,278 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:12,280 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:12,283 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:12,847 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220213&endTime=20220325&timeframe=day HTTP/1.1" 200 1674
+2022-04-16 03:23:12,950 - DEBUG - __LR_training__ - close_price: 1440
+2022-04-16 03:23:12,951 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:12,952 - DEBUG - __LR_training__ - 파라미터: probs([[0.4786624 0.5213376]], threshold(0.98))
+2022-04-16 03:23:12,952 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:12,953 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:12,953 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:12,955 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:12,958 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:13,511 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220214&endTime=20220326&timeframe=day HTTP/1.1" 200 1674
+2022-04-16 03:23:13,606 - DEBUG - __LR_training__ - close_price: 1440
+2022-04-16 03:23:13,608 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:13,609 - DEBUG - __LR_training__ - 파라미터: probs([[0.4786624 0.5213376]], threshold(0.98))
+2022-04-16 03:23:13,609 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:13,609 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:13,610 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:13,612 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:13,615 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:14,170 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220215&endTime=20220327&timeframe=day HTTP/1.1" 200 1618
+2022-04-16 03:23:14,286 - DEBUG - __LR_training__ - close_price: 1440
+2022-04-16 03:23:14,287 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:14,288 - DEBUG - __LR_training__ - 파라미터: probs([[0.4786624 0.5213376]], threshold(0.98))
+2022-04-16 03:23:14,288 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:14,288 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:14,289 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:14,290 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:14,294 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:14,867 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220216&endTime=20220328&timeframe=day HTTP/1.1" 200 1619
+2022-04-16 03:23:14,959 - DEBUG - __LR_training__ - close_price: 1415
+2022-04-16 03:23:14,960 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:14,961 - DEBUG - __LR_training__ - 파라미터: probs([[0.39977233 0.60022767]], threshold(0.98))
+2022-04-16 03:23:14,961 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:14,961 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:14,962 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:14,968 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:14,972 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:15,512 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220217&endTime=20220329&timeframe=day HTTP/1.1" 200 1619
+2022-04-16 03:23:15,606 - DEBUG - __LR_training__ - close_price: 1405
+2022-04-16 03:23:15,608 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:15,610 - DEBUG - __LR_training__ - 파라미터: probs([[0.47969176 0.52030824]], threshold(0.98))
+2022-04-16 03:23:15,610 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:15,611 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:15,611 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:15,613 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:15,616 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:16,168 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220218&endTime=20220330&timeframe=day HTTP/1.1" 200 1619
+2022-04-16 03:23:16,263 - DEBUG - __LR_training__ - close_price: 1425
+2022-04-16 03:23:16,264 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:16,265 - DEBUG - __LR_training__ - 파라미터: probs([[0.43043365 0.56956635]], threshold(0.98))
+2022-04-16 03:23:16,265 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:16,266 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:16,266 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:16,268 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:16,272 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:16,849 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220219&endTime=20220331&timeframe=day HTTP/1.1" 200 1620
+2022-04-16 03:23:16,945 - DEBUG - __LR_training__ - close_price: 1850
+2022-04-16 03:23:16,946 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:16,947 - DEBUG - __LR_training__ - 파라미터: probs([[0.01301478 0.98698522]], threshold(0.98))
+2022-04-16 03:23:16,947 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:16,948 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:16,948 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:16,950 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:16,953 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:17,498 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220220&endTime=20220401&timeframe=day HTTP/1.1" 200 1678
+2022-04-16 03:23:17,598 - DEBUG - __LR_training__ - close_price: 1855
+2022-04-16 03:23:17,600 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:17,600 - DEBUG - __LR_training__ - 파라미터: probs([[0.00565914 0.99434086]], threshold(0.98))
+2022-04-16 03:23:17,601 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:17,601 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:17,601 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:17,603 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:17,607 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:18,174 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220221&endTime=20220402&timeframe=day HTTP/1.1" 200 1678
+2022-04-16 03:23:18,294 - DEBUG - __LR_training__ - close_price: 1855
+2022-04-16 03:23:18,296 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:18,296 - DEBUG - __LR_training__ - 파라미터: probs([[0.00565914 0.99434086]], threshold(0.98))
+2022-04-16 03:23:18,297 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:18,297 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:18,297 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:18,299 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:18,303 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:18,839 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220222&endTime=20220403&timeframe=day HTTP/1.1" 200 1622
+2022-04-16 03:23:18,934 - DEBUG - __LR_training__ - close_price: 1855
+2022-04-16 03:23:18,936 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:18,936 - DEBUG - __LR_training__ - 파라미터: probs([[0.00565914 0.99434086]], threshold(0.98))
+2022-04-16 03:23:18,937 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:18,937 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:18,937 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:18,939 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:18,942 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:19,492 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220223&endTime=20220404&timeframe=day HTTP/1.1" 200 1624
+2022-04-16 03:23:19,587 - DEBUG - __LR_training__ - close_price: 1880
+2022-04-16 03:23:19,589 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:19,589 - DEBUG - __LR_training__ - 파라미터: probs([[0.22119769 0.77880231]], threshold(0.98))
+2022-04-16 03:23:19,589 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:19,589 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:19,590 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:19,591 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:19,595 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:20,177 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220224&endTime=20220405&timeframe=day HTTP/1.1" 200 1627
+2022-04-16 03:23:20,273 - DEBUG - __LR_training__ - close_price: 1950
+2022-04-16 03:23:20,274 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:20,275 - DEBUG - __LR_training__ - 파라미터: probs([[0.08334985 0.91665015]], threshold(0.98))
+2022-04-16 03:23:20,275 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:20,275 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:20,276 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:20,277 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:20,281 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:20,856 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220225&endTime=20220406&timeframe=day HTTP/1.1" 200 1628
+2022-04-16 03:23:20,945 - DEBUG - __LR_training__ - close_price: 1875
+2022-04-16 03:23:20,946 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:20,947 - DEBUG - __LR_training__ - 파라미터: probs([[0.2620198 0.7379802]], threshold(0.98))
+2022-04-16 03:23:20,947 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:20,947 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:20,948 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:20,949 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:20,953 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:21,493 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220226&endTime=20220407&timeframe=day HTTP/1.1" 200 1629
+2022-04-16 03:23:21,583 - DEBUG - __LR_training__ - close_price: 1825
+2022-04-16 03:23:21,585 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:21,586 - DEBUG - __LR_training__ - 파라미터: probs([[0.3677433 0.6322567]], threshold(0.98))
+2022-04-16 03:23:21,586 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:21,586 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:21,587 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:21,589 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:21,592 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:22,133 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220227&endTime=20220408&timeframe=day HTTP/1.1" 200 1686
+2022-04-16 03:23:22,251 - DEBUG - __LR_training__ - close_price: 1750
+2022-04-16 03:23:22,252 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:22,253 - DEBUG - __LR_training__ - 파라미터: probs([[0.37168687 0.62831313]], threshold(0.98))
+2022-04-16 03:23:22,253 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:22,253 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:22,254 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:22,255 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:22,259 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:22,825 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220228&endTime=20220409&timeframe=day HTTP/1.1" 200 1686
+2022-04-16 03:23:22,926 - DEBUG - __LR_training__ - close_price: 1750
+2022-04-16 03:23:22,928 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:22,929 - DEBUG - __LR_training__ - 파라미터: probs([[0.37168687 0.62831313]], threshold(0.98))
+2022-04-16 03:23:22,929 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:22,929 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:22,930 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:22,931 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:22,935 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:23,500 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220301&endTime=20220410&timeframe=day HTTP/1.1" 200 1629
+2022-04-16 03:23:23,594 - DEBUG - __LR_training__ - close_price: 1750
+2022-04-16 03:23:23,595 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:23,596 - DEBUG - __LR_training__ - 파라미터: probs([[0.37168687 0.62831313]], threshold(0.98))
+2022-04-16 03:23:23,596 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:23,597 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:23,597 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:23,599 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:23,602 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:24,181 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220302&endTime=20220411&timeframe=day HTTP/1.1" 200 1686
+2022-04-16 03:23:24,277 - DEBUG - __LR_training__ - close_price: 1765
+2022-04-16 03:23:24,279 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:24,279 - DEBUG - __LR_training__ - 파라미터: probs([[0.41793357 0.58206643]], threshold(0.98))
+2022-04-16 03:23:24,279 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:24,280 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:24,280 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:24,282 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:24,285 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:24,839 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220303&endTime=20220412&timeframe=day HTTP/1.1" 200 1687
+2022-04-16 03:23:24,928 - DEBUG - __LR_training__ - close_price: 1755
+2022-04-16 03:23:24,930 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:24,930 - DEBUG - __LR_training__ - 파라미터: probs([[0.4385178 0.5614822]], threshold(0.98))
+2022-04-16 03:23:24,931 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:24,931 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:24,931 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:24,933 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:24,936 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:25,497 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220304&endTime=20220413&timeframe=day HTTP/1.1" 200 1687
+2022-04-16 03:23:25,590 - DEBUG - __LR_training__ - close_price: 1795
+2022-04-16 03:23:25,592 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:25,593 - DEBUG - __LR_training__ - 파라미터: probs([[0.32257551 0.67742449]], threshold(0.98))
+2022-04-16 03:23:25,593 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:25,593 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:25,595 - DEBUG - __LR_training__ - 로딩 스케일러 경로: ./saved_models/scaler_v4.sav
+2022-04-16 03:23:25,596 - DEBUG - __LR_training__ - 로딩 모델 경로: ./saved_models/lr_v4.sav
+2022-04-16 03:23:25,599 - DEBUG - urllib3.connectionpool - Starting new HTTPS connection (1): fchart.stock.naver.com:443
+2022-04-16 03:23:26,154 - DEBUG - urllib3.connectionpool - https://fchart.stock.naver.com:443 "POST /siseJson.nhn?symbol=001440&requestType=1&startTime=20220305&endTime=20220414&timeframe=day HTTP/1.1" 200 1687
+2022-04-16 03:23:26,283 - DEBUG - __LR_training__ - close_price: 1800
+2022-04-16 03:23:26,285 - DEBUG - __LR_training__ - _threshold() 호출
+2022-04-16 03:23:26,285 - DEBUG - __LR_training__ - 파라미터: probs([[0.44383519 0.55616481]], threshold(0.98))
+2022-04-16 03:23:26,286 - DEBUG - __LR_training__ - prob_thresholded 값: [1]
+2022-04-16 03:23:26,286 - DEBUG - __bt_logger__ - No recommendations
+2022-04-16 03:23:26,287 - INFO - __simulator__ - STOCK      BUY PRICE  SHARES     TOTAL VALUE
+2022-04-16 03:23:26,287 - INFO - __simulator__ - STOCK      BUY PRICE  SHARES     SELL PRICE NET GAIN  
+2022-04-16 03:23:26,287 - INFO - __simulator__ - Initial Balance: 3000.00
+2022-04-16 03:23:26,287 - INFO - __simulator__ - Final Balance: 3000.00
+2022-04-16 03:23:26,287 - INFO - __simulator__ - Total gain: 0.00
+2022-04-16 03:23:26,288 - INFO - __simulator__ - P/L : 0.00 %

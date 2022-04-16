@@ -167,8 +167,12 @@ def get_data(sym, start_date = None, end_date = None, n = 10):
 def create_train_data(stock, start_date = None, end_date = None, n = 10):
 
     #get data to a dataframe
-    data, idxs_with_mins, idxs_with_maxs = get_data(stock, start_date, end_date, n)
+    # data, idxs_with_mins, idxs_with_maxs = get_data(stock, start_date, end_date, n)
     
+    #get data to a dataframe
+    #이미 다운로드 받은 데이터셋 활용
+    data, idxs_with_mins, idxs_with_maxs = get_offline_data(stock, start_date, end_date, n)
+
     #create regressions for 3, 5 and 10 days
     data = n_day_regression(3, data, list(idxs_with_mins) + list(idxs_with_maxs))
     data = n_day_regression(5, data, list(idxs_with_mins) + list(idxs_with_maxs))
@@ -256,6 +260,26 @@ def csv_to_dict(filename):
     data = dict(data)    
 
     return data
-   
 
+#이미 다운로드 받은 주가 데이터를 학습 데이터로 사용하가
+def get_offline_data(sym, start_date = None, end_date = None, n = 10):
+
+    load_data_path = os.getcwd()
+    load_data_path = os.path.join(load_data_path, f"datasets/{sym}")
+
+    data = pd.read_csv(load_data_path)
+    data = data.loc[:,["date", "open", "high", "low", "close", "volume"]]
+
+    #add the noramlzied value function and create a new column
+    data["normalized_value"] = data.apply(lambda x: normalized_values(x.high, x.low, x.close), axis = 1)
+    
+    #column with local minima and maxima
+    data["loc_min"] = data.iloc[argrelextrema(data.close.values, np.less_equal, order = n)[0]]["close"]
+    data["loc_max"] = data.iloc[argrelextrema(data.close.values, np.greater_equal, order = n)[0]]["close"]
+
+    #idx with mins and max
+    idx_with_mins = np.where(data["loc_min"] > 0)[0]
+    idx_with_maxs = np.where(data["loc_max"] > 0)[0]
+
+    return data, idx_with_mins, idx_with_maxs
 

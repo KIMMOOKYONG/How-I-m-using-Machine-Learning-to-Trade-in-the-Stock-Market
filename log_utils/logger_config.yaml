@@ -10,12 +10,12 @@ formatters:
 handlers:
   console:
     class: logging.StreamHandler
-    level: WARNING
+    level: DEBUG
     formatter: simple
     stream: ext://sys.stdout
   file:
     class: logging.FileHandler
-    level: WARNING
+    level: DEBUG
     filename: 'ieddit.log' # 프로젝트 시작시 수정필요
     formatter: simple
   queue_listener:
@@ -27,13 +27,13 @@ handlers:
     queue: cfg://objects.queue
 loggers:
   __bt_logger__:
-    level: WARNING
+    level: DEBUG
     handlers:
       - console
       - file
     propagate: false        
 root:
-  level: WARNING
+  level: DEBUG
   handlers:
     - console
     - file

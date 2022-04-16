@@ -24,11 +24,11 @@ import os
 import sys
 import pickle
 
-# append path
-# import 문을 통해 다른 파이썬 파일을 불러올 때, 
-# 파이썬은 내부적으로 파일을 찾기 위해 sys.path와 PYTHONPATH에 있는 경로를 탐색합니다.
-# 현재 경로를 sys.path에 추가한다.
-# 현재 경로(current_dir)란 사용자가 프로그램을 실행하는 폴더의 절대경로 정보
+#append path
+#import 문을 통해 다른 파이썬 파일을 불러올 때, 
+#파이썬은 내부적으로 파일을 찾기 위해 sys.path와 PYTHONPATH에 있는 경로를 탐색합니다.
+#현재 경로를 sys.path에 추가한다.
+#현재 경로(current_dir)란 사용자가 프로그램을 실행하는 폴더의 절대경로 정보
 current_dir = os.getcwd()
 sys.path.append(current_dir)
 
@@ -81,7 +81,7 @@ class LR_training:
         # stocks 변수에 학습에 사용할 종목 코드 목록을 저장한다.
         # dow: 학습 할 임의 종목을 설정한다.
         # tickers: 학습에 사용할 종목 정보를 저장한 파일
-        dow = []
+        dow = []        
         tickers = pd.read_csv(f"{self.curr_dir}/tickers.csv", dtype=str)
         tickers = list(tickers["ticker"])
         stocks = dow + tickers[:20] # 상위 20개 종목

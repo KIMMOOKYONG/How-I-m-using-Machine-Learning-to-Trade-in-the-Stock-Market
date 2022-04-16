@@ -42,7 +42,7 @@ def s_download(ticker, start, end):
 if __name__ == "__main__":
 
     load_data_path = os.getcwd()
-    load_data_path = os.path.join(load_data_path, "stock_utils/KOSPI50.csv")
+    load_data_path = os.path.join(load_data_path, "models/KOSPI50.csv")
 
     save_data_path = os.getcwd()
     save_data_path = os.path.join(save_data_path, "datasets")
