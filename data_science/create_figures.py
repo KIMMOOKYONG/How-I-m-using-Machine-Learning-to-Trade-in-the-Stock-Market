@@ -151,7 +151,7 @@ class create_figures:
         plt.savefig(fig_path)
 
 if __name__ == '__main__':
-    create_figures('LR_v1_predict', 0.98, 10)
+    create_figures('LR_v1_predict', 0.50, 20)
 
     """
     특성값 생성하기를 실행하면

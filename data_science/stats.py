@@ -81,7 +81,7 @@ if __name__ == "__main__":
     # 모델명: LR_v1_predict
     # 임계값: 1
     # 보유일수: 1
-    cs = create_stats('LR_v1_predict', 0.98, 10)
+    cs = create_stats('LR_v1_predict', 0.50, 20)
 
     """
     특성값 생성하기를 실행하면
